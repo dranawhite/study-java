@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>study-basic</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>study-algorithm</module>
+        <module>study-concurrent</module>
+        <module>study-jvm</module>
+        <module>study-structure</module>
+    </modules>
 
 
 </project>
