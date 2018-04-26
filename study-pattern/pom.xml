@@ -11,5 +11,21 @@
 
     <artifactId>study-pattern</artifactId>
 
+    <properties>
+        <cglib.version>3.2.5</cglib.version>
+    </properties>
 
+    <dependencies>
+        <!-- Dranawhite Framework -->
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-interceptor</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
