@@ -11,5 +11,12 @@
 
     <artifactId>study-algorithm</artifactId>
 
-
+    <dependencies>
+        <!-- Dranawhite Framework -->
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-jmh</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>

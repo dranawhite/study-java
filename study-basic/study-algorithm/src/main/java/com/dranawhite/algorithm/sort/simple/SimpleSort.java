@@ -1,4 +1,4 @@
-package com.dranawhite.algorithm.sort;
+package com.dranawhite.algorithm.sort.simple;
 
 /**
  * 简单排序
