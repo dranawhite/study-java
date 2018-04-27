@@ -20,7 +20,7 @@ public class BubbleSortBenchmakData extends AverageTimeBenchmark {
 	@Benchmark
 	public void benchmark() {
 		Sort bubbleSort = new BubbleSort();
-		bubbleSort.sort(CollectionInit.getRandomArray(DataInitConstant.NUM));
+		bubbleSort.sort(CollectionInit.getRandomArray(CollectionInit.DEFAULT_NUM));
 	}
 
 }

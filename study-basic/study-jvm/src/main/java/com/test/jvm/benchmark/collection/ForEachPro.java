@@ -1,4 +1,4 @@
-package com.test.jvm.collection;
+package com.test.jvm.benchmark.collection;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.test.jvm.collection;
+package com.test.jvm.benchmark.collection;
 
 import java.util.Map;
 import java.util.SortedMap;
