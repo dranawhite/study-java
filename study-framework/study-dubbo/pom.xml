@@ -12,9 +12,20 @@
     <artifactId>study-dubbo</artifactId>
 
     <dependencies>
+        <!-- Dranawhite Framework -->
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.dranawhite</groupId>
             <artifactId>dranawhite-test</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-distributed</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
