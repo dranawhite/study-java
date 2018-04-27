@@ -36,7 +36,7 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <configuration>
                     <!-- 自动将不使用的类去掉，保持包最小化 -->
-                    <minimizeJar>true</minimizeJar>
+                    <minimizeJar>false</minimizeJar>
                     <transformers>
                         <!-- 合并所有jar的spring.schemas -->
                         <transformer

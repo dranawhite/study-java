@@ -14,7 +14,7 @@ public class Consumer {
 				new ClassPathXmlApplicationContext("applicationContext-dubbo-consumer.xml");
 		context.start();
 		IDubboService dubboService = context.getBean("dubboService", IDubboService.class);
-		String hello = dubboService.sayHello();
+		String hello = dubboService.sayHello().getData();
 		System.out.println(hello);
 	}
 }
