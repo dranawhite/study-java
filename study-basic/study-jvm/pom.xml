@@ -11,5 +11,18 @@
 
     <artifactId>study-jvm</artifactId>
 
+    <dependencies>
+        <!-- Dranawhite Framework -->
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-dal</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>study-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

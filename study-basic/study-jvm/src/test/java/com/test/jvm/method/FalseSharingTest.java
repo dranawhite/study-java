@@ -1,6 +1,6 @@
 package com.test.jvm.method;
 
-import com.dranawhite.jvm.memory.FalseSharing;
+import com.test.jvm.memory.FalseSharing;
 import org.junit.Test;
 
 /**
