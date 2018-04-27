@@ -18,5 +18,11 @@
         <module>study-structure</module>
     </modules>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>study-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>

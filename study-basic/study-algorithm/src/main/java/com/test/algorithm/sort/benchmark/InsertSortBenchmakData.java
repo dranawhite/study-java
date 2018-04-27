@@ -1,5 +1,6 @@
 package com.test.algorithm.sort.benchmark;
 
+import com.dranawhite.test.CollectionInit;
 import com.dranawhite.test.jmh.AverageTimeBenchmark;
 import com.test.algorithm.sort.Sort;
 import com.test.algorithm.sort.simple.InsertSort;
@@ -18,7 +19,7 @@ public class InsertSortBenchmakData extends AverageTimeBenchmark {
 	@Benchmark
 	public void benchmark() {
 		Sort bubbleSort = new InsertSort();
-		bubbleSort.sort(SortBenchmakData.getRandomArray());
+		bubbleSort.sort(CollectionInit.getRandomArray(DataInitConstant.NUM));
 	}
 
 }
