@@ -15,7 +15,7 @@
         <!-- Dranawhite Framework -->
         <dependency>
             <groupId>com.dranawhite</groupId>
-            <artifactId>dranawhite-jmh</artifactId>
+            <artifactId>dranawhite-test</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
