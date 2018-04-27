@@ -1,5 +1,6 @@
 package com.test.algorithm.sort.benchmark;
 
+import com.dranawhite.test.jmh.AverageTimeBenchmark;
 import com.test.algorithm.sort.Sort;
 import com.test.algorithm.sort.simple.InsertSort;
 import org.openjdk.jmh.annotations.Benchmark;
@@ -10,7 +11,7 @@ import org.openjdk.jmh.annotations.Benchmark;
  * @author liangyq
  * @version [1.0, 2018/4/26 17:34]
  */
-public class InsertSortBenchmakData  {
+public class InsertSortBenchmakData extends AverageTimeBenchmark {
 
 	@Benchmark
 	public void benchmark() {
