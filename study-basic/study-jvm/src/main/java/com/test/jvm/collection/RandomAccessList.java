@@ -1,4 +1,4 @@
-package com.test.jvm.benchmark.collection;
+package com.test.jvm.collection;
 
 import java.util.Iterator;
 import java.util.List;

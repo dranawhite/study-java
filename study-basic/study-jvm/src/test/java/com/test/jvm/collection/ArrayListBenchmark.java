@@ -1,14 +1,10 @@
-package com.test.jvm.benchmark.collection;
+package com.test.jvm.collection;
 
 import com.dranawhite.test.CollectionInit;
 import com.dranawhite.test.jmh.AverageTimeBenchmark;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openjdk.jmh.annotations.Benchmark;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 /**
  * 数组表基准测试
@@ -25,6 +21,9 @@ public class ArrayListBenchmark extends AverageTimeBenchmark {
         RandomAccessList.traverse(list);
     }
 
+    /**
+     * 性能：0.075ms/op
+     */
     @Benchmark
     public void testTraverseLoop() {
         ArrayList<Integer> list = new ArrayList<>(CollectionInit.DEFAULT_NUM);
@@ -32,6 +31,9 @@ public class ArrayListBenchmark extends AverageTimeBenchmark {
         RandomAccessList.traverseWithLoop(list);
     }
 
+    /**
+     * 性能:0.070ms/op
+     */
     @Benchmark
     public void testTraverseIterator() {
         ArrayList<Integer> list = new ArrayList<>(CollectionInit.DEFAULT_NUM);

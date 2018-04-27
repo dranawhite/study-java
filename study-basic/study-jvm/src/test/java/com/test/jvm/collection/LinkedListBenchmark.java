@@ -1,4 +1,4 @@
-package com.test.jvm.benchmark.collection;
+package com.test.jvm.collection;
 
 import com.dranawhite.test.CollectionInit;
 import com.dranawhite.test.jmh.AverageTimeBenchmark;
@@ -21,6 +21,9 @@ public class LinkedListBenchmark extends AverageTimeBenchmark {
 		RandomAccessList.traverse(list);
 	}
 
+	/**
+	 * 性能：7.543ms/op
+	 */
 	@Benchmark
 	public void testTraverseLoop() {
 		LinkedList<Integer> list = new LinkedList<>();
@@ -28,6 +31,9 @@ public class LinkedListBenchmark extends AverageTimeBenchmark {
 		RandomAccessList.traverseWithLoop(list);
 	}
 
+	/**
+	 * 性能：0.075ma/op
+	 */
 	@Benchmark
 	public void testTraverseIterator() {
 		LinkedList<Integer> list = new LinkedList<>();

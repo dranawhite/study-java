@@ -65,5 +65,7 @@ public class SwitchEnum {
         SwitchEnum.oridinal();
         System.out.println("====Switch====");
         SwitchEnum.switchColor();
+        System.out.println("====Swit====");
+        SwitchEnum.swit();
     }
 }

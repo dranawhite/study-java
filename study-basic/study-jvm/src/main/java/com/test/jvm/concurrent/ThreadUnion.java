@@ -8,22 +8,19 @@ public class ThreadUnion {
 
     public void run() throws InterruptedException {
 
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                try {
-                    int a = 0;
-                    for (int i = 0; i < 5; i ++) {
-                        a++;
-                        System.out.println("a= " + a);
-                        Thread.sleep(1000);
-                    }
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
+        Thread thread = new Thread(() -> {
+            try {
+                int a = 0;
+                for (int i = 0; i < 5; i ++) {
+                    a++;
+                    System.out.println("a= " + a);
+                    Thread.sleep(1000);
                 }
             }
-        };
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
         thread.setName("CountA");
         thread.start();
         thread.join();

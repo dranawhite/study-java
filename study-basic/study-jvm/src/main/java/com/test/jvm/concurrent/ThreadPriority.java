@@ -7,7 +7,7 @@ package com.test.jvm.concurrent;
  * @author dranawhite 2017/7/21
  * @version 1.0
  */
-class ThreadPriority extends Thread {
+public class ThreadPriority extends Thread {
 
     /**
      * 线程名
