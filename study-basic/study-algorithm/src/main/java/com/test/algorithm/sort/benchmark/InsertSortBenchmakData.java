@@ -7,7 +7,9 @@ import org.openjdk.jmh.annotations.Benchmark;
 
 /**
  * 插入排序基准测试
- *
+ * <pre>
+ *     性能：3.9s/op
+ * </pre>
  * @author liangyq
  * @version [1.0, 2018/4/26 17:34]
  */
