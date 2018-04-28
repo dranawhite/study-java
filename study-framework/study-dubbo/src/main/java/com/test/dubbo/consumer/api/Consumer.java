@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ReferenceConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.dranawhite.common.util.PropertyLoader;
+import com.test.dubbo.provider.DubboRequest;
 import com.test.dubbo.provider.IDubboService;
 
 /**
@@ -37,6 +38,9 @@ public class Consumer {
 		// 注意：此代理对象内部封装了所有通讯细节，对象较重，请缓存复用
 		IDubboService dubboService = reference.get();
 
-		System.out.println(dubboService.sayHello());
+		DubboRequest request = new DubboRequest();
+		request.setId(19);
+		request.setName("jerry");
+		System.out.println(dubboService.service(request));
 	}
 }

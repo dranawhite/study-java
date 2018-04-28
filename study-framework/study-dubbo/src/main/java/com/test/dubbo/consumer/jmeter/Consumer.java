@@ -1,10 +1,15 @@
 package com.test.dubbo.consumer.jmeter;
 
 import com.dranawhite.api.model.Result;
+import com.dranawhite.common.util.StringUtil;
 import com.dranawhite.test.jmeter.dubbo.AbstractDubboPerformSampler;
+import com.test.dubbo.provider.DubboRequest;
 import com.test.dubbo.provider.IDubboService;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author liangyq
@@ -23,8 +28,27 @@ public class Consumer extends AbstractDubboPerformSampler {
 	}
 
 	@Override
+	public Map<String, String> getArguments() {
+		Map<String, String> args = new HashMap<>(4);
+		args.put("id", "19");
+		args.put("name", "Ketty");
+		return args;
+	}
+
+	@Override
 	public <T> Result<T> run(JavaSamplerContext context) {
-		Result<String> result = dubboService.sayHello();
+		Result<String> result = dubboService.service(buildRequest(context));
 		return (Result<T>) result;
+	}
+
+	private DubboRequest buildRequest(JavaSamplerContext context) {
+		DubboRequest request = new DubboRequest();
+		String id = context.getParameter("id");
+		String name = context.getParameter("name");
+		if (StringUtil.isNotEmpty(id)) {
+			request.setId(Integer.parseInt(id));
+		}
+		request.setName(name);
+		return request;
 	}
 }

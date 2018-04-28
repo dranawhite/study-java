@@ -8,6 +8,6 @@ import com.dranawhite.api.model.Result;
  */
 public interface IDubboService {
 
-	Result<String> sayHello();
+	Result<String> service(DubboRequest request);
 
 }
