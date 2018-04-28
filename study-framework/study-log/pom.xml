@@ -18,5 +18,17 @@
             <artifactId>dranawhite-log</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-exception</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Study Framework -->
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>study-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>
