@@ -1,6 +1,9 @@
 package com.test.dubbo.provider.xml;
 
+import com.dranawhite.exception.DranawhiteException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.io.IOException;
 
 /**
  * @author liangyq
@@ -8,10 +11,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Provider {
 
-	public static void main(String[] args) throws Exception {
-		ClassPathXmlApplicationContext context =
-				new ClassPathXmlApplicationContext("applicationContext-dubbo-provider.xml");
-		context.start();
-		System.in.read();
+	public static void main(String[] args) {
+		try {
+			ClassPathXmlApplicationContext context =
+					new ClassPathXmlApplicationContext("applicationContext-dubbo-provider.xml");
+			context.start();
+			System.in.read();
+		} catch (IOException ioe) {
+			throw new DranawhiteException(ioe);
+		}
 	}
 }

@@ -28,6 +28,11 @@
             <artifactId>dranawhite-distributed</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-log</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

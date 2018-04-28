@@ -2,9 +2,10 @@ package com.test.dubbo.consumer.jmeter;
 
 import com.dranawhite.api.model.Result;
 import com.dranawhite.common.util.StringUtil;
-import com.dranawhite.test.jmeter.dubbo.AbstractDubboPerformSampler;
+import com.dranawhite.test.jmeter.java.AbstractJavaPerformSampler;
 import com.test.dubbo.provider.DubboRequest;
 import com.test.dubbo.provider.IDubboService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,7 +16,8 @@ import java.util.Map;
  * @author liangyq
  * @version [1.0, 2018/4/27 17:41]
  */
-public class Consumer extends AbstractDubboPerformSampler {
+@Slf4j
+public class Consumer extends AbstractJavaPerformSampler {
 
 	private IDubboService dubboService;
 
