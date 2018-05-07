@@ -1,4 +1,4 @@
-package com.test.jvm.loader;
+package com.test.jvm.classloader;
 
 /**
  * @author liangyq

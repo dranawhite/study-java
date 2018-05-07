@@ -25,6 +25,11 @@
         </dependency>
         <dependency>
             <groupId>com.dranawhite</groupId>
+            <artifactId>study-log</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
             <artifactId>study-core</artifactId>
             <version>${project.version}</version>
         </dependency>

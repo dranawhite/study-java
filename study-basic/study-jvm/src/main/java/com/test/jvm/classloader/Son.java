@@ -1,4 +1,4 @@
-package com.test.jvm.loader;
+package com.test.jvm.classloader;
 
 /**
  * @author liangyq
@@ -17,10 +17,6 @@ public class Son extends Parent {
 	public Son() {
 		System.out.println("S2=" + s2);
 		System.out.println("Son constructor");
-	}
-
-	public static void main(String[] args) {
-		new Son();
 	}
 
 }
