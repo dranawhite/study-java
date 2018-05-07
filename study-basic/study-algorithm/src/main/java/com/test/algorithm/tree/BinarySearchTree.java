@@ -92,10 +92,10 @@ public class BinarySearchTree implements Tree {
 	 *
 	 * @param node 节点
 	 */
-	public void afterOrder(Node node) {
+	public void postOrder(Node node) {
 		if (node != null) {
-			afterOrder(node.left);
-			afterOrder(node.right);
+			postOrder(node.left);
+			postOrder(node.right);
 			System.out.println(node.data);
 		}
 	}
