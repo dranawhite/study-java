@@ -51,68 +51,6 @@ public class ChainAddress implements Hash {
 	}
 }
 
-class SortedLink {
-	private Link first;
-
-	public SortedLink() {
-		first = null;
-	}
-
-	public void insert(Link link) {
-		int data = link.getIData();
-		Link previous = null;
-		Link current = first;
-
-		while (current != null && data > current.getIData()) {
-			previous = current;
-			current = current.next;
-		}
-		if (previous == null) {
-			first = link;
-		} else {
-			previous.next = link;
-		}
-		link.next = current;
-	}
-
-	public void delete(int data) {
-		Link previous = null;
-		Link current = first;
-
-		while(current != null && data != current.getIData()) {
-			previous = current;
-			current = current.next;
-		}
-		if (previous == null) {
-			first = first.next;
-		} else {
-			previous.next = current.next;
-		}
-	}
-
-	public Link find(int data) {
-		Link current = first;
-		while (current != null && current.getIData() <= data) {
-			if (current.getIData() == data) {
-				return current;
-			}
-			current = current.next;
-		}
-		return null;
-	}
-}
-
-class Link {
-
-	@Getter
-	private int iData;
-	public Link next;
-
-	public Link(int iData) {
-		this.iData = iData;
-	}
-}
-
 
 
 
