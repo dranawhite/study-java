@@ -16,6 +16,7 @@
         <module>study-mybatis</module>
         <module>study-dubbo</module>
         <module>study-log</module>
+        <module>study-zookeeper</module>
     </modules>
 
 

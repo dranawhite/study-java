@@ -15,7 +15,6 @@
         <module>study-algorithm</module>
         <module>study-concurrent</module>
         <module>study-jvm</module>
-        <module>study-structure</module>
     </modules>
 
     <dependencies>

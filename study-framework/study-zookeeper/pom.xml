@@ -3,20 +3,21 @@
          xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>study-basic</artifactId>
+        <artifactId>study-framework</artifactId>
         <groupId>com.dranawhite</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>study-concurrent</artifactId>
+    <artifactId>study-zookeeper</artifactId>
+
+    <properties></properties>
 
     <dependencies>
-        <!-- Dranawhite Framework -->
         <dependency>
-            <groupId>com.dranawhite</groupId>
-            <artifactId>dranawhite-exception</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 </project>
