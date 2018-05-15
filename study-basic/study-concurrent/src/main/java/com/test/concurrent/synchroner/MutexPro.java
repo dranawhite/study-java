@@ -140,4 +140,10 @@ public class MutexPro implements Lock {
 	public Condition newCondition() {
 		return sync.newCondition();
 	}
+
+	public static void main(String[] args) {
+		MutexPro pro = new MutexPro();
+		pro.lock();
+		pro.lock();
+	}
 }

@@ -1,4 +1,4 @@
-package com.test.jvm.unsafe;
+package com.test.concurrent.unsafe;
 
 import sun.misc.Unsafe;
 
