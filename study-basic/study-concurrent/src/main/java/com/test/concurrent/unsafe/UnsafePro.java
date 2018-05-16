@@ -1,6 +1,9 @@
 package com.test.concurrent.unsafe;
 
+import com.dranawhite.exception.DranawhiteException;
 import sun.misc.Unsafe;
+
+import java.lang.reflect.Field;
 
 /**
  * <pre>
@@ -13,9 +16,21 @@ import sun.misc.Unsafe;
  */
 public class UnsafePro {
 
-    public static void main(String[] args) {
-        Unsafe unsafe = UnsafeFactory.getUnsafe();
-        System.out.println(unsafe);
-    }
+    private Integer num;
 
+    private long offSet;
+
+    public static void main(String[] args) {
+        try {
+            Unsafe unsafe = UnsafeFactory.getUnsafe();
+            Field numField = UnsafePro.class.getDeclaredField("num");
+            UnsafePro pro = new UnsafePro();
+            pro.offSet = unsafe.objectFieldOffset(numField);
+            System.out.println("初始值：" + unsafe.getObject(pro, pro.offSet));
+            unsafe.compareAndSwapObject(pro, pro.offSet, null, 100);
+            System.out.println("变更值：" + pro.num);
+        } catch (NoSuchFieldException ex) {
+            throw new DranawhiteException();
+        }
+    }
 }
