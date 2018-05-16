@@ -38,11 +38,12 @@ public class MutexPro implements Lock {
 		 * 共享式获取同步状态，返回大于等于0的值，表示获取成功，反之获取失败
 		 *
 		 * @param acquires
+		 *
 		 * @return
 		 */
 		@Override
 		protected int tryAcquireShared(int acquires) {
-			// Do Nothing
+			// TODO
 			return -1;
 		}
 
@@ -50,11 +51,12 @@ public class MutexPro implements Lock {
 		 * 共享式释放同步状态
 		 *
 		 * @param releases
+		 *
 		 * @return
 		 */
 		@Override
 		public boolean tryReleaseShared(int releases) {
-			// Do Nothing
+			// TODO
 			return false;
 		}
 
@@ -62,6 +64,7 @@ public class MutexPro implements Lock {
 		 * 独占式获取同步状态，实现该方法需要查询当前状态并判断同步状态是否符合预期，然后再进行CAS设置同步状态
 		 *
 		 * @param acquires
+		 *
 		 * @return 是否成功
 		 */
 		@Override
@@ -77,6 +80,7 @@ public class MutexPro implements Lock {
 		 * 独占式释放同步状态，等待获取同步状态的线程将会有机会获取同步状态
 		 *
 		 * @param releases
+		 *
 		 * @return 是否释放成功
 		 */
 		@Override
