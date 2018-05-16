@@ -15,6 +15,11 @@
         <!-- Dranawhite Framework -->
         <dependency>
             <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
             <artifactId>dranawhite-exception</artifactId>
             <version>${project.version}</version>
         </dependency>

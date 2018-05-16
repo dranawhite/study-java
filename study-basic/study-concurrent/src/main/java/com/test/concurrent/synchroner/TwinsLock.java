@@ -1,6 +1,6 @@
 package com.test.concurrent.synchroner;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.util.ThreadUnit;
 import com.dranawhite.exception.IllegalArgDranawhiteException;
 
 import java.io.IOException;
@@ -23,6 +23,7 @@ public class TwinsLock implements Lock {
 	private Sync sync = new Sync(2);
 
 	private static final class Sync extends AbstractQueuedSynchronizer {
+
 		Sync(int count) {
 			if (count <= 0) {
 				throw new IllegalArgDranawhiteException("count必须大于0");
@@ -32,7 +33,7 @@ public class TwinsLock implements Lock {
 
 		@Override
 		public int tryAcquireShared(int reduceCount) {
-			for(;;) {
+			for (; ; ) {
 				int currentState = getState();
 				int newCount = currentState - reduceCount;
 				if (newCount < 0 || compareAndSetState(currentState, newCount)) {
@@ -43,7 +44,7 @@ public class TwinsLock implements Lock {
 
 		@Override
 		public boolean tryReleaseShared(int returnCount) {
-			for(;;) {
+			for (; ; ) {
 				int currentState = getState();
 				int newCount = currentState + returnCount;
 				if (compareAndSetState(currentState, newCount)) {
@@ -93,16 +94,12 @@ public class TwinsLock implements Lock {
 
 			@Override
 			public void run() {
-				try {
-					while(true) {
-						lock.lock();
-						System.out.println(Thread.currentThread().getName());
-						TimeUnit.SECONDS.sleep(3);
-						System.out.println();
-						lock.unlock();
-					}
-				} catch (InterruptedException ex) {
-					throw new DranawhiteException(ex);
+				while (true) {
+					lock.lock();
+					System.out.println(Thread.currentThread().getName());
+					ThreadUnit.sleep(3);
+					System.out.println();
+					lock.unlock();
 				}
 			}
 		}
@@ -116,25 +113,3 @@ public class TwinsLock implements Lock {
 		System.in.read();
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,7 @@
 package com.test.concurrent.synchroner;
 
+import com.dranawhite.exception.DranawhiteException;
+
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -8,10 +10,19 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchPro {
 
-	public static void main(String[] args) {
-		CountDownLatch latch = new CountDownLatch(2);
+	private CountDownLatch latch = new CountDownLatch(2);
+
+	public void countDown() {
+		latch.countDown();
 	}
 
+	public void await() {
+		try {
+			latch.await();
+		} catch (InterruptedException ex) {
+			throw new DranawhiteException(ex);
+		}
+	}
 }
 
 
