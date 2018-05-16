@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class ZkOperation {
 
-	private ZooKeeper zooKeeper;
+	protected ZooKeeper zooKeeper;
 
 	public void conn() {
 		try {
@@ -41,7 +41,7 @@ public class ZkOperation {
 		try {
 			zooKeeper.delete(path, -1);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK创建节点错误!", ex);
+			throw new DranawhiteException("ZK删除节点错误!", ex);
 		}
 	}
 
@@ -76,8 +76,12 @@ public class ZkOperation {
 		try {
 			return zooKeeper.exists(path, false);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK读取节点错误!", ex);
+			throw new DranawhiteException("ZK查询节点错误!", ex);
 		}
+	}
+
+	public void setAuth() {
+		zooKeeper.addAuthInfo("digest", "foo:true".getBytes());
 	}
 
 	public static void main(String[] args) {
