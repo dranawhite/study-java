@@ -19,5 +19,12 @@
         <module>study-zookeeper</module>
     </modules>
 
-
+    <dependencies>
+        <!-- Dranawhite Framework -->
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
