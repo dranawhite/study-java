@@ -16,25 +16,9 @@ public class CountDownLatchTest {
 	@Test
 	public void testCounDown() {
 		CountDownLatch latch = new CountDownLatch(2);
-
-		class Interrupt extends Thread {
-
-			private Worker worker;
-
-			public Interrupt(Worker worker) {
-				this.worker = worker;
-			}
-
-			@Override
-			public void run() {
-				worker.interrupt();
-			}
-		}
 		worker = new Worker(latch);
 		worker.start();
 		System.out.println("Time ----");
-		Interrupt interrupt = new Interrupt(worker);
-		interrupt.start();
 		ThreadUnit.wait(latch);
 		System.out.println("Time Over");
 	}
