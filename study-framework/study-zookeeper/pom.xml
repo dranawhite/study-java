@@ -11,13 +11,32 @@
 
     <artifactId>study-zookeeper</artifactId>
 
-    <properties></properties>
+    <properties>
+        <zookeeper.version>3.4.10</zookeeper.version>
+        <zkclient.version>0.1</zkclient.version>
+        <curator.version>2.12.0</curator.version>
+    </properties>
 
     <dependencies>
+        <!-- zookeeper -->
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>LATEST</version>
+            <version>${zookeeper.version}</version>
+        </dependency>
+
+        <!-- zkclient -->
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${zkclient.version}</version>
+        </dependency>
+
+        <!-- Curator -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${curator.version}</version>
         </dependency>
     </dependencies>
 </project>
