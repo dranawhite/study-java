@@ -1,6 +1,5 @@
 package com.test.zookeeper;
 
-import com.dranawhite.common.util.ThreadUnit;
 import com.dranawhite.exception.DranawhiteException;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
@@ -10,7 +9,6 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
 
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * ZK简易操作
