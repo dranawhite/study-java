@@ -59,6 +59,51 @@ public class ExceptionPro {
         }
     }
 
+    /**
+     * <pre>
+     *     字节码如下：finally会捕获Any异常
+     *     Code:
+     *       stack=2, locals=3, args_size=1
+     *          0: iconst_0
+     *          1: istore_1
+     *          2: iconst_1
+     *          3: istore_1
+     *          4: new           #5                  // class java/lang/RuntimeException
+     *          7: dup
+     *          8: invokespecial #6                  // Method java/lang/RuntimeException."<init>":()V
+     *         11: athrow
+     *         12: astore_2
+     *         13: iconst_2
+     *         14: istore_1
+     *         15: aload_2
+     *         16: athrow
+     *       Exception table:
+     *          from    to  target type
+     *              2    13    12   any
+     * </pre>
+     */
+    public void tryFinally() {
+        int i = 0;
+        try {
+            i = 1;
+            throw new RuntimeException();
+        } finally {
+            i = 2;
+        }
+    }
+
+    public void tryCatchFinally() {
+        int i = 0;
+        try {
+            i = 1;
+            throw new RuntimeException();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            i = 2;
+        }
+    }
+
     private void exceptionMethod() throws IOException {
         throw new IOException();
     }
