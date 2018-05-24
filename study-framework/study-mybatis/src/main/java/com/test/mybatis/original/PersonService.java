@@ -7,38 +7,26 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
-import java.io.IOException;
-import java.io.Reader;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 /**
  * @author liangyq
  * @version [1.0, 2018/5/23 17:44]
  */
+@Service
 public class PersonService {
 
-	private SqlSessionFactory getSqlSessionFactory() {
-		try {
-			Reader reader = Resources.getResourceAsReader("mybatis-configuration.xml");
-			return new SqlSessionFactoryBuilder().build(reader);
-		} catch (IOException e) {
-			throw new DranawhiteException(e);
-		}
-	}
-
-	private SqlSession getSession() {
-		SqlSessionFactory sqlSessionFactory = getSqlSessionFactory();
-		return sqlSessionFactory.openSession();
-	}
-
-	private PersonMapper getPersonMapper() {
-		SqlSession session = getSession();
-		return session.getMapper(PersonMapper.class);
-	}
+	@Autowired
+	private PersonMapper personMapper;
 
 	public static void main(String[] args) {
-		PersonService personService = new PersonService();
-		PersonMapper personMapper = personService.getPersonMapper();
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring-mybatis.xml");
+		ctx.start();
+
+		PersonMapper personMapper = ctx.getBean(PersonMapper.class);
 		PersonDO person = new PersonDO();
 		person.setName("Tom");
 		person.setAge(27);

@@ -1,11 +1,13 @@
 package com.test.dal.model.origin;
 
 import lombok.Data;
+import org.apache.ibatis.type.Alias;
 
 /**
  * @author liangyq
- * @version [V1.0, 2018-05-23]
+ * @version [V1.0, 2018-05-24]
  */
+@Alias("PersonDO")
 @Data
 public class PersonDO {
     /**

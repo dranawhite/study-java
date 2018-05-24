@@ -16,7 +16,7 @@
             <property name = "version" value = "1.0" />
             <property name = "suppressCopyRight" value = "true" />
             <property name = "addLombokData" value = "true" />
-            <property name = "suppressModelAlias" value = "true" />
+            <property name = "suppressModelAlias" value = "false" />
         </commentGenerator>
         <!-- 注释控制完毕 -->
 
