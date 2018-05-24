@@ -30,15 +30,15 @@
         </javaTypeResolver>
 
         <!-- 数据表对应的model 层  -->
-        <javaModelGenerator targetPackage = "${entity}" targetProject = "${targetPath}">
+        <javaModelGenerator targetPackage = "${entity}" targetProject = "${targetJavaPath}">
             <property name = "enableSubPackages" value = "false" />
             <property name = "trimStrings" value = "true" />
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage = "${mapper}" targetProject = "${targetPath}">
+        <sqlMapGenerator targetPackage = "${mapper}" targetProject = "${targetResourcePath}">
             <property name = "enableSubPackages" value = "false" />
         </sqlMapGenerator>
         <javaClientGenerator type = "XMLMAPPER" targetPackage = "${dao}"
-                             targetProject = "${targetPath}">
+                             targetProject = "${targetJavaPath}">
             <property name = "enableSubPackages" value = "false" />
         </javaClientGenerator>
 

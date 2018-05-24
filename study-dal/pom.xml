@@ -11,11 +11,20 @@
 
     <artifactId>study-dal</artifactId>
 
+    <properties>
+        <druid.version>1.1.7</druid.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.dranawhite</groupId>
             <artifactId>dranawhite-dal</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,14 +1,7 @@
 package com.test.mybatis.original;
 
-import com.dranawhite.exception.DranawhiteException;
 import com.test.dal.dao.origin.PersonMapper;
 import com.test.dal.model.origin.PersonDO;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +12,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PersonService {
 
-	@Autowired
-	private PersonMapper personMapper;
-
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring-mybatis.xml");
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring-context.xml");
 		ctx.start();
 
 		PersonMapper personMapper = ctx.getBean(PersonMapper.class);
