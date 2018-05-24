@@ -17,11 +17,12 @@ public class PersonService {
 		ctx.start();
 
 		PersonMapper personMapper = ctx.getBean(PersonMapper.class);
-		PersonDO person = new PersonDO();
-		person.setName("Tom");
-		person.setAge(27);
-		person.setAddress("Queue Route");
-		personMapper.insertSelective(person);
+		System.out.println("第一次查询");
+		personMapper.selectByPrimaryKey(1);
+		System.out.println("第二次查询");
+		personMapper.selectByPrimaryKey(1);
+		System.out.println("第三次查询");
+		personMapper.selectByPrimaryKey(1);
 	}
 
 }

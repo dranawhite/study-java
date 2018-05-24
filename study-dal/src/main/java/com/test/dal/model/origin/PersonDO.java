@@ -3,13 +3,17 @@ package com.test.dal.model.origin;
 import lombok.Data;
 import org.apache.ibatis.type.Alias;
 
+import java.io.Serializable;
+
 /**
  * @author liangyq
  * @version [V1.0, 2018-05-24]
  */
 @Alias("PersonDO")
 @Data
-public class PersonDO {
+public class PersonDO implements Serializable {
+
+    private static final long serialVersionUID = -4308220611528296272L;
     /**
      * ID
      */
