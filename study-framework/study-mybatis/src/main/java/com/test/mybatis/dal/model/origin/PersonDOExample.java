@@ -1,4 +1,4 @@
-package com.test.dal.model.origin;
+package com.test.mybatis.dal.model.origin;
 
 import java.util.ArrayList;
 import java.util.List;

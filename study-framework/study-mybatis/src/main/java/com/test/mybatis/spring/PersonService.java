@@ -1,7 +1,6 @@
-package com.test.mybatis.original;
+package com.test.mybatis.spring;
 
-import com.test.dal.dao.origin.PersonMapper;
-import com.test.dal.model.origin.PersonDO;
+import com.test.mybatis.dal.dao.origin.PersonMapper;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 

@@ -12,6 +12,7 @@
     <artifactId>study-mybatis</artifactId>
 
     <properties>
+        <druid.version>1.1.7</druid.version>
         <mybatis.version>3.4.6</mybatis.version>
         <mybatis-spring.version>2.0.0-SNAPSHOT</mybatis-spring.version>
     </properties>
@@ -20,8 +21,13 @@
         <!-- Study Project -->
         <dependency>
             <groupId>com.dranawhite</groupId>
-            <artifactId>study-dal</artifactId>
+            <artifactId>dranawhite-dal</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
         </dependency>
 
         <!-- MyBatis -->

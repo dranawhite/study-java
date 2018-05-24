@@ -8,5 +8,5 @@
 
     <context:component-scan base-package = "com.test.mybatis" />
 
-    <import resource = "classpath:spring-mybatis.xml" />
+    <import resource = "classpath:mybatis/spring-mybatis.xml" />
 </beans>

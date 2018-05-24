@@ -1,4 +1,4 @@
-package com.test.dal;
+package com.test.mybatis.dal;
 
 import com.dranawhite.common.util.ResourceLoader;
 import com.dranawhite.dal.mybatis.DBgenerrator;
@@ -10,7 +10,7 @@ import com.dranawhite.dal.mybatis.DBgenerrator;
 public class MybatisGenerator {
 
 	public static void main(String[] args) {
-		String url = ResourceLoader.getClasspathResource("mybatis-generator.xml");
+		String url = ResourceLoader.getClasspathResource("mybatis/mybatis-generator.xml");
 		DBgenerrator.autoDB(url);
 	}
 

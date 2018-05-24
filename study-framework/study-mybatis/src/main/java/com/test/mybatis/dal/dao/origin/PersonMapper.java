@@ -1,9 +1,11 @@
-package com.test.dal.dao.origin;
+package com.test.mybatis.dal.dao.origin;
 
-import com.test.dal.model.origin.PersonDO;
-import com.test.dal.model.origin.PersonDOExample;
-import java.util.List;
+
+import com.test.mybatis.dal.model.origin.PersonDO;
+import com.test.mybatis.dal.model.origin.PersonDOExample;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface PersonMapper {
     long countByExample(PersonDOExample example);
