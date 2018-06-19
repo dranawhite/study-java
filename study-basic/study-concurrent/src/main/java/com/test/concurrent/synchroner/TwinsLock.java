@@ -89,7 +89,7 @@ public class TwinsLock implements Lock {
 	}
 
 	public static void main(String[] args) throws IOException {
-		Lock lock = new TwinsLock();
+		final Lock lock = new TwinsLock();
 		class Worker extends Thread {
 
 			@Override

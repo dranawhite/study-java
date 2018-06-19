@@ -19,4 +19,10 @@ public class Parent {
 		System.out.println("Parent construtor");
 	}
 
+	{
+		p2 = 8;
+		System.out.println("P1=" + p2);
+		System.out.println("Code Block");
+	}
+
 }

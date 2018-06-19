@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局映射器启用二级缓存，默认使用最小使用原则清除缓存，保留1024个引用 -->
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+
+    <!-- 默认是Dev环境 -->
+    <environments default="dev">
+        <!-- 每个数据库对应一个SqlSessionFactory实例 -->
+        <environment id="dev">
+            <!-- 使用JDBC来提交和回滚设置 -->
+            <transactionManager type="JDBC"/>
+            <!-- 使用连接池，默认10个链接 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/test?characterEncoding=utf8&amp;serverTimezone=GMT"/>
+                <property name="username" value="root"/>
+                <property name="password" value="10250618"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- Mapper文件映射 -->
+    <mappers>
+        <mapper resource="mapper/origin/PersonMapper.xml"/>
+    </mappers>
+</configuration>

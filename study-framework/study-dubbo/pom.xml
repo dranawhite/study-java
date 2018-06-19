@@ -33,6 +33,12 @@
             <artifactId>dranawhite-log</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.5.8</version>
+        </dependency>
     </dependencies>
 
     <build>

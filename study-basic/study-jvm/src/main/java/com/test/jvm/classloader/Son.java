@@ -19,4 +19,9 @@ public class Son extends Parent {
 		System.out.println("Son constructor");
 	}
 
+	{
+		s2 = 8;
+		System.out.println("S1=" + s2);
+		System.out.println("Code Block");
+	}
 }
