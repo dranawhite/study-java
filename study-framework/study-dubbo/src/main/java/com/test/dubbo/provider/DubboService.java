@@ -4,6 +4,7 @@ import com.dranawhite.api.builder.ResultBuilder;
 import com.dranawhite.api.model.RespEnum;
 import com.dranawhite.api.model.Result;
 import com.dranawhite.common.util.BeanValidator;
+import com.dranawhite.common.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,7 +16,7 @@ public class DubboService implements IDubboService {
 
 	@Override
 	public Result<String> service(DubboRequest request) {
-		if(BeanValidator.validate(request)) {
+		if(StringUtil.isEmpty(BeanValidator.validate(request))) {
 			log.info(request.toString());
 			return ResultBuilder.buildResult(RespEnum.SUCCESS, "Hello Dubbo!");
 		} else {
