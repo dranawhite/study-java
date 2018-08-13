@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cache = "http://www.springframework.org/schema/cache"
+       xmlns:p = "http://www.springframework.org/schema/p"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/com.study.spring-beans.xsd
+            http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/com.study.spring-cache.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/com.study.spring-context.xsd">
+
+    <!-- 使用Ehcache组件 -->
+    <context:component-scan base-package = "com.dranawhite.com.study.spring.cache" />
+    <context:annotation-config />
+    <!-- 开启Cache注解 -->
+    <cache:annotation-driven />
+
+    <bean id = "cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager"
+          p:cacheManager-ref="cache">
+    </bean>
+    <bean id = "cache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
+          p:configLocation="classpath:cache/ehcache.xml"/>
+</beans>

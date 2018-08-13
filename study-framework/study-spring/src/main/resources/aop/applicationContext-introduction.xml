@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/com.study.spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/com.study.spring-context.xsd">
+
+    <context:component-scan base-package="com.dranawhite.com.study.spring.aop" />
+
+    <!-- 配置一个代理 -->
+    <bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean"
+          lazy-init="true">
+        <!-- 需要动态实现的接口 -->
+        <property name="interfaces" value="com.dranawhite.com.study.spring.aop.Apolopy" />
+        <!-- 被代理的类 -->
+        <property name="target" ref="person" />
+        <!-- 拦截器名称，bean id -->
+        <property name="interceptorNames">
+            <list>
+                <value>personAroundAdvice</value>
+                <value>personIntroductionAdvice</value>
+            </list>
+        </property>
+        <!-- 默认值为false，表明代理接口，此时使用JDK动态代理；true表明代理类，此时使用CGLIB动态代理 -->
+        <property name="proxyTargetClass" value="true" />
+    </bean>
+
+</beans>

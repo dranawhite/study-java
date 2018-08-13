@@ -52,11 +52,11 @@
                         <!-- 合并所有jar的spring.schemas -->
                         <transformer
                                 implementation = "org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring.handlers</resource>
+                            <resource>META-INF/com.study.spring.handlers</resource>
                         </transformer>
                         <transformer
                                 implementation = "org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring.schemas</resource>
+                            <resource>META-INF/com.study.spring.schemas</resource>
                         </transformer>
                         <!-- 配置MainClass -->
                         <transformer

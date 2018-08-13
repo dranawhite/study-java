@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/com.study.spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/com.study.spring-context.xsd">
+
+    <context:component-scan base-package="com.dranawhite.com.study.spring.aop" />
+
+    <!-- 配置一个切面 -->
+    <!-- RegexpMethodPointcutAdvisor是正则表达式切面
+     其它切面有：
+         DefaultPointcutAdvisor——默认切面，可扩展它来自定义切面
+         NameMatchMethodPointcutAdvisor——根据方法名称进行匹配的切面
+         StaticMethodMatcherPointcutAdvisor——用于匹配静态方法的切面-->
+    <bean id="advisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"
+          lazy-init="true">
+        <property name="advice" ref="personAroundAdvice" />
+        <!-- 切点正则表达式, ".*"表示匹配所有字符 -->
+        <property name="pattern" value="com.dranawhite.com.study.spring.aop.Person.sayGood.*" />
+    </bean>
+    <bean id="proxyAdvisorFactoryBean"
+          class="org.springframework.aop.framework.ProxyFactoryBean" lazy-init="true">
+        <property name="target" ref="person" />
+        <!-- 此处值改为切面 -->
+        <property name="interceptorNames" value="advisor" />
+        <property name="proxyTargetClass" value="true" />
+    </bean>
+
+</beans>

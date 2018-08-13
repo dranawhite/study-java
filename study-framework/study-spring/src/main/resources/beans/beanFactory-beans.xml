@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/com.study.spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/com.study.spring-context.xsd">
+
+    <!-- 该配置文件用于探究BeanFactory形式解析资源文件，此时后置处理器需要手动代码加载 -->
+
+    <context:property-placeholder location="classpath:core/person.properties" />
+
+    <bean id="car" class="com.dranawhite.com.study.spring.beans.bean.Car" init-method="myInit" destroy-method="myDestory"
+          p:brand="红旗CA72" p:maxSpeed="200" />
+
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/com.study.spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/com.study.spring-context.xsd">
+
+    <context:component-scan base-package="com.dranawhite.com.study.spring.aop" />
+
+    <!-- BeanNameAutoProxyCreator可以根据bean名称来自动生成代理 -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"
+          lazy-init="true">
+        <!-- 正则表达式，如果是*Impl，则为后缀是Impl的bean生成代理 -->
+        <property name="beanNames" value="*person" />
+        <property name="interceptorNames" value="personAroundAdvice" />
+        <!-- 是否对代理生成策略进行优化，如果该类有接口就代理接口，如果没有接口则代理类 -->
+        <property name="optimize" value="true" />
+    </bean>
+
+</beans>
