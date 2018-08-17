@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<!-- 设置namenode的http通讯地址 -->
+	<property>
+		<name>dfs.namenode.http-address</name>
+		<value>localhost:50070</value>
+	</property>
+
+	<!-- 它决定着系统里面的文件块的数据备份个数，对于一个实际的应用，它应该被设置为3（这个数字并没有上限，
+	但是更多的备份可能并没有作用，而且会占用更多的空间），少于三个的备份，可能会影响到数据的可靠性（系统故障时，也许会
+	造成数据丢失） -->
+	<property>
+		<name>dfs.replication</name>
+		<value>1</value>
+	</property>
+
+	<!-- 这是namenode节点存储Hadoop文件系统信息的本地系统路径，这个值只对namenode有效，
+	datanode节点并不需要使用到它 -->
+	<property>
+		<name>dfs.namenode.name.dir</name>
+		<value>file:///E:/hadoop/tmp/dfs/name</value>
+	</property>
+
+	<!-- 这是datanode节点被指定要存储数据的本地文件系统路径，datanode节点上的这个路径
+	没有必要完全 相同，因为每台机器环境很可能不一样的，但是如果每台机器上的这个路径都是统一配置的话，
+	会使工作变得简单一些 -->
+	<property>
+		<name>dfs.datanode.data.dir</name>
+		<value>file:///E:/hadoop/tmp/dfs/data</value>
+	</property>
+</configuration>

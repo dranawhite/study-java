@@ -18,6 +18,7 @@
         <module>study-pattern</module>
         <module>study-framework</module>
         <module>study-core</module>
+        <module>study-data</module>
     </modules>
 
 </project>
