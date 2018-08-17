@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceLog {
 
-    @Around("execution(* SimpleService.doService(..))")
+    @Around("execution(* com.study.springmvc.service.SimpleService.doService(..))")
     public Object printLog(ProceedingJoinPoint pjp) throws Throwable {
         System.out.println("====进入Service方法====");
         Object result = pjp.proceed();
