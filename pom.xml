@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns = "http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -11,7 +11,12 @@
     </parent>
 
     <artifactId>study-java</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <properties>
+        <dranawhite.version>1.0.0-SNAPSHOT</dranawhite.version>
+    </properties>
 
     <modules>
         <module>study-basic</module>
@@ -20,5 +25,95 @@
         <module>study-core</module>
         <module>study-data</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-api</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-cache</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-common</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-config</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-core</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-dal</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-distributed</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-event</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-exception</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-interceptor</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-job</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-log</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-mq</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-office</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-test</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-tx</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dranawhite</groupId>
+                <artifactId>dranawhite-web</artifactId>
+                <version>${dranawhite.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
