@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * @author liangyq
  * @version [1.0, 2018/4/21 11:50]
  */
-public class BusinessParser {
+public class BusinessParserPro {
 
     public static void main(String[] args) throws SQLException {
         ClassPathXmlApplicationContext ctx =
