@@ -34,6 +34,11 @@ package com.test.jvm.string;
  *         32: astore        5
  * </pre>
  *
+ * <pre>
+ *     String#intern() 方法底层实现，是一个StringTable，固定长度为1009，类似于HashTable的结构;
+ *     在JDK1.7之后，可以通过-XX:StringTableSize=99991参数调整StringTable的长度;
+ * </pre>
+ *
  * @author dranawhite 2017/10/24
  * @version 1.0
  */
