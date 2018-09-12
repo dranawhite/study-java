@@ -3,15 +3,15 @@
  */
 package com.test.jvm.reference;
 
-import com.rometools.rome.feed.atom.Person;
-
-import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 
 /**
  * 弱引用实验
  * <pre>
- *     -Xmx = 6M
+ *     GC后会回收弱引用对象;
+ *     当WeakHashMap中值直接或者间接的引用键时，WeakHashMap中的数据不会被回收
+ *     可以用WeakReference包裹值
  * </pre>
  *
  * @author liangyq
@@ -19,20 +19,31 @@ import java.util.WeakHashMap;
  */
 public class WeakMapPro {
 
-    public static void main(String[] args) {
-        WeakHashMap map = new WeakHashMap();
+    public static void main(String[] args) throws InterruptedException {
+        WeakHashMap<Integer, WeakReference<Integer>> map = new WeakHashMap();
         for (int i = 0; i < 1024 * 1024; i++) {
-            map.put(i, new Integer(1));
+            Integer num = new Integer(i + 128);
+            WeakReference<Integer> reference = new WeakReference<>(num);
+            map.put(num, reference);
         }
+        System.out.println(map.get(200).get());
         System.out.println("SIZE = " + map.size());
         System.gc();
+        Thread.sleep(5000);
         System.out.println("SIZE = " + map.size());
     }
 
 }
 
-class person {
-    int id;
+class PersonPO {
+
+    Integer id;
+
+    PersonPO(Integer id) {
+        this.id = id;
+    }
+
+    PersonPO() {}
 
     public int getId() {
         return id;
