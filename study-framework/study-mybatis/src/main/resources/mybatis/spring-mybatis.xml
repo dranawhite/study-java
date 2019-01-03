@@ -15,7 +15,7 @@
 
     <!-- 配置使用动态代理自动生成Dao的内容 -->
     <bean class="org.mybatis.com.study.spring.mapper.MapperScannerConfigurer">
-        <property name = "basePackage" value="com.test.mybatis.dal.dao" />
+        <property name = "basePackage" value="com.study.mybatis.dal.dao" />
         <property name = "sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 </beans>

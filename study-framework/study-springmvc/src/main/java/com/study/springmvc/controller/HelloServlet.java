@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 请求URL路径解析，如URL="http://localhost:8080/test-springmvc/hello/print"
- * 则context = test-springmvc; servlet = /hello/print; path = null
+ * 则context = study-springmvc; servlet = /hello/print; path = null
  *
  * @author dranawhite 2017/12/14
  * @version 1.0

@@ -13,7 +13,7 @@
     <!--<bean id="person" class="com.study.spring.core.Person">-->
         <!--<property name="id" value="${id}" />-->
         <!--<property name="age" value="${age}" />-->
-        <!--<property name="name" value="${test.com.study.spring-maven}" />-->
+        <!--<property name="name" value="${study.com.study.spring-maven}" />-->
     <!--</bean>-->
 
     <!-- 通过代码解析bean时用到 -->

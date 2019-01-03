@@ -20,7 +20,7 @@
     <dubbo:protocol name = "dubbo" port = "20880" />
 
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface = "com.test.dubbo.provider.IDubboService" ref = "dubboService" />
+    <dubbo:service interface = "com.study.dubbo.provider.IDubboService" ref = "dubboService" />
 
-    <bean id = "dubboService" class = "com.test.dubbo.provider.DubboService" />
+    <bean id = "dubboService" class = "com.study.dubbo.provider.DubboService" />
 </beans>

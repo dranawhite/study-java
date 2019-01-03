@@ -3,7 +3,7 @@ package com.study.spring.test;
 /**
  * JUnit参数化测试
  * <pre>
- *     具体使用参照test/com.dranawhite.com.study.spring.test.CommonUtilsTest
+ *     具体使用参照test/com.dranawhite.com.study.spring.study.CommonUtilsTest
  * </pre>
  *
  * @author dranawhite 2017/8/18

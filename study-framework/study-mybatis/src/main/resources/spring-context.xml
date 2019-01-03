@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/com.study.spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/com.study.spring-context.xsd">
 
-    <context:component-scan base-package = "com.test.mybatis" />
+    <context:component-scan base-package = "com.study.mybatis" />
 
     <import resource = "classpath:mybatis/com.study.spring-mybatis.xml" />
 </beans>
