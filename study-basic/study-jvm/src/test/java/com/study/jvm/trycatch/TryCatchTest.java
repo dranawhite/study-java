@@ -7,11 +7,7 @@ import org.junit.Test;
  */
 public class TryCatchTest {
 
-    private TryCatch tryCatch;
-
-    {
-        tryCatch = new TryCatch();
-    }
+    private TryCatch tryCatch = new TryCatch();
 
     @Test(expected = NullPointerException.class)
     public void testBarResource() {
@@ -26,5 +22,14 @@ public class TryCatchTest {
     @Test
     public void testFooNormalResource() {
         tryCatch.fooNormalResource();
+    }
+
+    @Test
+    public void testTryWithResources() {
+        // try with resource finally执行逻辑
+        // 正常语句块
+        // 执行Close逻辑
+        // Finally语句块
+        tryCatch.tryWithResourceFinally();
     }
 }

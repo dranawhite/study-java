@@ -75,6 +75,16 @@ public class TryCatch {
         }
     }
 
+    public void tryWithResourceFinally() {
+        try (FooResource resource = new FooResource();) {
+            System.out.println("正常语句块");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            System.out.println("Finally语句块");
+        }
+    }
+
     /**
      * Catch捕获多个异常
      */
@@ -96,6 +106,7 @@ class FooResource implements AutoCloseable {
 
     @Override
     public void close() throws Exception {
+        System.out.println("执行Close逻辑");
         throw new IOException("Close时出现IO异常!");
     }
 }
