@@ -48,8 +48,11 @@ public class StringCache {
         String a = "go die, ";
         final String b = "final";
         String c = "go die, " + b;
+        // d编译过程如下：StringBuilder sb = new StringBuilder(); sb.append(a).append(b); sb.toString();
         String d = a + b;
         String e = "go die, final";
+        String f = "final";
+        String g = "go die, " + f;
 
         // false
         System.out.println("c==d\t" + (c == d));
@@ -57,6 +60,10 @@ public class StringCache {
         System.out.println("d==e\t" + (d == e));
         // true
         System.out.println("c==e\t" + (c == e));
+        // true
+        System.out.println("b==f\t" + (b == f));
+        // false
+        System.out.println("g==e\t" + (g == e));
     }
 
 }

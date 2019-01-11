@@ -25,4 +25,17 @@ public class StringCacheTest {
         // cacheStr取常量池中的"str"的引用，和intern指向同一个引用
         Assert.assertEquals(intern, cacheStr);
     }
+
+    @Test
+    public void testIntern_new() {
+        String s3 = new String("1") + new String("1");
+        s3.intern();
+        String s4 = "11";
+        System.out.println(s3 == s4);
+
+        String s = new String("1");
+        s.intern();
+        String s2 = "1";
+        System.out.println(s == s2);
+    }
 }
