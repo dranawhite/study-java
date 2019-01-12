@@ -16,7 +16,7 @@ package com.study.jvm.annotation;
  *      Documented——将此注解包含在JavaDoc中
  *      Inherited——允许子类继承父类中的注解
  * JDK1.8新加入两个注解
- *      Repeatable——同一个注解可以在一个位置重复使用
+ *      RepeatableAnno——同一个注解可以在一个位置重复使用
  *      Native——被标注的变量可以被本地方法引入
  *
  * 注解定义规则
