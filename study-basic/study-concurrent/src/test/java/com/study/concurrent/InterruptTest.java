@@ -8,8 +8,8 @@ import com.study.concurrent.synchroner.Counter;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: InterruptTest.java, v 0.1 2019-01-03 19:50 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: InterruptTest.java, v 0.1 2019-01-03 19:50 dranawhite Exp $$
  */
 public class InterruptTest {
 

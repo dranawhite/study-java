@@ -6,8 +6,8 @@ package com.study.concurrent.synchroner;
 import com.dranawhite.common.util.ThreadUnit;
 
 /**
- * @author liangyuquan
- * @version $Id: Counter.java, v 0.1 2019-01-03 19:48 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: Counter.java, v 0.1 2019-01-03 19:48 dranawhite Exp $$
  */
 public class Counter extends Thread {
 

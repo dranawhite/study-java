@@ -9,8 +9,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: ReentrantLockTest.java, v 0.1 2019-01-03 20:33 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ReentrantLockTest.java, v 0.1 2019-01-03 20:33 dranawhite Exp $$
  */
 public class ReentrantLockTest {
 

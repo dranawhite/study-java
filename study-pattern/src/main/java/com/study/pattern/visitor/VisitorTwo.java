@@ -5,8 +5,8 @@ package com.study.pattern.visitor;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: VisitorTwo.java, v 0.1 2019-01-02 17:18 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: VisitorTwo.java, v 0.1 2019-01-02 17:18 dranawhite Exp $$
  */
 public class VisitorTwo implements Visitor {
 

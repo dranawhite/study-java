@@ -12,8 +12,8 @@ import javax.management.ObjectName;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: MainAgent.java, v 0.1 2019-01-03 14:26 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: MainAgent.java, v 0.1 2019-01-03 14:26 dranawhite Exp $$
  */
 public class MainAgent {
 

@@ -8,8 +8,8 @@ import lombok.Getter;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: ElementTwo.java, v 0.1 2019-01-02 17:16 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ElementTwo.java, v 0.1 2019-01-02 17:16 dranawhite Exp $$
  */
 @AllArgsConstructor
 public class ElementTwo implements Element {

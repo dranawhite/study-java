@@ -5,8 +5,8 @@ package com.study.jmx;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: PersonMBean.java, v 0.1 2019-01-03 14:24 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: PersonMBean.java, v 0.1 2019-01-03 14:24 dranawhite Exp $$
  */
 public interface PersonMBean {
 

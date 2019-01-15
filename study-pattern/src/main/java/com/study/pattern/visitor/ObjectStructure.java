@@ -8,8 +8,8 @@ import java.util.List;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: ObjectStructure.java, v 0.1 2019-01-02 17:21 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ObjectStructure.java, v 0.1 2019-01-02 17:21 dranawhite Exp $$
  */
 public class ObjectStructure {
 

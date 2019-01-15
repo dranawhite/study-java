@@ -7,8 +7,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * @author liangyuquan
- * @version $Id: DruidDataSourceTest.java, v 0.1 2019-01-03 14:51 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: DruidDataSourceTest.java, v 0.1 2019-01-03 14:51 dranawhite Exp $$
  */
 public class DruidDataSourceTest {
 

@@ -26,7 +26,7 @@ import java.io.IOException;
  *   OSR trigger = (CompileThreshold * (OnStackReplacePercentage - InterpreterProfilePercentage))/ 100 = 10700
  * </pre>
  *
- * @author liangyuquan
+ * @author dranawhite
  * @version [V1.0, 2018/2/11]
  */
 public class EscapePro {

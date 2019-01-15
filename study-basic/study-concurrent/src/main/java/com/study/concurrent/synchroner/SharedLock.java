@@ -11,8 +11,8 @@ import java.util.concurrent.locks.Lock;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: SharedLock.java, v 0.1 2019-01-03 20:01 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: SharedLock.java, v 0.1 2019-01-03 20:01 dranawhite Exp $$
  */
 public class SharedLock {
 
