@@ -1,7 +1,7 @@
 package com.study.spring.profile;
 
 /**
- * @author liangyq 2018/3/19
+ * @author dranawhite 2018/3/19
  */
 public class DeviceInfo {
 

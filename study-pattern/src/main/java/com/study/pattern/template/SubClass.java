@@ -1,7 +1,7 @@
 package com.study.pattern.template;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/3/24 17:39]
  */
 public class SubClass extends SuperClass {

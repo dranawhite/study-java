@@ -8,7 +8,7 @@ import org.springframework.util.backoff.ExponentialBackOff;
 import org.springframework.util.backoff.FixedBackOff;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/10 18:57]
  */
 public class TestRetry {

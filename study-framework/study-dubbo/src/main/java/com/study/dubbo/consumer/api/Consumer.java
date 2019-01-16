@@ -8,7 +8,7 @@ import com.study.dubbo.provider.DubboRequest;
 import com.study.dubbo.provider.IDubboService;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/17 17:23]
  */
 public class Consumer {

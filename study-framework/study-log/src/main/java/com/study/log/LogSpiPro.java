@@ -6,7 +6,7 @@ package com.study.log;
  *     默认加载的是log工程下的LoggerBuilder；如果把log下的LoggerBuilder去掉后，则加载的是core工程下的
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 14:35]
  */
 public class LogSpiPro {

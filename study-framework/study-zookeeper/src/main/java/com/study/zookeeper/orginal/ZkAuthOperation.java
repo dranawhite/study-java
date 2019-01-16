@@ -5,7 +5,7 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/16 17:21]
  */
 public class ZkAuthOperation extends ZkOperation {

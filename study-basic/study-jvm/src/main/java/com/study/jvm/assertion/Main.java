@@ -6,7 +6,7 @@ package com.study.jvm.assertion;
  *     断言默认是关闭的，开启断言使用jvm的-ea参数
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/27 11:15]
  */
 public class Main {

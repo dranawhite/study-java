@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * @author liangyq 2018/3/14
+ * @author dranawhite 2018/3/14
  */
 public class NumberCounterTest {
 

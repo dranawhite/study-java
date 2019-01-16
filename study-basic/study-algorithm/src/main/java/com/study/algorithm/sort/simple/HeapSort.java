@@ -15,7 +15,7 @@ import com.study.algorithm.sort.SortUtils;
  *      O(N*logN)
  * </pre>
  *
- * @author liangyq 2017/8/30
+ * @author dranawhite 2017/8/30
  */
 public class HeapSort extends SelectSort {
 

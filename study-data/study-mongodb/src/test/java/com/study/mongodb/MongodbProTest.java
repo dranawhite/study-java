@@ -21,8 +21,8 @@ import java.util.function.Consumer;
 /**
  * MongoDb CURD
  *
- * @author liangyq
- * @version $Id: MongodbProTest.java, v 0.1 2018-08-25 16:24 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: MongodbProTest.java, v 0.1 2018-08-25 16:24 dranawhite Exp $$
  */
 public class MongodbProTest {
 

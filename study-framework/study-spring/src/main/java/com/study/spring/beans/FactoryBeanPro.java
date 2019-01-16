@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * FactoryBean通过getBean调用时，实际是返回FactoryBean.getObject()
  *
- * @author liangyq 2017/12/22
+ * @author dranawhite 2017/12/22
  */
 public class FactoryBeanPro {
 

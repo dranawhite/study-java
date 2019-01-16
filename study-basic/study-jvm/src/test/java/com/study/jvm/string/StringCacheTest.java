@@ -8,8 +8,8 @@ import org.junit.Test;
 
 /**
  *
- * @author liangyq
- * @version $Id: StringCacheTest.java, v 0.1 2018-08-21 9:21 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: StringCacheTest.java, v 0.1 2018-08-21 9:21 dranawhite Exp $$
  */
 public class StringCacheTest {
 

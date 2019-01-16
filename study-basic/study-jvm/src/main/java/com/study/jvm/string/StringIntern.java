@@ -9,8 +9,8 @@ import java.util.Random;
 /**
  * JVM参数设置：-Xmx=2g -Xms=2g -Xmn=1500m
  *
- * @author liangyq
- * @version $Id: StringIntern.java, v 0.1 2018-08-21 10:22 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: StringIntern.java, v 0.1 2018-08-21 10:22 dranawhite Exp $$
  */
 public class StringIntern {
     static final int MAX = 1000 * 10000;

@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * @author liangyq 2018/1/14
+ * @author dranawhite 2018/1/14
  */
 public class FilePro {
 

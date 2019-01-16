@@ -6,7 +6,7 @@ import org.apache.ibatis.type.Alias;
 import java.io.Serializable;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [V1.0, 2018-05-24]
  */
 @Alias("PersonDO")

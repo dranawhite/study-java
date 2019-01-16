@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * @author liangyq 2018/3/19
+ * @author dranawhite 2018/3/19
  */
 public class MyEvent extends ApplicationEvent {
 

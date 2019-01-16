@@ -1,7 +1,7 @@
 package com.study.log.log4j1;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 13:57]
  */
 public class Main {

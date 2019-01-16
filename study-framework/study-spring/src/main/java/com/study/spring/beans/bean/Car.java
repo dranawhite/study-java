@@ -13,7 +13,7 @@ import org.springframework.beans.factory.InitializingBean;
  *     用于研究Bean的生命周期
  * </pre>
  *
- * @author liangyq 2017/12/18
+ * @author dranawhite 2017/12/18
  */
 public class Car implements BeanNameAware, BeanFactoryAware, InitializingBean, DisposableBean {
 

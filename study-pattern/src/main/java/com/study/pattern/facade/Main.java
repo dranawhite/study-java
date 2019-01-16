@@ -3,7 +3,7 @@ package com.study.pattern.facade;
 /**
  * 门面模式隐藏具体的内部实现细节
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 12:19]
  */
 public class Main {

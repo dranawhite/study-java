@@ -17,7 +17,7 @@ import com.study.log.LoggerBuilder;
  *  类加载器首先加载本工程的类，如果找不到才到Jar包里面去找
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 14:43]
  */
 public class MulityLoaderPro {

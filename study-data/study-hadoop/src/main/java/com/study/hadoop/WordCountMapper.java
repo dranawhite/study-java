@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 /**
- * @author liangyq
- * @version $Id: WordCountMapper.java, v 0.1 2018-08-15 11:30 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: WordCountMapper.java, v 0.1 2018-08-15 11:30 dranawhite Exp $$
  */
 public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 

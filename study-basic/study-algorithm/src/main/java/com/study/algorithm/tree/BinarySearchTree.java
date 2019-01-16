@@ -9,7 +9,7 @@ package com.study.algorithm.tree;
  *     docs/二叉搜索树删除过程图/png
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/7 17:57]
  */
 public class BinarySearchTree implements Tree {

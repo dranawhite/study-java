@@ -5,7 +5,7 @@ import ch.qos.logback.core.util.StatusPrinter;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/18 13:54]
  */
 public class Main {

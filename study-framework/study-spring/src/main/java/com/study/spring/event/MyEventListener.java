@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @author liangyq 2018/3/19
+ * @author dranawhite 2018/3/19
  */
 @Component
 public class MyEventListener implements ApplicationListener {

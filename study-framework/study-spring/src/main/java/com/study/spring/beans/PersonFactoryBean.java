@@ -11,7 +11,7 @@ import org.springframework.beans.factory.FactoryBean;
  * FactoryBean.getObject()返回的对象；
  * </pre>
  *
- * @author liangyq 2017/12/22
+ * @author dranawhite 2017/12/22
  */
 public class PersonFactoryBean implements FactoryBean {
 

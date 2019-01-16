@@ -6,7 +6,7 @@ import org.I0Itec.zkclient.ZkClient;
 import java.util.List;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/17 15:07]
  */
 public class ZkOperation {

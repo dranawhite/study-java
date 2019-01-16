@@ -3,7 +3,7 @@ package com.study.jvm.stream;
 /**
  * 计算字符串中数字个数
  *
- * @author liangyq 2018/3/14
+ * @author dranawhite 2018/3/14
  */
 public class NumberCounter {
 

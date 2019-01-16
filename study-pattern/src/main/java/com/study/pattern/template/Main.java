@@ -8,7 +8,7 @@ package com.study.pattern.template;
  *     类图:/docs/template.png
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/3/24 17:41]
  */
 public class Main {

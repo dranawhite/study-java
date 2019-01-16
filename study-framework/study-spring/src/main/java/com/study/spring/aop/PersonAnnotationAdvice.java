@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 作用于注解上的通知
  *
- * @author liangyq 2017/8/18
+ * @author dranawhite 2017/8/18
  */
 @Aspect
 @Component

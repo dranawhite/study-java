@@ -11,7 +11,7 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/17 15:32]
  */
 public class ZkOperation {

@@ -1,6 +1,3 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2018 All Rights Reserved.
- */
 package com.study.boot.conditional;
 
 import org.springframework.context.annotation.Bean;
@@ -9,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  *
- * @author liangyq
- * @version $Id: Config.java, v 0.1 2018-08-13 18:04 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: Config.java, v 0.1 2018-08-13 18:04 dranawhite Exp $$
  */
 @Configuration
 public class Config {

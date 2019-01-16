@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * 	    3) Logger使用Adapter适配器模式
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 11:29]
  */
 public class LogBindPro {

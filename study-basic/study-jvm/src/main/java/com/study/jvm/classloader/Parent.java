@@ -1,7 +1,7 @@
 package com.study.jvm.classloader;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/24 9:48]
  */
 public class Parent {

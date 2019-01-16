@@ -9,7 +9,7 @@ package com.study.pattern.observer;
  *     类图：/docs/observer.png
  * </pre>
  *
- * @author liangyq 2018/3/20
+ * @author dranawhite 2018/3/20
  */
 public class Main {
 

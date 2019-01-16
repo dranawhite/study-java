@@ -3,7 +3,7 @@ package com.study.jvm.trycatch;
 import org.junit.Test;
 
 /**
- * @author liangyq 2018/3/13
+ * @author dranawhite 2018/3/13
  */
 public class TryCatchTest {
 

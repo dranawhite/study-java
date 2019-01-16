@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 /**
  * unsafe.objectFieldOffset获取字段相对于对象的偏移量，发生垃圾回收后偏移量仍不变
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/16 10:15]
  */
 public class MemoryOffSet {

@@ -12,7 +12,7 @@ import org.openjdk.jmh.annotations.Benchmark;
  *     性能68s/op
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/26 17:22]
  */
 public class BubbleSortBenchmakData extends AverageTimeBenchmark {

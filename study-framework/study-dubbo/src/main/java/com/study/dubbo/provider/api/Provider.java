@@ -12,7 +12,7 @@ import com.study.dubbo.provider.IDubboService;
 import java.io.IOException;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/17 17:17]
  */
 public class Provider {

@@ -1,12 +1,13 @@
 package com.study.concurrent;
 
-import com.dranawhite.common.util.ThreadUnit;
+import com.dranawhite.common.common.ThreadUnit;
+
 import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/16 15:28]
  */
 public class CountDownLatchTest {

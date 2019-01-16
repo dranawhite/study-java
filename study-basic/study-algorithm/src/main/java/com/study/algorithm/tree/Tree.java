@@ -3,7 +3,7 @@ package com.study.algorithm.tree;
 /**
  * 树
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/7 17:52]
  */
 public interface Tree {

@@ -3,7 +3,7 @@ package com.study.pattern.facade;
 import lombok.Setter;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 12:19]
  */
 public class Client {

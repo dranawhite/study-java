@@ -16,8 +16,8 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @author liangyq
- * @version $Id: MorphiaTest.java, v 0.1 2018-08-25 17:36 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: MorphiaTest.java, v 0.1 2018-08-25 17:36 dranawhite Exp $$
  */
 public class MorphiaTest {
 

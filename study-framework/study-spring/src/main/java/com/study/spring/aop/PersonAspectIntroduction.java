@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  *     DeclareParents引入增强
  * </pre>
  *
- * @author liangyq 2017/8/18
+ * @author dranawhite 2017/8/18
  */
 @Aspect
 @Component

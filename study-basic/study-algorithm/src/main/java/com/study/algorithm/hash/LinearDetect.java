@@ -6,7 +6,7 @@ package com.study.algorithm.hash;
  *     假设一共有60个数据，则申明一个大小为120的数组。当检测到Hash冲突时，则把数据保存到下一个空位
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/7 14:30]
  */
 public class LinearDetect implements Hash {

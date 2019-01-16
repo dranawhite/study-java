@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/14 11:08]
  */
 @Data

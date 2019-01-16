@@ -7,7 +7,7 @@ package com.study.algorithm.hash;
  *     桶——碰撞的部分用数组存储
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/7 15:42]
  */
 public class ChainAddress implements Hash {

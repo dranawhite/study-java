@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Spliterators;
 
 /**
- * @author liangyq 2018/3/14
+ * @author dranawhite 2018/3/14
  */
 public class SpliteratorPro {
 

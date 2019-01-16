@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Jdk 1.8新特性 Stream
  *
- * @author liangyq 2018/3/13
+ * @author dranawhite 2018/3/13
  */
 public class StreamPro {
 

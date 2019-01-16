@@ -9,8 +9,8 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
  *
- * @author liangyq
- * @version $Id: WinCondition.java, v 0.1 2018-08-13 17:59 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: WinCondition.java, v 0.1 2018-08-13 17:59 dranawhite Exp $$
  */
 public class WinCondition implements Condition {
     @Override

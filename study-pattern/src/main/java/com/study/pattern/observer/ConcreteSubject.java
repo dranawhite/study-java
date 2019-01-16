@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author liangyq 2018/3/20
+ * @author dranawhite 2018/3/20
  */
 public class ConcreteSubject implements Subject {
 

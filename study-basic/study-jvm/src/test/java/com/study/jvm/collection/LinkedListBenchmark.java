@@ -9,7 +9,7 @@ import java.util.LinkedList;
 /**
  * 链表基准测试
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/27 14:41]
  */
 public class LinkedListBenchmark extends AverageTimeBenchmark {

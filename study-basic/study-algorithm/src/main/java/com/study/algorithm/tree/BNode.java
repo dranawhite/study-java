@@ -3,7 +3,7 @@ package com.study.algorithm.tree;
 /**
  * 2-4树节点
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/9 15:49]
  */
 public class BNode {

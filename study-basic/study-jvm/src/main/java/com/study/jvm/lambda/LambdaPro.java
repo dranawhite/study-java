@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @author liangyq 2018/3/14
+ * @author dranawhite 2018/3/14
  */
 public class LambdaPro {
 

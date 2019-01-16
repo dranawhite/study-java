@@ -1,9 +1,6 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2019 All Rights Reserved.
- */
 package com.study.concurrent;
 
-import com.dranawhite.common.util.ThreadUnit;
+import com.dranawhite.common.common.ThreadUnit;
 
 import java.util.concurrent.locks.ReentrantLock;
 

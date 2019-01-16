@@ -16,7 +16,7 @@ import java.util.List;
  *     ZK中的Version主要用来CAS操作，确保分布式更新时数据的准确性
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/15 10:15]
  */
 public class ZkOperation implements Watcher {

@@ -1,7 +1,7 @@
 package com.study.pattern.facade;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 12:23]
  */
 public class SysTwo {

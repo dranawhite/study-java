@@ -4,7 +4,7 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/6/15 16:47]
  */
 public class HelloWorldHystrixCommand extends HystrixCommand<String> {

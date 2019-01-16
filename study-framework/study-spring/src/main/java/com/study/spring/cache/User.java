@@ -7,7 +7,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import java.io.Serializable;
 
 /**
- * @author liangyq 2017/12/27
+ * @author dranawhite 2017/12/27
  */
 public class User implements Serializable {
 

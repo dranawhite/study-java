@@ -23,7 +23,7 @@ package com.study.algorithm.tree;
  * 1) 在顺着树向下查找插入点时，只要发现一个黑色节点有两个红色的子节点就执行一次颜色变换。
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/8 11:07]
  */
 public class RedBlackTree {

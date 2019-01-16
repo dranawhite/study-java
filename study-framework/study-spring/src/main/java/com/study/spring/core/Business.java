@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
  *     用Componet标注即可
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/21 11:41]
  */
 @Component

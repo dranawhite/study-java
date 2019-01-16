@@ -12,8 +12,8 @@ import lombok.Data;
 
 /**
  *
- * @author liangyq
- * @version $Id: Person.java, v 0.1 2018-08-25 17:34 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: Person.java, v 0.1 2018-08-25 17:34 dranawhite Exp $$
  */
 @Entity(value = "person")
 @Data

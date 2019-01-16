@@ -12,7 +12,7 @@
             <property name = "suppressDate" value = "false" />
             <!-- 自定义配置, 自定义注释 -->
             <property name = "addRemarkComments" value = "true" />
-            <property name = "author" value = "liangyq" />
+            <property name = "author" value = "dranawhite" />
             <property name = "version" value = "1.0" />
             <property name = "suppressCopyRight" value = "true" />
             <property name = "addLombokData" value = "true" />

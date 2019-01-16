@@ -1,7 +1,7 @@
 package com.study.dubbo.hystrix;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/6/15 16:51]
  */
 public class Main {

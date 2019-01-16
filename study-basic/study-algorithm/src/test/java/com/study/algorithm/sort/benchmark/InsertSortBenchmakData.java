@@ -11,7 +11,7 @@ import org.openjdk.jmh.annotations.Benchmark;
  * <pre>
  *     性能：3.9s/op
  * </pre>
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/26 17:34]
  */
 public class InsertSortBenchmakData extends AverageTimeBenchmark {

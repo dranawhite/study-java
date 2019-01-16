@@ -16,8 +16,8 @@ import java.io.IOException;
 /**
  * 单词计数器
  *
- * @author liangyq
- * @version $Id: WordCountPro.java, v 0.1 2018-08-15 11:29 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: WordCountPro.java, v 0.1 2018-08-15 11:29 dranawhite Exp $$
  */
 public class WordCountPro {
 

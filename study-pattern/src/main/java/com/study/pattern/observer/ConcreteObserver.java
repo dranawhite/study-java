@@ -3,7 +3,7 @@ package com.study.pattern.observer;
 /**
  * 实际的观察者
  *
- * @author liangyq 2018/3/20
+ * @author dranawhite 2018/3/20
  */
 public class ConcreteObserver implements Observer {
 

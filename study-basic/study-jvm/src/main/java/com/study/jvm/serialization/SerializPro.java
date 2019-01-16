@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 /**
  * JVM使用ObjectOutputStream对对象序列化
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/14 11:10]
  */
 public class SerializPro {

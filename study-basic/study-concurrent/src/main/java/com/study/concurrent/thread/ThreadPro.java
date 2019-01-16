@@ -10,7 +10,7 @@ import java.util.concurrent.locks.LockSupport;
  *     interrupt方法可以唤醒处于wait(), join(), park()状态的线程
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/15 17:43]
  */
 public class ThreadPro extends Thread {

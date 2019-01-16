@@ -3,7 +3,7 @@ package com.study.pattern.template;
 /**
  * 模板类
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/3/24 17:37]
  */
 public abstract class SuperClass {

@@ -8,7 +8,7 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * 线程挂起与恢复
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/16 11:33]
  */
 public class UnsafePark extends Thread {

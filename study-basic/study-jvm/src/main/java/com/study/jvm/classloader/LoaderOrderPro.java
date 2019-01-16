@@ -9,7 +9,7 @@ package com.study.jvm.classloader;
  * 		最后才是子类的变量初始化，构造方法
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/28 14:41]
  */
 public class LoaderOrderPro {

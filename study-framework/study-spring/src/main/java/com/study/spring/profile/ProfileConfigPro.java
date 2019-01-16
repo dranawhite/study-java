@@ -3,7 +3,7 @@ package com.study.spring.profile;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * @author liangyq 2018/3/19
+ * @author dranawhite 2018/3/19
  */
 public class ProfileConfigPro {
 

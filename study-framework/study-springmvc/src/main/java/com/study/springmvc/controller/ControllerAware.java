@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author liangyq
- * @version $Id: ControllerAware.java, v 0.1 2018-08-16 20:40 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: ControllerAware.java, v 0.1 2018-08-16 20:40 dranawhite Exp $$
  */
 @Controller("controllerAware")
 @RequestMapping("/controllerAware")

@@ -5,7 +5,7 @@ import com.dranawhite.exception.DranawhiteException;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/15 15:08]
  */
 public class CountDownLatchPro {

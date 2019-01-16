@@ -10,8 +10,8 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 
 /**
- * @author liangyq
- * @version $Id: WordCountReducer.java, v 0.1 2018-08-15 11:31 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: WordCountReducer.java, v 0.1 2018-08-15 11:31 dranawhite Exp $$
  */
 public class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 

@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *    ApplicationContext 无需手动添加后置处理器，只要在配置文件中配置即可，容器会通过反射的方式自动调用
  * </pre>
  *
- * @author liangyq 2017/12/18
+ * @author dranawhite 2017/12/18
  */
 public class ApplicationContextPro {
 

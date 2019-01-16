@@ -8,7 +8,7 @@ import com.dranawhite.common.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/17 15:49]
  */
 @Slf4j

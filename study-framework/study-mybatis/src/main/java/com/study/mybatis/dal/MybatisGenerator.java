@@ -4,7 +4,7 @@ import com.dranawhite.common.util.ResourceLoader;
 import com.dranawhite.dal.mybatis.DBgenerrator;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/23 17:14]
  */
 public class MybatisGenerator {

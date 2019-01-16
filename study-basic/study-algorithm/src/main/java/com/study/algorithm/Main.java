@@ -1,7 +1,7 @@
 package com.study.algorithm;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/11/26 14:07]
  */
 public class Main {

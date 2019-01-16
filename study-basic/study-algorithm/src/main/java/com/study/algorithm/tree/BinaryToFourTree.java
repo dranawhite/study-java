@@ -26,7 +26,7 @@ package com.study.algorithm.tree;
  * 2) 如图:/docs/B树分裂图.png
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/9 15:22]
  */
 public class BinaryToFourTree {

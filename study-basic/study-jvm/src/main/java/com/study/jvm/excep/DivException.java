@@ -6,7 +6,7 @@ package com.study.jvm.excep;
  *     抛出java.lang.ArithmeticException
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/21 15:51]
  */
 public class DivException {

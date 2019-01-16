@@ -1,7 +1,7 @@
 package com.study.spring.aop;
 
 /**
- * @author liangyq 2017/8/18
+ * @author dranawhite 2017/8/18
  */
 public class ApolopyImpl implements Apolopy {
 

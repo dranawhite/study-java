@@ -31,7 +31,7 @@
  * 20、哈希表可以用于外部存储，相同hash值的数据放到同一个文件块中，如果文件块填满则哈希到其它的文件块
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/7 16:10]
  */
 package com.study.algorithm.hash;

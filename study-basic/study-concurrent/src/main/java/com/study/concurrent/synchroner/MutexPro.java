@@ -14,7 +14,7 @@ import java.util.concurrent.locks.Lock;
  *     同步器使用示例
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/15 15:19]
  */
 public class MutexPro implements Lock {

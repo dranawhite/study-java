@@ -14,8 +14,8 @@ import java.util.WeakHashMap;
  *     可以用WeakReference包裹值
  * </pre>
  *
- * @author liangyq
- * @version $Id: WeakMapPro.java, v 0.1 2018-09-12 19:16 liangyq Exp $$
+ * @author dranawhite
+ * @version $Id: WeakMapPro.java, v 0.1 2018-09-12 19:16 dranawhite Exp $$
  */
 public class WeakMapPro {
 

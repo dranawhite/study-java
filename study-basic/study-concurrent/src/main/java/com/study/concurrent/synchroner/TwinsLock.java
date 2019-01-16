@@ -15,7 +15,7 @@ import java.util.concurrent.locks.Lock;
  *    	同一时间只允许两个线程同时访问
  * </pre>
  *
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/5/16 15:01]
  */
 public class TwinsLock implements Lock {

@@ -1,6 +1,6 @@
 package com.study.concurrent;
 
-import com.dranawhite.common.util.ThreadUnit;
+import com.dranawhite.common.common.ThreadUnit;
 
 import java.util.concurrent.CountDownLatch;
 

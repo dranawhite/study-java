@@ -1,7 +1,7 @@
 package com.study.spring.core;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/21 11:48]
  */
 @Business("personB")

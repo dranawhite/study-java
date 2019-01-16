@@ -1,7 +1,7 @@
 package com.study.jvm.ieee;
 
 /**
- * @author liangyq
+ * @author dranawhite
  * @version [1.0, 2018/4/18 10:08]
  */
 public class IEEEPro {
