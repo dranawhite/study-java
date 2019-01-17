@@ -14,8 +14,8 @@ import java.nio.charset.Charset;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- * @author liangyuquan
- * @version $Id: StreamDecoderPro.java, v 0.1 2019-01-16 14:05 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: StreamDecoderPro.java, v 0.1 2019-01-16 14:05 dranawhite Exp $$
  */
 public class StreamDecoderPro {
 
