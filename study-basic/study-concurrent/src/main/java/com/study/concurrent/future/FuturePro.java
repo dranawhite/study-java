@@ -1,6 +1,6 @@
 package com.study.concurrent.future;
 
-import com.dranawhite.common.util.ThreadUnit;
+import com.dranawhite.common.common.ThreadUnit;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
