@@ -1,9 +1,10 @@
 package com.study.dubbo.consumer.api;
 
+import com.dranawhite.common.resource.PropertyLoader;
+
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ReferenceConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
-import com.dranawhite.common.util.PropertyLoader;
 import com.study.dubbo.provider.DubboRequest;
 import com.study.dubbo.provider.IDubboService;
 

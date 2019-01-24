@@ -1,6 +1,6 @@
 package com.study.concurrent.synchroner;
 
-import com.dranawhite.common.util.ThreadUnit;
+import com.dranawhite.common.common.ThreadUnit;
 import com.dranawhite.exception.IllegalArgDranawhiteException;
 
 import java.io.IOException;

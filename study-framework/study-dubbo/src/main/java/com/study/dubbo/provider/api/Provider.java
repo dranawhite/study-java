@@ -4,7 +4,8 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
-import com.dranawhite.common.util.PropertyLoader;
+
+import com.dranawhite.common.resource.PropertyLoader;
 import com.dranawhite.exception.DranawhiteException;
 import com.study.dubbo.provider.DubboService;
 import com.study.dubbo.provider.IDubboService;

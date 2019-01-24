@@ -1,6 +1,6 @@
 package com.study.mybatis.dal;
 
-import com.dranawhite.common.util.ResourceLoader;
+import com.dranawhite.common.resource.ResourceLoader;
 import com.dranawhite.dal.mybatis.DBgenerrator;
 
 /**
