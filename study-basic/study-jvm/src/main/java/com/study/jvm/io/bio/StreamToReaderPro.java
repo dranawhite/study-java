@@ -1,7 +1,5 @@
 package com.study.jvm.io.bio;
 
-import org.mozilla.javascript.IdFunctionObjectES6;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
