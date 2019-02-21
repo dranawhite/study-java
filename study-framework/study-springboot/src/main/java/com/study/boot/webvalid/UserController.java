@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: UserController.java, v 0.1 2019-01-29 18:09 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: UserController.java, v 0.1 2019-01-29 18:09 dranawhite Exp $$
  */
 @RestController
 @RequestMapping(value = "/user")

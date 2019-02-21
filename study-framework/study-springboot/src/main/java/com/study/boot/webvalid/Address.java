@@ -14,8 +14,8 @@ import lombok.ToString;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: Address.java, v 0.1 2019-01-29 18:09 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: Address.java, v 0.1 2019-01-29 18:09 dranawhite Exp $$
  */
 @Setter
 @Getter

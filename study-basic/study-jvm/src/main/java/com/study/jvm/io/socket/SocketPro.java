@@ -8,8 +8,8 @@ import java.net.Socket;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: SocketPro.java, v 0.1 2019-01-24 23:00 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: SocketPro.java, v 0.1 2019-01-24 23:00 dranawhite Exp $$
  */
 public class SocketPro {
 

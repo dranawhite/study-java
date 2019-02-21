@@ -1,6 +1,3 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2019 All Rights Reserved.
- */
 package com.study.jvm.io.socket;
 
 import java.io.InputStream;
@@ -10,12 +7,10 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import javax.servlet.ServletOutputStream;
-
 /**
  *
- * @author liangyuquan
- * @version $Id: ServerSocketPro.java, v 0.1 2019-01-24 20:40 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ServerSocketPro.java, v 0.1 2019-01-24 20:40 dranawhite Exp $$
  */
 public class ServerSocketPro {
 
@@ -34,9 +29,11 @@ public class ServerSocketPro {
             while (true) {
                 InputStreamReader reader = new InputStreamReader(ins);
                 int num = reader.read(buffer);
-                System.out.println("Got data " + new String(buffer) + "; Size = " + num);
+                String inMsg = new String(buffer);
+                System.out.println("Got data " + inMsg + "; Size = " + num);
                 System.out.println(System.currentTimeMillis());
-                out.write(new String("HTTP/1.1 200 OK").getBytes());
+                String header = "HTTP/1.1 200 OK\r\nContent-Type:text/html\r\nContent-Length:12\r\n\r\nHello World!";
+                out.write(header.getBytes());
                 out.flush();
             }
         } catch (Exception ex) {
