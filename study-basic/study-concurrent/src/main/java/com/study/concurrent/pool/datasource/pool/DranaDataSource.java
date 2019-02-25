@@ -6,8 +6,8 @@ import com.dranawhite.common.exception.DranaRuntimeException;
 import java.util.Random;
 
 /**
- * @author liangyuquan
- * @version $Id: DranaDataSource.java, v 0.1 2019-02-19 18:46 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: DranaDataSource.java, v 0.1 2019-02-19 18:46 dranawhite Exp $$
  */
 public class DranaDataSource {
 

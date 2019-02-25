@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.Random;
 
 /**
- * @author liangyuquan
- * @version $Id: Main.java, v 0.1 2019-02-19 18:58 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: Main.java, v 0.1 2019-02-19 18:58 dranawhite Exp $$
  */
 public class Main implements Runnable {
 

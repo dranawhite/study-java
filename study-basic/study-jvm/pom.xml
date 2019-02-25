@@ -33,6 +33,13 @@
             <artifactId>study-core</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!-- kryo序列化框架 -->
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.0.0-RC2</version>
+        </dependency>
     </dependencies>
 
 </project>

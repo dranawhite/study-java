@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: ThreadPoolPro.java, v 0.1 2019-02-19 9:31 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ThreadPoolPro.java, v 0.1 2019-02-19 9:31 dranawhite Exp $$
  */
 public class ThreadPoolPro {
 
