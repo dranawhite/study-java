@@ -6,8 +6,8 @@ import java.io.IOException;
 
 /**
  *
- * @author liangyuquan
- * @version $Id: PigeonInvoker.java, v 0.1 2019-03-06 18:05 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: PigeonInvoker.java, v 0.1 2019-03-06 18:05 dranawhite Exp $$
  */
 public class PigeonInvoker {
 

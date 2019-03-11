@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>study-java</artifactId>
+        <groupId>com.dranawhite</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>study-tomcat</artifactId>
+    <description>Tomcat容器探究</description>
+
+    <properties>
+        <servlet.version>2.5</servlet.version>
+        <digester.version>2.1</digester.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dranawhite</groupId>
+            <artifactId>dranawhite-common</artifactId>
+        </dependency>
+
+        <!-- Servlet Version -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>${digester.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -24,6 +24,7 @@
         <module>study-framework</module>
         <module>study-core</module>
         <module>study-data</module>
+        <module>study-tomcat</module>
     </modules>
 
     <dependencyManagement>
@@ -115,5 +116,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.6</version>
+        </dependency>
+    </dependencies>
 
 </project>
