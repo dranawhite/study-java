@@ -93,7 +93,6 @@ import java.util.Random;
  *  concurrent mark-sweep generation total 524288K, used 0K [0x00000000e0000000, 0x0000000100000000, 0x0000000100000000)
  *  Metaspace       used 14794K, capacity 14974K, committed 15232K, reserved 1062912K
  *   class space    used 1760K, capacity 1821K, committed 1920K, reserved 1048576K
- *
  * </pre>
  *
  * @author liangyuquan
