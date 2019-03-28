@@ -1,6 +1,3 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2018 All Rights Reserved.
- */
 package com.study.boot.conditional;
 
 import org.springframework.context.annotation.Condition;

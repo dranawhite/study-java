@@ -1,6 +1,3 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2019 All Rights Reserved.
- */
 package com.study.boot.webvalid;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
