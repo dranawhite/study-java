@@ -82,8 +82,8 @@ import java.util.List;
  *
  * </pre>
  *
- * @author liangyuquan
- * @version $Id: ExcelReader.java, v 0.1 2019-03-15 10:27 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ExcelReader.java, v 0.1 2019-03-15 10:27 dranawhite Exp $$
  */
 public class ExcelReader {
 

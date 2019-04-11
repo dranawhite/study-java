@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * @author liangyuquan
- * @version $Id: CommonHash.java, v 0.1 2019-03-11 18:03 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: CommonHash.java, v 0.1 2019-03-11 18:03 dranawhite Exp $$
  */
 public class CommonHash {
 

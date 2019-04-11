@@ -95,8 +95,8 @@ import java.util.Random;
  *   class space    used 1760K, capacity 1821K, committed 1920K, reserved 1048576K
  * </pre>
  *
- * @author liangyuquan
- * @version $Id: ExcelGenerator.java, v 0.1 2019-03-15 10:27 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ExcelGenerator.java, v 0.1 2019-03-15 10:27 dranawhite Exp $$
  */
 public class ExcelGenerator {
 

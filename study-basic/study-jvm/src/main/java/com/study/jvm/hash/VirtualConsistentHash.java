@@ -9,8 +9,8 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 /**
- * @author liangyuquan
- * @version $Id: VirtualConsistentHash.java, v 0.1 2019-03-11 19:04 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: VirtualConsistentHash.java, v 0.1 2019-03-11 19:04 dranawhite Exp $$
  */
 public class VirtualConsistentHash {
 

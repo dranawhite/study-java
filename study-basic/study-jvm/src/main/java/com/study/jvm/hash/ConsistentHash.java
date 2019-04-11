@@ -11,8 +11,8 @@ import java.util.TreeMap;
  *     不带虚拟节点
  * </pre>
  *
- * @author liangyuquan
- * @version $Id: ConsistentHash.java, v 0.1 2019-03-11 18:46 liangyuquan Exp $$
+ * @author dranawhite
+ * @version $Id: ConsistentHash.java, v 0.1 2019-03-11 18:46 dranawhite Exp $$
  */
 public class ConsistentHash {
 
