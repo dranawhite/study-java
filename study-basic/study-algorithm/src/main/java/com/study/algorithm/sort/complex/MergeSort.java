@@ -31,40 +31,44 @@ public class MergeSort implements Sort {
     }
 
     private void sort(Integer[] arrs, int min, int max, Integer[] tempArr) {
-        if (max - min > 1) {
-            int mid = (max - min) / 2 + min;
-            sort(arrs, min, mid, tempArr);
-            sort(arrs, mid + 1, max, tempArr);
-            int i = min;
-            int j = mid + 1;
-            int k = 0;
-            //在临时数组中按顺序组装数据
-            while (i <= mid && j <= max) {
-                if (arrs[i] < arrs[j]) {
-                    tempArr[k++] = arrs[i++];
-                } else {
-                    tempArr[k++] = arrs[j++];
-                }
-            }
-            if (mid > i - 1) {
-                while (i <= mid) {
-                    tempArr[k++] = arrs[i++];
-                }
-            } else if (max > j - 1) {
-                while (j <= max) {
-                    tempArr[k++] = arrs[j++];
-                }
-            } else if (k - 1 < max) {
-                while (j <= max) {
-                    tempArr[k++] = arrs[j++];
-                }
-            }
-            k = 0;
-            for (int n = min; n <= max; n++) {
-                arrs[n] = tempArr[k++];
-            }
-        } else {
+        if (min == max) {
+            return;
+        }
+        if (max - min == 1) {
             SortUtils.compareAndSwap(arrs, min, max);
+            return;
+        }
+
+        int mid = (max - min) / 2 + min;
+        sort(arrs, min, mid, tempArr);
+        sort(arrs, mid + 1, max, tempArr);
+        merge(arrs, min, mid, max, tempArr);
+    }
+
+    private void merge(Integer[] arrs, int min, int mid, int max, Integer[] tempArr) {
+        int i = min;
+        int j = mid + 1;
+        int k = 0;
+        //在临时数组中按顺序组装数据
+        while (i <= mid && j <= max) {
+            if (arrs[i] < arrs[j]) {
+                tempArr[k++] = arrs[i++];
+            } else {
+                tempArr[k++] = arrs[j++];
+            }
+        }
+        if (mid > i - 1) {
+            while (i <= mid) {
+                tempArr[k++] = arrs[i++];
+            }
+        } else if (max > j - 1) {
+            while (j <= max) {
+                tempArr[k++] = arrs[j++];
+            }
+        }
+        k = 0;
+        for (int n = min; n <= max; n++) {
+            arrs[n] = tempArr[k++];
         }
     }
 }
