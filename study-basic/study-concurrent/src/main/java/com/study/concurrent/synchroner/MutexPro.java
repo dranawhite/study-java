@@ -1,7 +1,7 @@
 package com.study.concurrent.synchroner;
 
-import com.dranawhite.exception.IllegalMonitorStateDranawhiteException;
-import com.dranawhite.exception.InterruptedDranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
@@ -86,7 +86,7 @@ public class MutexPro implements Lock {
 		@Override
 		protected boolean tryRelease(int releases) {
 			if (getState() == 0) {
-				throw new IllegalMonitorStateDranawhiteException("同步器状态异常");
+				throw new DranaRuntimeException("同步器状态异常", ResultCodeEnum.SERVICE_UNAVAILABLE);
 			}
 			setState(0);
 			return true;
@@ -117,7 +117,7 @@ public class MutexPro implements Lock {
 		try {
 			sync.acquireInterruptibly(1);
 		} catch (InterruptedException ex) {
-			throw new InterruptedDranawhiteException("同步器获取锁时中断", ex);
+			throw new DranaRuntimeException("同步器获取锁时中断", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -131,7 +131,7 @@ public class MutexPro implements Lock {
 		try {
 			return sync.tryAcquireNanos(1, unit.toNanos(time));
 		} catch (InterruptedException ex) {
-			throw new InterruptedDranawhiteException("同步器获取锁中断", ex);
+			throw new DranaRuntimeException("同步器获取锁中断", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 

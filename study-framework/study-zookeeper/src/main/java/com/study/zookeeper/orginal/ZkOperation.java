@@ -1,6 +1,8 @@
 package com.study.zookeeper.orginal;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
+
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -28,7 +30,7 @@ public class ZkOperation implements Watcher {
 			// ZK连接的创建是一个异步的过程
 			zooKeeper = new ZooKeeper("www.dranawhite.com:2181", 5000, this);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK连接错误!", ex);
+			throw new DranaRuntimeException("ZK连接错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -36,7 +38,7 @@ public class ZkOperation implements Watcher {
 		try {
 			zooKeeper.create(path, data, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK创建节点错误!", ex);
+			throw new DranaRuntimeException("ZK创建节点错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -44,7 +46,7 @@ public class ZkOperation implements Watcher {
 		try {
 			zooKeeper.delete(path, -1);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK删除节点错误!", ex);
+			throw new DranaRuntimeException("ZK删除节点错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -52,7 +54,7 @@ public class ZkOperation implements Watcher {
 		try {
 			return zooKeeper.setData(path, data, version);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK创建节点错误!", ex);
+			throw new DranaRuntimeException("ZK创建节点错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -60,7 +62,7 @@ public class ZkOperation implements Watcher {
 		try {
 			return zooKeeper.getChildren(path, true);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK读取节点错误!", ex);
+			throw new DranaRuntimeException("ZK读取节点错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -71,7 +73,7 @@ public class ZkOperation implements Watcher {
 			}
 			return zooKeeper.getData(path, true, stat);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK读取数据错误!", ex);
+			throw new DranaRuntimeException("ZK读取数据错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -79,7 +81,7 @@ public class ZkOperation implements Watcher {
 		try {
 			return zooKeeper.exists(path, true);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK查询节点错误!", ex);
+			throw new DranaRuntimeException("ZK查询节点错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 

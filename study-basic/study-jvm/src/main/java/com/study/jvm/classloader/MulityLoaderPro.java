@@ -1,6 +1,8 @@
 package com.study.jvm.classloader;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
+
 import com.study.log.LoggerBuilder;
 
 /**
@@ -29,7 +31,7 @@ public class MulityLoaderPro {
 			LoggerBuilder loggerBuilder = (LoggerBuilder) clz.newInstance();
 			loggerBuilder.print();
 		} catch(ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-			throw new DranawhiteException(e);
+			throw new DranaRuntimeException("突发异常", ResultCodeEnum.SERVICE_UNAVAILABLE, e);
 		}
 	}
 }

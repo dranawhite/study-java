@@ -1,7 +1,8 @@
 package com.study.concurrent.synchroner;
 
 import com.dranawhite.common.common.ThreadUnit;
-import com.dranawhite.exception.IllegalArgDranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -26,7 +27,7 @@ public class TwinsLock implements Lock {
 
 		Sync(int count) {
 			if (count <= 0) {
-				throw new IllegalArgDranawhiteException("count必须大于0");
+				throw new DranaRuntimeException("count必须大于0", ResultCodeEnum.SERVICE_UNAVAILABLE);
 			}
 			setState(count);
 		}

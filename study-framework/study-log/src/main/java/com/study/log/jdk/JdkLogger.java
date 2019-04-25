@@ -1,6 +1,7 @@
 package com.study.log.jdk;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -30,7 +31,7 @@ public class JdkLogger {
 			logger.setLevel(Level.INFO);
 			logger.addHandler(fileHandler);
 		} catch (IOException ioe) {
-			throw new DranawhiteException(ioe);
+			throw new DranaRuntimeException("IO异常", ResultCodeEnum.SERVICE_UNAVAILABLE, ioe);
 		}
 	}
 

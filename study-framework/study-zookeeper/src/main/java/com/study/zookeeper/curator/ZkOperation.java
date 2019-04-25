@@ -1,6 +1,8 @@
 package com.study.zookeeper.curator;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
+
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -41,7 +43,7 @@ public class ZkOperation {
 					.inBackground(new Watcher())
 					.forPath(path, data);
 		} catch (Exception ex) {
-			throw new DranawhiteException(ex);
+			throw new DranaRuntimeException("创建节点错误", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -53,7 +55,7 @@ public class ZkOperation {
 					.withVersion(-1)
 					.forPath(path);
 		} catch (Exception ex) {
-			throw new DranawhiteException(ex);
+			throw new DranaRuntimeException("删除节点错误", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -61,7 +63,7 @@ public class ZkOperation {
 		try {
 			client.getData().storingStatIn(stat).forPath(path);
 		} catch (Exception ex) {
-			throw new DranawhiteException(ex);
+			throw new DranaRuntimeException("读取节点错误", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 
@@ -69,7 +71,7 @@ public class ZkOperation {
 		try {
 			client.setData().withVersion(0).forPath(path, data);
 		} catch (Exception ex) {
-			throw new DranawhiteException(ex);
+			throw new DranaRuntimeException("更新节点错误", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 

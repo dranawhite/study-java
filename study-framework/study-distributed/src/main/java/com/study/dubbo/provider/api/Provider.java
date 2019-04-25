@@ -1,12 +1,13 @@
 package com.study.dubbo.provider.api;
 
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.resource.PropertyLoader;
+
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
-
-import com.dranawhite.common.resource.PropertyLoader;
-import com.dranawhite.exception.DranawhiteException;
 import com.study.dubbo.provider.DubboService;
 import com.study.dubbo.provider.IDubboService;
 
@@ -55,7 +56,7 @@ public class Provider {
 			service.export();
 			System.in.read();
 		} catch (IOException ioe) {
-			throw new DranawhiteException(ioe);
+			throw new DranaRuntimeException("突发异常", ResultCodeEnum.SERVICE_UNAVAILABLE, ioe);
 		}
 	}
 }

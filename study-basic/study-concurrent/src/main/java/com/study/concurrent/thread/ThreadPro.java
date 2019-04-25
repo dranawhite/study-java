@@ -1,6 +1,7 @@
 package com.study.concurrent.thread;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
@@ -42,7 +43,7 @@ public class ThreadPro extends Thread {
 			System.out.println("Hey, guy interrupting!");
 			td.interrupt();
 		} catch (InterruptedException ex) {
-			throw new DranawhiteException(ex);
+			throw new DranaRuntimeException("中断异常", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 

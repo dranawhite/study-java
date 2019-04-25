@@ -1,6 +1,8 @@
 package com.study.dubbo.provider.xml;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
@@ -18,7 +20,7 @@ public class Provider {
 			context.start();
 			System.in.read();
 		} catch (IOException ioe) {
-			throw new DranawhiteException(ioe);
+			throw new DranaRuntimeException("突发异常", ResultCodeEnum.SERVICE_UNAVAILABLE, ioe);
 		}
 	}
 }

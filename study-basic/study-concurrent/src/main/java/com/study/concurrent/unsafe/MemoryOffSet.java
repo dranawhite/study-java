@@ -1,6 +1,5 @@
 package com.study.concurrent.unsafe;
 
-import com.dranawhite.exception.DranawhiteException;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -13,23 +12,23 @@ import java.lang.reflect.Field;
  */
 public class MemoryOffSet {
 
-	private Integer num = new Integer(9876);
+    private Integer num = new Integer(9876);
 
-	public static void main(String[] args) {
-		try {
-			byte[] arrs = new byte[4*1024*1024];
-			MemoryOffSet offSet = new MemoryOffSet();
-			Field numField = MemoryOffSet.class.getDeclaredField("num");
-			Unsafe unsafe = UnsafeFactory.getUnsafe();
-			long offSetPre = unsafe.objectFieldOffset(numField);
-			System.out.println(offSetPre);
-			arrs = null;
-			System.gc();
-			long offSetPost = unsafe.objectFieldOffset(numField);
-			System.out.println(offSetPost);
-		} catch (NoSuchFieldException ex) {
-			throw new DranawhiteException();
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            byte[] arrs = new byte[4 * 1024 * 1024];
+            MemoryOffSet offSet = new MemoryOffSet();
+            Field numField = MemoryOffSet.class.getDeclaredField("num");
+            Unsafe unsafe = UnsafeFactory.getUnsafe();
+            long offSetPre = unsafe.objectFieldOffset(numField);
+            System.out.println(offSetPre);
+            arrs = null;
+            System.gc();
+            long offSetPost = unsafe.objectFieldOffset(numField);
+            System.out.println(offSetPost);
+        } catch (NoSuchFieldException ex) {
+            throw new RuntimeException();
+        }
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.study.concurrent.unsafe;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
@@ -27,7 +28,7 @@ public class UnsafePark extends Thread {
 			TimeUnit.SECONDS.sleep(5);
 			LockSupport.unpark(park);
 		} catch (InterruptedException ex) {
-			throw new DranawhiteException();
+			throw new DranaRuntimeException("中断异常!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 }

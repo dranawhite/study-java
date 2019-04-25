@@ -1,6 +1,7 @@
 package com.study.concurrent.synchroner;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -20,7 +21,7 @@ public class CountDownLatchPro {
 		try {
 			latch.await();
 		} catch (InterruptedException ex) {
-			throw new DranawhiteException(ex);
+			throw new DranaRuntimeException("线程中断异常!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 }

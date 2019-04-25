@@ -71,11 +71,6 @@
             </dependency>
             <dependency>
                 <groupId>com.dranawhite</groupId>
-                <artifactId>dranawhite-exception</artifactId>
-                <version>${dranawhite.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.dranawhite</groupId>
                 <artifactId>dranawhite-interceptor</artifactId>
                 <version>${dranawhite.version}</version>
             </dependency>

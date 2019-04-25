@@ -1,6 +1,8 @@
 package com.study.zookeeper.orginal;
 
-import com.dranawhite.exception.DranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
+
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs;
 
@@ -15,7 +17,7 @@ public class ZkAuthOperation extends ZkOperation {
 		try {
 			zooKeeper.create(path, data, ZooDefs.Ids.CREATOR_ALL_ACL, CreateMode.EPHEMERAL);
 		} catch (Exception ex) {
-			throw new DranawhiteException("ZK创建节点错误!", ex);
+			throw new DranaRuntimeException("ZK创建节点错误!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 		}
 	}
 

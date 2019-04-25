@@ -1,6 +1,8 @@
 package com.study.concurrent.unsafe;
 
-import com.dranawhite.exception.IllegalAccessDranawhiteException;
+import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.ResultCodeEnum;
+
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -28,7 +30,7 @@ public class UnsafeFactory {
 						field.setAccessible(true);
 						unsafe = (Unsafe) field.get(null);
 					} catch (NoSuchFieldException | IllegalAccessException ex) {
-						throw new IllegalAccessDranawhiteException("Unsafe获取错误", ex);
+						throw new DranaRuntimeException("Unsafe获取错误", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
 					}
 				}
 			}
