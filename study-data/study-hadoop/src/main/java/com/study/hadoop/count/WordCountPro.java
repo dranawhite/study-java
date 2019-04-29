@@ -21,12 +21,6 @@ import java.io.IOException;
 public class WordCountPro {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
-        // write your code here
-        if (args.length != 2) {
-            System.err.println("Usage:wordcount <input><output>");
-            System.exit(2);
-        }
-
         Job job = Job.getInstance();
 
         // 设置运行JOB的类
@@ -45,8 +39,8 @@ public class WordCountPro {
         job.setOutputValueClass(IntWritable.class);
 
         // 设置输入输出的路径
-        FileInputFormat.addInputPath(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        FileInputFormat.addInputPath(job, new Path("study-data/study-hadoop/input/word_count"));
+        FileOutputFormat.setOutputPath(job, new Path("study-data/study-hadoop/output/word_count"));
 
         // 提交JOB
         boolean result = job.waitForCompletion(true);
