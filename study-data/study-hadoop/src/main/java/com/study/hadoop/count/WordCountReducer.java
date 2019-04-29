@@ -1,4 +1,4 @@
-package com.study.hadoop;
+package com.study.hadoop.count;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

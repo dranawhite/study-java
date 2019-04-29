@@ -1,6 +1,5 @@
-package com.study.hadoop;
+package com.study.hadoop.count;
 
-import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -12,6 +11,9 @@ import java.io.IOException;
 
 /**
  * 单词计数器
+ * <pre>
+ *      java study-data/study-hadoop/input/word_count study-data/study-hadoop/output/word_count
+ * </pre>
  *
  * @author dranawhite
  * @version $Id: WordCountPro.java, v 0.1 2018-08-15 11:29 dranawhite Exp $$
@@ -20,24 +22,36 @@ public class WordCountPro {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         // write your code here
-
-        Configuration configuration = new Configuration();
-
         if (args.length != 2) {
             System.err.println("Usage:wordcount <input><output>");
             System.exit(2);
         }
 
-        Job job = new Job(configuration, "word count");
+        Job job = Job.getInstance();
 
+        // 设置运行JOB的类
         job.setJarByClass(WordCountPro.class);
+
+        // 设置Mapper类和Reduce类
         job.setMapperClass(WordCountMapper.class);
         job.setReducerClass(WordCountReducer.class);
+
+        // 设置map输出的key/value
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(IntWritable.class);
+
+        // 设置reduce输出的key/value
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
+
+        // 设置输入输出的路径
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
-        System.exit(job.waitForCompletion(true) ? 0 : 1);
+        // 提交JOB
+        boolean result = job.waitForCompletion(true);
+        if (!result) {
+            System.out.println("Job Failed!");
+        }
     }
 }
