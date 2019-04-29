@@ -23,6 +23,10 @@ public class FlowPro {
 
         job.setMapperClass(FlowMapper.class);
         job.setReducerClass(FlowReducer.class);
+        job.setPartitionerClass(ProvincePartitioner.class);
+
+        // 指定ReduceTask数量，跟Partition分区数保持一致
+        job.setNumReduceTasks(5);
 
         job.setMapOutputKeyClass(LongWritable.class);
         job.setMapOutputValueClass(FlowBean.class);
