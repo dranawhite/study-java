@@ -8,8 +8,8 @@ import java.io.IOException;
 
 /**
  *
- * @author liangyuquan
- * @version : OrderReducer.java, v 0.1 2019-04-30 9:37 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : OrderReducer.java, v 0.1 2019-04-30 9:37 dranawhite Exp $$
  */
 public class OrderReducer extends Reducer<Text, OrderBean, Text, DoubleWritable> {
 
