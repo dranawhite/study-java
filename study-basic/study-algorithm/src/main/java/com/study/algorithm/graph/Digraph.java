@@ -55,8 +55,10 @@ public class Digraph {
         }
         boolean[] visited = new boolean[vertex];
         visited[source] = true;
+
         Queue<Integer> queue = new LinkedList<>();
         queue.add(source);
+
         int[] prev = new int[vertex];
         for (int i = 0; i < vertex; ++i) {
             prev[i] = -1;
