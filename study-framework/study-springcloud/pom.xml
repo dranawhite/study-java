@@ -37,7 +37,8 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-feign</artifactId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <version>RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
