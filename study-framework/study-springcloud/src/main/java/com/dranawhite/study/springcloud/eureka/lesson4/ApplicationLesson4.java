@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
+ * <pre>
+ *     -Dspring.profiles.activce=consumer
+ * </pre>
  *
  * @author dranawhite
  * @version : ApplicationLesson4.java, v 0.1 2019-07-11 11:51 dranawhite Exp $$

@@ -6,6 +6,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * eureka测试工程
+ * <pre>
+ *     -Dspring.profiles.active=peer1
+ *     -Dspring.profiles.active=peer2
+ * </pre>
  *
  * @author dranawhite
  * @version : Application.java, v 0.1 2019-07-10 17:08 dranawhite Exp $$
