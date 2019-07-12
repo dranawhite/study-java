@@ -7,8 +7,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 /**
  * eureka测试工程
  * <pre>
- *     -Dspring.profiles.active=peer1
- *     -Dspring.profiles.active=peer2
+ *     -Dspring.profiles.active=eureka-peer1
+ *     -Dspring.profiles.active=eureka-peer2
  * </pre>
  *
  * @author dranawhite
@@ -18,10 +18,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @SpringBootApplication(scanBasePackages = {
         "com.dranawhite.study.springcloud.eureka.lesson2"
 })
-public class ApplicationLesson2 {
+public class ApplicationEureka2 {
 
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(ApplicationLesson2.class);
+        SpringApplication application = new SpringApplication(ApplicationEureka2.class);
         application.run(args);
     }
 }

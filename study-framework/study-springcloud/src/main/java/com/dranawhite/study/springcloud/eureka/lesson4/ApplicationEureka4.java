@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * <pre>
- *     -Dspring.profiles.activce=consumer
+ *     -Dspring.profiles.activce=eureka-consumer
  * </pre>
  *
  * @author dranawhite
@@ -16,10 +16,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication(scanBasePackages = {
         "com.dranawhite.study.springcloud.eureka.lesson4"
 })
-public class ApplicationLesson4 {
+public class ApplicationEureka4 {
 
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(ApplicationLesson4.class);
+        SpringApplication application = new SpringApplication(ApplicationEureka4.class);
         application.run(args);
     }
 }

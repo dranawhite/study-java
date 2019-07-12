@@ -16,10 +16,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @SpringBootApplication(scanBasePackages = {
         "com.dranawhite.study.springcloud.eureka.lesson1"
 })
-public class ApplicationLesson1 {
+public class ApplicationEureka1 {
 
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(ApplicationLesson1.class);
+        SpringApplication application = new SpringApplication(ApplicationEureka1.class);
         application.run(args);
     }
 }

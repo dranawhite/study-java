@@ -1,6 +1,6 @@
 package com.dranawhite.study.springcloud.eureka.lesson3;
 
-import com.dranawhite.study.springcloud.eureka.lesson1.ApplicationLesson1;
+import com.dranawhite.study.springcloud.eureka.lesson1.ApplicationEureka1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * <pre>
- *     -Dspring.profiles.active=client
+ *     -Dspring.profiles.active=eureka-client
  * </pre>
  *
  * @author dranawhite
@@ -18,10 +18,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication(scanBasePackages = {
         "com.dranawhite.study.springcloud.eureka.lesson3"
 })
-public class ApplicationLesson3 {
+public class ApplicationEureka3 {
 
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(ApplicationLesson1.class);
+        SpringApplication application = new SpringApplication(ApplicationEureka1.class);
         application.run(args);
     }
 }
