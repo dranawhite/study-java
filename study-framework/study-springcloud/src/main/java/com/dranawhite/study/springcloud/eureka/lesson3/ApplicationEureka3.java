@@ -9,6 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * <pre>
  *     -Dspring.profiles.active=eureka-client
+ *     -Dserver.port=8081
  * </pre>
  *
  * @author dranawhite

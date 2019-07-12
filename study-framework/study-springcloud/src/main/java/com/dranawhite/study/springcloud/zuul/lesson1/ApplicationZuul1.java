@@ -5,9 +5,10 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
+ * -Dspring.profiles.active=zuul-1
  *
- * @author liangyuquan
- * @version : ApplicationZuul1.java, v 0.1 2019-07-12 10:59 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : ApplicationZuul1.java, v 0.1 2019-07-12 10:59 dranawhite Exp $$
  */
 @EnableZuulProxy
 @SpringCloudApplication
