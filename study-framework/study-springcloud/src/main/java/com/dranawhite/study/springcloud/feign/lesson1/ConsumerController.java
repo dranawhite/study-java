@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * -Dspring.profiles.active=feign-1
  *
- * @author liangyuquan
- * @version : ConsumerController.java, v 0.1 2019-07-12 15:41 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : ConsumerController.java, v 0.1 2019-07-12 15:41 dranawhite Exp $$
  */
 @RestController
 public class ConsumerController {
