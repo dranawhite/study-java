@@ -1,5 +1,7 @@
 package com.study.boot.web;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -56,4 +58,13 @@ public class WebController {
         System.out.println("Thread = " + Thread.currentThread().getName());
     }
 
+    @GetMapping(value = "/user/{id}")
+    public void testUser(@ModelAttribute User user) {
+        // web/user/12?name=tom&address=南京&age=19
+        // 将path和param中的参数映射到Model中
+        System.out.println("id: " + user.getId());
+        System.out.println("name: " + user.getName());
+        System.out.println("address: " + user.getAddress());
+        System.out.println("age: " + user.getAge());
+    }
 }

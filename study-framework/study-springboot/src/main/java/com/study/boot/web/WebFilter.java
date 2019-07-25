@@ -1,7 +1,5 @@
 package com.study.boot.web;
 
-import org.springframework.web.filter.CharacterEncodingFilter;
-
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
