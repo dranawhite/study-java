@@ -6,9 +6,14 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author dranawhite 2017/12/27
  */
+@Setter
+@Getter
 public class User implements Serializable {
 
     private static final long serialVersionUID = 5664877869926039599L;
@@ -18,30 +23,6 @@ public class User implements Serializable {
     private String name;
 
     private int age;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     @Override
     public String toString() {

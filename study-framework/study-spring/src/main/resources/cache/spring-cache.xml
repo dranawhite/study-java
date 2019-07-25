@@ -9,7 +9,7 @@
             http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/com.study.spring-cache.xsd
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/com.study.spring-context.xsd">
 
-    <context:component-scan base-package = "com.dranawhite.com.study.spring.cache" />
+    <context:component-scan base-package = "com.study.spring.cache" />
     <context:annotation-config />
     <!-- 开启Cache注解 -->
     <cache:annotation-driven />

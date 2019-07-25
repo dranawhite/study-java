@@ -1,7 +1,10 @@
-package com.test.jvm.reference;
+package com.study.jvm.reference;
 
 import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 弱引用实验
@@ -32,6 +35,8 @@ public class WeakMapPro {
 
 }
 
+@Setter
+@Getter
 class PersonPO {
 
     Integer id;
@@ -42,12 +47,5 @@ class PersonPO {
 
     PersonPO() {}
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }
 
