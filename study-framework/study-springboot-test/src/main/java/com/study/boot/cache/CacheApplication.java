@@ -6,8 +6,8 @@ import org.springframework.cache.annotation.EnableCaching;
 
 /**
  *
- * @author liangyuquan
- * @version : CacheApplication.java, v 0.1 2019-07-25 17:49 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : CacheApplication.java, v 0.1 2019-07-25 17:49 dranawhite Exp $$
  */
 @SpringBootApplication(
         scanBasePackages = {

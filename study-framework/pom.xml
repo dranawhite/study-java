@@ -20,6 +20,8 @@
         <module>study-springboot</module>
         <module>study-springmvc</module>
         <module>study-springcloud</module>
+        <module>study-springboot</module>
+        <module>study-springboot-test</module>
     </modules>
 
     <dependencies>

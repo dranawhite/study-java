@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author liangyuquan
- * @version : UserService.java, v 0.1 2019-07-25 17:50 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : UserService.java, v 0.1 2019-07-25 17:50 dranawhite Exp $$
  */
 @Service
 public class UserService {
