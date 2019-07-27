@@ -33,8 +33,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author liangyuquan
- * @version : BatchConfig.java, v 0.1 2019-07-27 18:25 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : BatchConfig.java, v 0.1 2019-07-27 18:25 dranawhite Exp $$
  */
 @Configuration
 @EnableBatchProcessing
