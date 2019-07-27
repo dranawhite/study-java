@@ -30,7 +30,6 @@
         }
     </style>
 </head>
-<body>
 <body style="margin: 0;padding: 0;">
 <table align="center" border="1" cellpadding="0" cellspacing="0" width="600px">
     <tr>
@@ -59,8 +58,9 @@
                             <tr th:if="${not #lists.isEmpty(userList)}">
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tr th:each="singleUser:${userList}">
-                                        <td align="center" style="padding: 5px 0 3px 0">Status:<span
-                                                th:text="${singleUser.name}"> OPEN FOR JOINING</span></td>
+                                        <td align="center" style="padding: 5px 0 3px 0">
+                                            Status:<span th:text="${singleUser.name}"> OPEN FOR JOINING</span>
+                                        </td>
                                     </tr>
                                 </table>
                             </tr>
@@ -72,8 +72,8 @@
                                         </td>
                                     </tr>
                                     <tr th:each="singleUser :${userList}">
-                                        <td style="padding: 5px 0px 5px 0px"><span
-                                                th:text="${singleUser.getName()}+', Email: '+${singleUser.getEmail()}"></span>
+                                        <td style="padding: 5px 0px 5px 0px">
+                                            <span th:text="${singleUser.getName()}+', Email: '+${singleUser.getEmail()}"></span>
                                         </td>
                                     </tr>
                                 </table>
@@ -90,6 +90,5 @@
         </td>
     </tr>
 </table>
-</body>
 </body>
 </html>
