@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CacheService {
 
-    @Cacheable(value = "study.user", key = "#id")
+    @Cacheable(value = "study:user", key = "#id")
     public UserVO getUser(int id) {
         log.info("缓存穿透");
         UserVO user = new UserVO();
@@ -28,13 +28,13 @@ public class CacheService {
         return user;
     }
 
-    @CachePut(value = "study.user", key = "#user.id")
+    @CachePut(value = "study:user", key = "#user.id")
     public UserVO saveUser(UserVO user) {
         // Do Nothing
         return user;
     }
 
-    @CacheEvict(value = "study.user", key = "#id")
+    @CacheEvict(value = "study:user", key = "#id")
     public void removeUser(int id) {
         // Do Nothing
     }

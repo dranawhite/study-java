@@ -91,6 +91,13 @@
             <version>${dranawhite.version}</version>
         </dependency>
 
+        <!-- Apache Common -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+
         <!--js客户端的静态资源-->
         <dependency>
             <groupId>org.webjars</groupId>
