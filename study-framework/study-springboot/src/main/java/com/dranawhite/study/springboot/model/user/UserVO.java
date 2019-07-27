@@ -9,7 +9,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- *
  * @author dranawhite
  * @version : UserVO.java, v 0.1 2019-07-26 11:12 dranawhite Exp $$
  */
