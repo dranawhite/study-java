@@ -4,34 +4,25 @@ import com.dranawhite.study.springboot.model.BaseVO;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * 角色
+ *
  * @author dranawhite
- * @version : UserVO.java, v 0.1 2019-07-26 11:12 dranawhite Exp $$
+ * @version : RoleVO.java, v 0.1 2019-07-27 15:40 dranawhite Exp $$
  */
 @Setter
 @Getter
-public class UserVO extends BaseVO {
-
-    private static final long serialVersionUID = -6561121986087818190L;
+public class RoleVO extends BaseVO {
 
     private Integer id;
 
     private String name;
 
-    private String email;
-
-    private String address;
-
-    private Integer age;
-
-    private List<RoleVO> roleList;
+    private RoleTypeEnum roleType;
 
     @Override
     public String toString() {
