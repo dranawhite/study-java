@@ -3,6 +3,7 @@ package com.dranawhite.study.springboot.spring;
 import com.dranawhite.common.exception.DranaRuntimeException;
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.study.springboot.filter.LoginFilter;
+import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 import com.dranawhite.study.springboot.security.CustomUserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             // security/noLogin/**无需进行校验
             httpSecurity.antMatcher("/security/**").addFilterBefore(loginFilter, LogoutFilter.class).authorizeRequests()
                     .antMatchers("/security/noLogin/**").permitAll()
+                    .antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name())
                     .anyRequest().authenticated();
         } catch (Exception ex) {
             throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);

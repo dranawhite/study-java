@@ -30,4 +30,9 @@ public class SecurityController {
         log.info("User = [{}]", user);
         return DranaResponse.success(Boolean.TRUE);
     }
+
+    @GetMapping("/admin")
+    public DranaResponse<Boolean> needAdmin() {
+        return DranaResponse.success(Boolean.TRUE);
+    }
 }

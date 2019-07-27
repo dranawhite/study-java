@@ -27,7 +27,9 @@ public class UserSecurityVO extends UserVO implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorityList = new ArrayList<>();
-        authorityList.add(new SimpleGrantedAuthority(String.valueOf(RoleTypeEnum.ROOT.toCode())));
+        for (RoleVO role : getRoleList()) {
+            authorityList.add(new SimpleGrantedAuthority(role.getRoleType().name()));
+        }
         return authorityList;
     }
 
