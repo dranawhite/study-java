@@ -64,7 +64,8 @@ public class BatchConfig {
     }
 
     @Bean
-    public JobRepository jobRepository() {
+    public JobRepository batchJobRepository() {
+        // jobRepository默认SpringBoot会自动注册
         try {
             JobRepositoryFactoryBean factoryBean = new JobRepositoryFactoryBean();
             return factoryBean.getObject();
@@ -74,10 +75,11 @@ public class BatchConfig {
     }
 
     @Bean
-    public SimpleJobLauncher jobLauncher() {
+    public SimpleJobLauncher batchJobLauncher() {
+        // jobLauncher默认SpringBoot会自动注册
         try {
             SimpleJobLauncher jobLauncher = new SimpleJobLauncher();
-            jobLauncher.setJobRepository(jobRepository());
+            jobLauncher.setJobRepository(batchJobRepository());
             return jobLauncher;
         } catch (Exception ex) {
             throw new DranaRuntimeException("Batch Job错误", ResultCodeEnum.SYSTEM_ERR, ex);
