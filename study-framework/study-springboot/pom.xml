@@ -14,7 +14,6 @@
     <properties>
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <dranawhite.version>1.0.0-SNAPSHOT</dranawhite.version>
-
         <!-- Test -->
         <greenmail.version>1.5.10</greenmail.version>
     </properties>
@@ -60,6 +59,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- Validation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
         <!-- Batch处理大量的数据 -->
@@ -110,10 +115,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
             <version>2.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
         </dependency>
 
         <!--js客户端的静态资源-->
