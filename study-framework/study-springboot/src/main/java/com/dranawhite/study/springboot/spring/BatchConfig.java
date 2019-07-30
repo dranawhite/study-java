@@ -33,11 +33,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 此处添加@Configuration @EnableBatchProcessing
+ *
  * @author dranawhite
  * @version : BatchConfig.java, v 0.1 2019-07-27 18:25 dranawhite Exp $$
  */
-@Configuration
-@EnableBatchProcessing
 public class BatchConfig {
 
     @Bean

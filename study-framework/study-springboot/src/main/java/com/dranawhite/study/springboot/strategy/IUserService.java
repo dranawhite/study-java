@@ -1,5 +1,7 @@
 package com.dranawhite.study.springboot.strategy;
 
+import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
+
 /**
  *
  * @author dranawhite
@@ -13,4 +15,11 @@ public interface IUserService {
      * @return RoleName
      */
     String printRoleName();
+
+    /**
+     * 获取角色类型
+     *
+     * @return RoleType
+     */
+    RoleTypeEnum getRoleType();
 }
