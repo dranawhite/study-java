@@ -1,5 +1,8 @@
 package com.dranawhite.study.springboot.mail;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.dranawhite.common.exception.DranaRuntimeException;
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.study.springboot.BaseTest;
@@ -8,19 +11,16 @@ import com.dranawhite.study.springboot.model.user.UserVO;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.ServerSetup;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * 使用GreenMail做邮件单元测试

@@ -1,12 +1,5 @@
 package com.dranawhite.study.springboot.model.user;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -14,7 +7,16 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 /**
+ * 用户鉴权类.
+ *
  * @author dranawhite
  * @version : UserSecurityVO.java, v 0.1 2019-07-27 15:48 dranawhite Exp $$
  */
@@ -22,7 +24,7 @@ import lombok.Setter;
 @Getter
 public class UserSecurityVO extends UserVO implements UserDetails {
 
-    private String password;
+    private static final long serialVersionUID = -1943209911896843580L;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

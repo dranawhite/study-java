@@ -12,7 +12,6 @@ import com.dranawhite.study.springboot.model.user.UserVO;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
@@ -30,7 +29,6 @@ import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.batch.item.file.transform.LineTokenizer;
 import org.springframework.batch.item.validator.Validator;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * 此处添加@Configuration @EnableBatchProcessing
@@ -38,6 +36,7 @@ import org.springframework.context.annotation.Configuration;
  * @author dranawhite
  * @version : BatchConfig.java, v 0.1 2019-07-27 18:25 dranawhite Exp $$
  */
+@SuppressWarnings("unchecked")
 public class BatchConfig {
 
     @Bean

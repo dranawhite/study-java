@@ -1,8 +1,12 @@
 package com.dranawhite.study.springboot.web;
 
+import java.util.List;
+
 import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.common.text.MessageFormatter;
+
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
@@ -11,10 +15,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.List;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Exception处理

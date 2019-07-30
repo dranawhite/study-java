@@ -1,13 +1,13 @@
 package com.dranawhite.study.springboot.batch;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 import com.dranawhite.study.springboot.model.user.RoleVO;
 import com.dranawhite.study.springboot.model.user.UserVO;
 
 import org.springframework.batch.item.validator.ValidatingItemProcessor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 数据处理以及校验

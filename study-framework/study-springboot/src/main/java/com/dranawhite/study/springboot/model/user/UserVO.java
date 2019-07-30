@@ -1,19 +1,18 @@
 package com.dranawhite.study.springboot.model.user;
 
+import java.util.List;
+
 import com.dranawhite.common.validate.annotation.InsertGroup;
 import com.dranawhite.study.springboot.model.BaseVO;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.List;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @author dranawhite

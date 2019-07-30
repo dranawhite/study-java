@@ -1,5 +1,7 @@
 package com.dranawhite.study.springboot.filter;
 
+import java.io.IOException;
+
 import com.dranawhite.study.springboot.security.CustomUserService;
 
 import org.apache.commons.lang3.StringUtils;
@@ -10,8 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
-import java.io.IOException;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

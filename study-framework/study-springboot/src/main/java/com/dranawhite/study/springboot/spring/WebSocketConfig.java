@@ -2,14 +2,15 @@ package com.dranawhite.study.springboot.spring;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 /**
- * @EnableWebSocketMessageBroker注解 开启使用STOMP协议来传输基于代理message broker的消息，这时控制器支持使用
- * @MessageMapping注解，就像使用@RequestMapping注解一样
+ * <pre>
+ *     EnableWebSocketMessageBroker注解 开启使用STOMP协议来传输基于代理message broker的消息，这时控制器支持使用
+ *     MessageMapping注解，就像使用@RequestMapping注解一样
+ * </pre>
  *
  * @author dranawhite
  * @version : WebSocketConfig.java, v 0.1 2019-05-22 15:26 dranawhite Exp $$

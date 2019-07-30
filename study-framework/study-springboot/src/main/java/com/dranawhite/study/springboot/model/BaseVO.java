@@ -1,15 +1,14 @@
 package com.dranawhite.study.springboot.model;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
 import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 /**
- *
  * @author dranawhite
  * @version : BaseVO.java, v 0.1 2019-07-26 11:13 dranawhite Exp $$
  */

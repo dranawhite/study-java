@@ -1,16 +1,16 @@
 package com.dranawhite.study.springboot.web;
 
+import java.io.File;
+import java.net.URL;
+
 import com.dranawhite.api.model.DranaResponse;
+
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.File;
-import java.net.URL;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author dranawhite
@@ -42,8 +42,7 @@ public class SpelController {
     /**
      * 注入文件内容,
      *
-     * Resource:ClassPathResource
-     * File:File
+     * Resource:ClassPathResource File:File
      */
     @Value("classpath:static/index.html")
     private File file;
@@ -51,8 +50,7 @@ public class SpelController {
     /**
      * 注入网址内容
      *
-     * Resource:UrlResource
-     * Url:Url
+     * Resource:UrlResource Url:Url
      */
     @Value("http://www.baidu.com")
     private URL url;

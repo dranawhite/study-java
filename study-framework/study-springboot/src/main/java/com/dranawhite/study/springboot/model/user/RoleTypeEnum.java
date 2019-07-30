@@ -1,7 +1,6 @@
 package com.dranawhite.study.springboot.model.user;
 
 /**
- *
  * @author dranawhite
  * @version : RoleTypeEnum.java, v 0.1 2019-07-27 15:43 dranawhite Exp $$
  */

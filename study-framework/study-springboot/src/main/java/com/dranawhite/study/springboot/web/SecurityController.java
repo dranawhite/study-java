@@ -3,15 +3,14 @@ package com.dranawhite.study.springboot.web;
 import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.study.springboot.model.user.UserVO;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
- *
  * @author dranawhite
  * @version : SecurityController.java, v 0.1 2019-07-27 16:48 dranawhite Exp $$
  */

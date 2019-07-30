@@ -2,12 +2,12 @@ package com.dranawhite.study.springboot.cache;
 
 import com.dranawhite.study.springboot.model.user.UserVO;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * 开启EnableCaching注解

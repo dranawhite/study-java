@@ -1,5 +1,7 @@
 package com.dranawhite.study.springboot.spring;
 
+import java.time.Duration;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -16,17 +18,15 @@ import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-import java.time.Duration;
-
 /**
  * @author dranawhite
  * @version : RedisConfig.java, v 0.1 2019-07-27 14:11 dranawhite Exp $$
  */
 @Configuration
+@SuppressWarnings("unchecked")
 public class RedisConfig {
 
     @Bean
-    @SuppressWarnings({"rawtypes", "unchecked"})
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(redisConnectionFactory);

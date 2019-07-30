@@ -1,9 +1,9 @@
 package com.dranawhite.study.springboot.batch;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobExecutionListener;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author dranawhite

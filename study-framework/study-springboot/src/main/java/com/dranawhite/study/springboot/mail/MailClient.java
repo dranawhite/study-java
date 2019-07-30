@@ -1,5 +1,8 @@
 package com.dranawhite.study.springboot.mail;
 
+import java.io.File;
+import java.util.List;
+
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.common.exception.request.DranaIllegalArgumentException;
 import com.dranawhite.study.springboot.model.user.UserVO;
@@ -10,9 +13,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 
-import java.io.File;
-import java.util.List;
-
 /**
  * 邮件发送器
  *
@@ -22,12 +22,10 @@ import java.util.List;
 @MailService
 public class MailClient {
 
-    @Autowired
-    private JavaMailSender javaMailSender;
-
     private static final String FROM_ADDRESS = "dranawhite@aliyun.com";
     private static final String FROM_NAME = "drana";
-
+    @Autowired
+    private JavaMailSender javaMailSender;
 
     public void prepareAndSend(List<UserVO> toUserList, String subject, String message) {
         prepareAndSend(toUserList, null, subject, message, null);
@@ -45,7 +43,7 @@ public class MailClient {
     }
 
     private MimeMessagePreparator prepareMimeMessage(List<UserVO> toUserList, List<UserVO> copyUserList, String subject,
-                                                     String message, List<File> attachmentList){
+                                                     String message, List<File> attachmentList) {
         if (CollectionUtils.isEmpty(toUserList)) {
             throw new DranaIllegalArgumentException("邮件收件人不能为空!", ResultCodeEnum.ILLEGAL_REQUEST);
         }
