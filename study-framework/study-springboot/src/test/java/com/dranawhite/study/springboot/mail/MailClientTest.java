@@ -1,8 +1,5 @@
 package com.dranawhite.study.springboot.mail;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.dranawhite.common.exception.DranaRuntimeException;
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.study.springboot.BaseTest;
@@ -18,6 +15,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;

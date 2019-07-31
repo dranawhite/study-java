@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *
  * @author dranawhite
  * @version : ConditionConfig.java, v 0.1 2019-07-30 14:41 dranawhite Exp $$
  */

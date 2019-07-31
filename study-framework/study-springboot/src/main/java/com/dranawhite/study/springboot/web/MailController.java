@@ -1,8 +1,5 @@
 package com.dranawhite.study.springboot.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.dranawhite.api.model.DranaRequest;
 import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.common.validate.annotation.InsertGroup;
@@ -18,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.thymeleaf.context.Context;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 使用thymeleaf发送邮件

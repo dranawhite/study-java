@@ -6,7 +6,6 @@ import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
- *
  * @author dranawhite
  * @version : QaCondition.java, v 0.1 2019-07-30 13:55 dranawhite Exp $$
  */

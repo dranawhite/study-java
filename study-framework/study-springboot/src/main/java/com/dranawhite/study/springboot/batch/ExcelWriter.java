@@ -1,10 +1,10 @@
 package com.dranawhite.study.springboot.batch;
 
-import java.util.List;
-
 import com.dranawhite.study.springboot.model.user.UserVO;
 
 import org.springframework.batch.item.ItemWriter;
+
+import java.util.List;
 
 /**
  * @author dranawhite

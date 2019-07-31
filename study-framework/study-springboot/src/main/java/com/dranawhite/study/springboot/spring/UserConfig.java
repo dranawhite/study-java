@@ -1,14 +1,14 @@
 package com.dranawhite.study.springboot.spring;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 import com.dranawhite.study.springboot.model.user.RoleVO;
 import com.dranawhite.study.springboot.model.user.UserVO;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author dranawhite

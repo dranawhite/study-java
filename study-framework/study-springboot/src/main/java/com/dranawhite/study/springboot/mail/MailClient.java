@@ -1,8 +1,5 @@
 package com.dranawhite.study.springboot.mail;
 
-import java.io.File;
-import java.util.List;
-
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.common.exception.request.DranaIllegalArgumentException;
 import com.dranawhite.study.springboot.model.user.UserVO;
@@ -12,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * 邮件发送器

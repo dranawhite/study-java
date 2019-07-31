@@ -1,9 +1,5 @@
 package com.dranawhite.study.springboot.model.user;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +9,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * 用户鉴权类.
