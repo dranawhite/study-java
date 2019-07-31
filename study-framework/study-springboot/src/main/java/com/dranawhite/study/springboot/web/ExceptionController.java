@@ -7,10 +7,14 @@ import com.dranawhite.common.text.MessageFormatter;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -66,5 +70,15 @@ public class ExceptionController {
 
         log.warn("HTTP请求参数错误, Caused By = [{}]", objErrorMsg);
         return DranaResponse.fail(ResultCodeEnum.ILLEGAL_REQUEST.getCode(), objErrorMsg);
+    }
+
+    @ModelAttribute
+    public void addAttribute(Model model) {
+        model.addAttribute("global", "GlobalAttribute");
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder dataBinder) {
+        dataBinder.setDisallowedFields("id");
     }
 }

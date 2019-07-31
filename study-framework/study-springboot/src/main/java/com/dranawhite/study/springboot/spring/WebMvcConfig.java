@@ -25,6 +25,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Bean
     public MethodValidationPostProcessor methodValidationPostProcessor() {
+        // 开启Spring Controller和Service的方法校验
         return new MethodValidationPostProcessor();
     }
 }
