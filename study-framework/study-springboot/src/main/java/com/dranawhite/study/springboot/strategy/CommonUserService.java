@@ -1,9 +1,11 @@
 package com.dranawhite.study.springboot.strategy;
 
+import com.dranawhite.common.validate.annotation.InsertGroup;
 import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 /**
  * @author dranawhite
@@ -11,7 +13,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Order(1)
-public class CommonUserService implements IUserService {
+@Validated(value = InsertGroup.class)
+public class CommonUserService extends BaseUserService implements IUserService {
 
     @Override
     public String printRoleName() {

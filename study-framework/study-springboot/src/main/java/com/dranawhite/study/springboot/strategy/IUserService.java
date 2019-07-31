@@ -1,6 +1,9 @@
 package com.dranawhite.study.springboot.strategy;
 
 import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
+import com.dranawhite.study.springboot.model.user.UserVO;
+
+import javax.validation.Valid;
 
 /**
  * @author dranawhite
@@ -21,4 +24,11 @@ public interface IUserService {
      * @return RoleType
      */
     RoleTypeEnum getRoleType();
+
+    /**
+     * 保存用户信息
+     *
+     * @param user 用户信息
+     */
+    void saveUser(@Valid UserVO user);
 }

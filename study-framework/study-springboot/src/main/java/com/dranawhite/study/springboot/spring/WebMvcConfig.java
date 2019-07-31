@@ -2,7 +2,9 @@ package com.dranawhite.study.springboot.spring;
 
 import com.dranawhite.study.springboot.interceptor.InterfaceCostTimeInterceptor;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -19,5 +21,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加拦截器，应用于所有Path
         registry.addInterceptor(new InterfaceCostTimeInterceptor()).order(1).addPathPatterns("/**");
+    }
+
+    @Bean
+    public MethodValidationPostProcessor methodValidationPostProcessor() {
+        return new MethodValidationPostProcessor();
     }
 }
