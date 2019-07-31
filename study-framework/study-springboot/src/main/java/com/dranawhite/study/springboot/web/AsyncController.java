@@ -2,6 +2,7 @@ package com.dranawhite.study.springboot.web;
 
 import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.study.springboot.async.AsyncService;
+import com.dranawhite.study.springboot.interceptor.CostTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class AsyncController {
     private AsyncService asyncService;
 
     @GetMapping("/exec")
+    @CostTime
     public DranaResponse<Boolean> execAsyncTask() {
         asyncService.execLongCostTask();
         return DranaResponse.success(Boolean.TRUE);

@@ -19,6 +19,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * Filter属于Servlet, Interceptor属于Spring, Interceptor本身与Spring结合紧密, 功能更齐全，推荐优先使用Interceptor
+ *
+ * Filter和拦截器执行顺序
+ * <pre>
+ *     Filter Request
+ *     Interceptor preHandler
+ *     Interceptor postHandler
+ *     Interceptor afterCompletion
+ *     Filter Response
+ * </pre>
+ *
  * @author dranawhite
  * @version : LoginFilter.java, v 0.1 2019-07-27 16:57 dranawhite Exp $$
  */

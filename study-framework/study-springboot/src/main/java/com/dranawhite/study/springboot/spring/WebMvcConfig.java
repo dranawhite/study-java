@@ -1,6 +1,9 @@
 package com.dranawhite.study.springboot.spring;
 
+import com.dranawhite.study.springboot.interceptor.InterfaceCostTimeInterceptor;
+
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
@@ -11,4 +14,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        // 添加拦截器，应用于所有Path
+        registry.addInterceptor(new InterfaceCostTimeInterceptor()).order(1).addPathPatterns("/**");
+    }
 }
