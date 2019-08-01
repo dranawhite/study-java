@@ -1,13 +1,18 @@
 package com.dranawhite.study.springboot.spring;
 
+import com.dranawhite.study.springboot.converter.SensitiveDataEncryptConverter;
 import com.dranawhite.study.springboot.interceptor.InterfaceCostTimeInterceptor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
 
 /**
  * 自定义的MVC组件，实现WebMvcConfigurer接口，无需使用@EnableWebMvc注解
@@ -28,6 +33,18 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void configurePathMatch(PathMatchConfigurer configurer) {
         // URL取消截取.号之前的路径(原URL只会截取点号之前的路径，忽略点号之后的内容)
         configurer.setUseSuffixPatternMatch(false);
+    }
+
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        int insertIndex = converters.size();
+        for (int i = 0, size = converters.size(); i < size; i++) {
+            if (converters.get(i) instanceof MappingJackson2HttpMessageConverter) {
+                insertIndex = i;
+                break;
+            }
+        }
+        converters.add(insertIndex, new SensitiveDataEncryptConverter());
     }
 
     @Bean

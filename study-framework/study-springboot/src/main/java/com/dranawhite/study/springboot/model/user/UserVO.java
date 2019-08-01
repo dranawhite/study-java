@@ -35,6 +35,8 @@ public class UserVO extends BaseVO {
 
     private String address;
 
+    private String phone;
+
     private Integer age;
 
     private List<RoleVO> roleList;
