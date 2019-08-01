@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSE</title>
+    <script src="/study-springboot/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (!!window.EventSource) {
+            // sse url
+            var source = new EventSource('/study-springboot/sse/push');
+            var s = '';
+            source.addEventListener('message', function (ev) {
+                //收到一个没有event属性的消息时被调用
+                s += ev.data + "<br/>";
+                $("#msgFromPush").html(s);
+            });
+
+            source.addEventListener('open', function (ev) {
+                //连接打开时调用
+                console.log('连接打开!');
+            }, false);
+
+            source.addEventListener('error', function (ev) {
+                //发生错误时调用
+                if (ev.readyState == EventSource.CLOSED) {
+                    console.log('连接关闭');
+                } else {
+                    console.log(ev.readyState);
+                }
+            });
+        } else {
+            console.log('你的浏览器不支持SSE');
+        }
+    </script>
+</head>
+<body>
+<div id="msgFromPush">Ho ho! Look at me!</div>
+</body>
+</html>
