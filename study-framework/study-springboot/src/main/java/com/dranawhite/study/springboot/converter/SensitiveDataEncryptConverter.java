@@ -26,6 +26,9 @@ public class SensitiveDataEncryptConverter extends MappingJackson2HttpMessageCon
             throws IOException, HttpMessageNotWritableException {
         DranaResponse response = (DranaResponse) object;
         Object body = response.getBody();
+        if (body == null) {
+            return;
+        }
         if (!UserVO.class.isAssignableFrom(body.getClass())) {
             return;
         }

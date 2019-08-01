@@ -7,7 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
+import org.springframework.web.context.request.async.TimeoutCallableProcessingInterceptor;
+import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -47,9 +50,29 @@ public class WebMvcConfig implements WebMvcConfigurer {
         converters.add(insertIndex, new SensitiveDataEncryptConverter());
     }
 
+    @Override
+    public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
+        // 配置SpringBoot异步请求
+        configurer.setDefaultTimeout(60000L);
+        configurer.setTaskExecutor(getTaskExecutor());
+        configurer.registerCallableInterceptors(new TimeoutCallableProcessingInterceptor());
+    }
+
     @Bean
     public MethodValidationPostProcessor methodValidationPostProcessor() {
         // 开启Spring Controller和Service的方法校验
         return new MethodValidationPostProcessor();
     }
+
+    private ThreadPoolTaskExecutor getTaskExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(5);
+        executor.setMaxPoolSize(10);
+        executor.setQueueCapacity(20);
+        executor.setBeanName("async-request");
+        executor.setThreadNamePrefix("Async-Request-");
+        executor.initialize();
+        return executor;
+    }
+
 }

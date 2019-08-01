@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class AsyncService {
         log.info("异步任务——End!");
     }
 
-    @Scheduled(initialDelay = 5000, fixedDelay = 2000)
+    @Scheduled(initialDelay = 5000, fixedDelay = 60000)
     public void execScheduledTask() {
         log.info("定时任务!");
     }
@@ -43,5 +44,10 @@ public class AsyncService {
             ex.printStackTrace();
             emitter.completeWithError(ex);
         }
+    }
+
+    public void asyncRequest(DeferredResult<String> result, int waitSec) {
+        ThreadUnit.sleep(waitSec);
+        result.setResult("SUCCESS");
     }
 }
