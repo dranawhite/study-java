@@ -1,5 +1,6 @@
 package com.dranawhite.study.springboot.async;
 
+import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.common.common.ThreadUnit;
 
 import lombok.extern.slf4j.Slf4j;
@@ -46,8 +47,8 @@ public class AsyncService {
         }
     }
 
-    public void asyncRequest(DeferredResult<String> result, int waitSec) {
+    public void asyncRequest(DeferredResult<DranaResponse<String>> result, int waitSec) {
         ThreadUnit.sleep(waitSec);
-        result.setResult("SUCCESS");
+        result.setResult(DranaResponse.success("SUCCESS"));
     }
 }

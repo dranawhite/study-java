@@ -27,20 +27,6 @@ import java.io.File;
 @Slf4j
 public class FileController {
 
-    @PostMapping("/upload")
-    public DranaResponse<Boolean> uploadFile(MultipartFile file) {
-        log.info("FileName = [{}]", file.getOriginalFilename());
-        return DranaResponse.success(Boolean.TRUE);
-    }
-
-    @GetMapping("/{fileName}/download")
-    public ResponseEntity<FileSystemResource> downloadFile(@PathVariable String fileName) {
-        log.info("FileName = [{}]", fileName);
-        File file = ResourceLoader.getClasspathFile("static/index.html");
-        return buildDownloadResponseHeader(file, fileName);
-    }
-
-
     private static ResponseEntity<FileSystemResource> buildDownloadResponseHeader(File file, String fileName) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -54,5 +40,18 @@ public class FileController {
                 .contentLength(file.length())
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(result);
+    }
+
+    @PostMapping("/upload")
+    public DranaResponse<Boolean> uploadFile(MultipartFile file) {
+        log.info("FileName = [{}]", file.getOriginalFilename());
+        return DranaResponse.success(Boolean.TRUE);
+    }
+
+    @GetMapping("/{fileName}/download")
+    public ResponseEntity<FileSystemResource> downloadFile(@PathVariable String fileName) {
+        log.info("FileName = [{}]", fileName);
+        File file = ResourceLoader.getClasspathFile("static/index.html");
+        return buildDownloadResponseHeader(file, fileName);
     }
 }

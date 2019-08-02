@@ -1,5 +1,6 @@
 package com.dranawhite.study.springboot.web;
 
+import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.common.common.ThreadUnit;
 import com.dranawhite.study.springboot.async.AsyncService;
 
@@ -28,26 +29,26 @@ public class AsyncRequestController {
     private AsyncService asyncService;
 
     @GetMapping("/web")
-    public WebAsyncTask<String> webAsyncTask(@RequestParam int waitSec) {
-        Callable<String> result = () -> {
+    public WebAsyncTask<DranaResponse<String>> webAsyncTask(@RequestParam int waitSec) {
+        Callable<DranaResponse<String>> result = () -> {
             ThreadUnit.sleep(waitSec);
             log.info("WebAsyncTask SUCCESS!");
-            return "SUCCESS";
+            return DranaResponse.success("SUCCESS");
         };
-        WebAsyncTask<String> asyncTask = new WebAsyncTask<>(0L, result);
+        WebAsyncTask<DranaResponse<String>> asyncTask = new WebAsyncTask<>(0L, result);
         asyncTask.onTimeout(() -> {
             log.info("WebAsyncTask TIMED OUT!");
-            return "TIMED_OUT";
+            return DranaResponse.success("TIMED_OUT");
         });
         return asyncTask;
     }
 
     @GetMapping("/deferred")
-    public DeferredResult<String> deferredResult(@RequestParam int waitSec) {
-        DeferredResult<String> result = new DeferredResult<>(4000L);
+    public DeferredResult<DranaResponse<String>> deferredResult(@RequestParam int waitSec) {
+        DeferredResult<DranaResponse<String>> result = new DeferredResult<>(4000L);
         result.onTimeout(() -> {
             log.info("DeferredResult TIMED OUT!");
-            result.setResult("TIMED_OUT");
+            result.setResult(DranaResponse.success("TIMED_OUT"));
         });
         result.onCompletion(() -> log.info("DeferredResult SUCCESS"));
         asyncService.asyncRequest(result, waitSec);

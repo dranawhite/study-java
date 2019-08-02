@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 接口耗时统计
+ * <pre>
+ *     Spring中的拦截器只对Controller中的方法有效
+ * </pre>
  *
  * @author dranawhite
  * @version : InterfaceCostTimeInterceptor.java, v 0.1 2019-07-31 10:52 dranawhite Exp $$
