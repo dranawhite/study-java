@@ -52,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/security/noLogin/**").permitAll()
                     .antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name())
                     .anyRequest().authenticated();
+//            httpSecurity.requestMatcher(EndpointRequest.toAnyEndpoint()).authorizeRequests().anyRequest().authenticated();
         } catch (Exception ex) {
             throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
         }

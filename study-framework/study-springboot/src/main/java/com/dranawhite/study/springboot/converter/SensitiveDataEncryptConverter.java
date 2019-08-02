@@ -19,6 +19,10 @@ import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 
 /**
+ * <pre>
+ *     参照AbstractMessageConverterMethodProcessor的275行
+ * </pre>
+ *
  * @author dranawhite
  * @version : SensitiveDataEncryptConverter.java, v 0.1 2019-07-31 18:28 dranawhite Exp $$
  */
@@ -38,6 +42,9 @@ public class SensitiveDataEncryptConverter extends MappingJackson2HttpMessageCon
     public boolean canWrite(@Nullable Type type, @NonNull Class clazz, @Nullable MediaType mediaType) {
         if (type == null) {
             return canWrite(clazz, mediaType);
+        }
+        if (!DranaResponse.class.isAssignableFrom(clazz)) {
+            return false;
         }
         ParameterizedType parameterizedType = (ParameterizedType) type;
         Type[] bodyTypeArr = parameterizedType.getActualTypeArguments();
