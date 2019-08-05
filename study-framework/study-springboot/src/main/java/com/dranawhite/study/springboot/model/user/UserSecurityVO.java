@@ -3,7 +3,6 @@ package com.dranawhite.study.springboot.model.user;
 import lombok.Getter;
 import lombok.Setter;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,6 +23,10 @@ import java.util.List;
 @Getter
 public class UserSecurityVO extends UserVO implements UserDetails {
 
+    private String name;
+
+    private String password;
+
     private static final long serialVersionUID = -1943209911896843580L;
 
     @Override
@@ -37,7 +40,7 @@ public class UserSecurityVO extends UserVO implements UserDetails {
 
     @Override
     public String getPassword() {
-        return StringUtils.EMPTY;
+        return this.password;
     }
 
     @Override

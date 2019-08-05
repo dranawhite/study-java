@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.filter;
 
-import com.dranawhite.study.springboot.security.CustomUserService;
+import com.dranawhite.study.springboot.security.CustomUserServiceImpl;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginFilter extends OncePerRequestFilter {
 
     @Autowired
-    private CustomUserService customUserService;
+    private CustomUserServiceImpl customUserService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, @NonNull HttpServletResponse response,
