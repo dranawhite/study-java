@@ -8,6 +8,7 @@ import com.dranawhite.study.springboot.model.user.UserVO;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,7 @@ public class WebSocketController {
 
     @MessageMapping("/welcome")
     @SendTo("/topic/greetings")
-    public DranaResponse<String> sayHello(DranaRequest<UserVO> request) {
+    public DranaResponse<String> sayHello(@Payload DranaRequest<UserVO> request) {
         UserVO user = request.getData();
         String msg = "Welcome to WebSocket! " + user.getName();
         log.info(msg);
