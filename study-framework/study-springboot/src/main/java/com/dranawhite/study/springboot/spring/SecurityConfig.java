@@ -3,9 +3,11 @@ package com.dranawhite.study.springboot.spring;
 import com.dranawhite.common.exception.DranaRuntimeException;
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.study.springboot.filter.LoginFilter;
+import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 import com.dranawhite.study.springboot.security.CustomUserServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -50,14 +52,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         try {
             // 路径/security/**都需要进行登录校验
             // security/noLogin/**无需进行校验
-            httpSecurity.authorizeRequests().anyRequest().authenticated().and().formLogin();
-
-//
-//            httpSecurity.antMatcher("/security/**").addFilterBefore(loginFilter, LogoutFilter.class).authorizeRequests()
-//                    .antMatchers("/security/noLogin/**").permitAll()
-//                    .antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name())
-//                    .anyRequest().authenticated();
-//            httpSecurity.requestMatcher(EndpointRequest.toAnyEndpoint()).authorizeRequests().anyRequest().authenticated();
+            httpSecurity.authorizeRequests()
+                    .antMatchers("/security/noLogin/**").permitAll()
+                    .antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name())
+                    .antMatchers("/security/**").authenticated()
+                    .requestMatchers(EndpointRequest.toAnyEndpoint()).authenticated()
+                    .anyRequest().permitAll()
+                    .and().formLogin();
         } catch (Exception ex) {
             throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
         }

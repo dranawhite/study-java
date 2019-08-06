@@ -5,12 +5,17 @@ import com.dranawhite.study.springboot.interceptor.InterfaceCostTimeInterceptor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 import org.springframework.web.context.request.async.TimeoutCallableProcessingInterceptor;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -18,12 +23,37 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 /**
- * 自定义的MVC组件，实现WebMvcConfigurer接口，无需使用@EnableWebMvc注解
+ * 自定义的MVC组件，实现WebMvcConfigurer接口
+ *
+ * <pre>
+ *     corsFilter配置
+ *     // 表示允许哪些原始域进行跨域访问
+ *     // 添加Access-Control-Allow-Origin响应头
+ *     corsConfiguration.addAllowedOrigin("*");
+ *     // PUT和DELETE方法，浏览器需要发送OPTIONS请求询问，此处同意访问
+ *     // 添加Access-Control-Allow-Methods响应头
+ *     corsConfiguration.addAllowedMethod(HttpMethod.PUT);
+ *     corsConfiguration.addAllowedMethod(HttpMethod.DELETE);
+ *     // 允许发送Cookie
+ *     // 添加Access-Control-Allow-Credentials响应头
+ *     corsConfiguration.setAllowCredentials(Boolean.TRUE);
+ *     // 允许所有的浏览器请求头
+ *     // 添加Access-Control-Allow-Headers响应头
+ *     corsConfiguration.addAllowedHeader("*");
+ *     // 暴露所有响应头信息给客户端
+ *     // 添加Access-Control-Expose-Headers响应头
+ *     corsConfiguration.addExposedHeader("*");
+ *     // 设置OPTIONS请求的最大缓存时间
+ *     corsConfiguration.setMaxAge(1800L);
+ *
+ *     图片: doc/cors/cors.jpg
+ * </pre>
  *
  * @author dranawhite
  * @version : WebMvcConfig.java, v 0.1 2019-07-26 16:46 dranawhite Exp $$
  */
 @Configuration
+@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
@@ -62,6 +92,22 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public MethodValidationPostProcessor methodValidationPostProcessor() {
         // 开启Spring Controller和Service的方法校验
         return new MethodValidationPostProcessor();
+    }
+
+    @Bean
+    public CorsFilter corsFilter() {
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.applyPermitDefaultValues();
+        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.addAllowedMethod(HttpMethod.PUT);
+        corsConfiguration.addAllowedMethod(HttpMethod.DELETE);
+        corsConfiguration.setAllowCredentials(Boolean.TRUE);
+        corsConfiguration.addAllowedHeader("*");
+        corsConfiguration.addExposedHeader("*");
+        corsConfiguration.setMaxAge(1800L);
+        UrlBasedCorsConfigurationSource configurationSource = new UrlBasedCorsConfigurationSource();
+        configurationSource.registerCorsConfiguration("/**", corsConfiguration);
+        return new CorsFilter(configurationSource);
     }
 
     private ThreadPoolTaskExecutor getTaskExecutor() {
