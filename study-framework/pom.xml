@@ -17,11 +17,9 @@
         <module>study-distributed</module>
         <module>study-log</module>
         <module>study-zookeeper</module>
-        <module>study-springboot</module>
         <module>study-springmvc</module>
         <module>study-springcloud</module>
         <module>study-springboot</module>
-        <module>study-springboot-test</module>
     </modules>
 
     <dependencies>

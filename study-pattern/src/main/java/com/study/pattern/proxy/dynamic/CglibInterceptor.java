@@ -1,4 +1,4 @@
-package com.study.pattern.dynamicproxy;
+package com.study.pattern.proxy.dynamic;
 
 import com.dranawhite.interceptor.BaseCglibInterceptor;
 

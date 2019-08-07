@@ -1,10 +1,6 @@
-package com.study.pattern.dynamicproxy;
+package com.study.pattern.proxy.dynamic;
 
 import com.dranawhite.interceptor.BaseJdkInterceptor;
-
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 /**
  * JDK动态代理的类必须要实现一个接口
