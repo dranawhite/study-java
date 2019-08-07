@@ -14,7 +14,7 @@ package com.dranawhite.study.pattern.template;
 public class Main {
 
 	public static void main(String[] args) {
-		SuperClass clz = new SubClass();
+		BaseService clz = new ConcreteService();
 		clz.template();
 	}
 

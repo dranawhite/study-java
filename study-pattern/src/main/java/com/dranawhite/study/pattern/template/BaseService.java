@@ -6,7 +6,7 @@ package com.dranawhite.study.pattern.template;
  * @author dranawhite
  * @version [1.0, 2018/3/24 17:37]
  */
-public abstract class SuperClass {
+public abstract class BaseService {
 
 	abstract void start();
 

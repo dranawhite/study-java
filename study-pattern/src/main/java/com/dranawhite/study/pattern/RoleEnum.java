@@ -1,5 +1,7 @@
 package com.dranawhite.study.pattern;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  *
  * @author dranawhite
@@ -9,5 +11,21 @@ public enum RoleEnum {
 
     ROOT,
     ADMIN,
-    COMMON;
+    COMMON,
+    NULL;
+
+    public static RoleEnum findByName(String role) {
+        RoleEnum roleEnum = RoleEnum.NULL;
+        for (RoleEnum roleType : RoleEnum.values()) {
+            if (roleType == RoleEnum.NULL) {
+                continue;
+            }
+            if (StringUtils.equalsIgnoreCase(roleType.name(), role)) {
+                roleEnum = roleType;
+                break;
+            }
+        }
+        return roleEnum;
+    }
+
 }

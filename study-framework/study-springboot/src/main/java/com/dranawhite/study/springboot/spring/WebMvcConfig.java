@@ -94,7 +94,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return new MethodValidationPostProcessor();
     }
 
-    @Bean
+//    @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.applyPermitDefaultValues();
