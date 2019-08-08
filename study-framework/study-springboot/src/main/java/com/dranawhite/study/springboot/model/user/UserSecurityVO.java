@@ -7,6 +7,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
+import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
@@ -15,6 +17,9 @@ import java.util.List;
 
 /**
  * 用户鉴权类.
+ * <pre>
+ *     角色的判断是依赖RoleVoter类
+ * </pre>
  *
  * @author dranawhite
  * @version : UserSecurityVO.java, v 0.1 2019-07-27 15:48 dranawhite Exp $$
@@ -23,11 +28,17 @@ import java.util.List;
 @Getter
 public class UserSecurityVO extends UserVO implements UserDetails {
 
+    private static final long serialVersionUID = -1943209911896843580L;
+
     private String name;
 
     private String password;
 
-    private static final long serialVersionUID = -1943209911896843580L;
+    private GrantedAuthoritiesMapper authoritiesMapper;
+
+    public UserSecurityVO() {
+        authoritiesMapper = new SimpleAuthorityMapper();
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -35,7 +46,7 @@ public class UserSecurityVO extends UserVO implements UserDetails {
         for (RoleVO role : getRoleList()) {
             authorityList.add(new SimpleGrantedAuthority(role.getRoleType().name()));
         }
-        return authorityList;
+        return authoritiesMapper.mapAuthorities(authorityList);
     }
 
     @Override

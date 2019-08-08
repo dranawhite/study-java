@@ -13,6 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
+ * Spring Security判断UserDetailsService是否是UserDetailsPassowrdService的实例，如果是的话，则使用它作为默认的UserDetalsPasswordService
+ *
  * @author dranawhite
  * @version : UserService.java, v 0.1 2019-07-27 15:46 dranawhite Exp $$
  */

@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+        // AuthenticationConfiguration$LazyPasswordEncoder从ApplicationContext中获取PasswordEncoder的bean作为默认的PasswordEncoder
         return new BCryptPasswordEncoder();
     }
 
@@ -51,18 +52,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) {
         // 资源请求相关的鉴权
         try {
-            // 路径/security/**都需要进行登录校验
-            // security/noLogin/**无需进行校验
-            httpSecurity.authorizeRequests()
-                    .antMatchers("/security/noLogin/**").permitAll()
-                    .antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name())
-                    .antMatchers("/security/**").authenticated()
-                    .requestMatchers(EndpointRequest.toAnyEndpoint()).authenticated()
-                    .anyRequest().permitAll()
-                    .and().formLogin();
+            validateRequestUrl(httpSecurity).and()
+                    .formLogin();
         } catch (Exception ex) {
             throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
         }
     }
 
+    private ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry validateRequestUrl(HttpSecurity httpSecurity) {
+        try {
+            // 路径/security/**都需要进行登录校验
+            // security/noLogin/**无需进行校验
+            ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry =
+                    httpSecurity.authorizeRequests();
+            registry.antMatchers("/security/noLogin/**").permitAll();
+            registry.antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name());
+            registry.antMatchers("/security/**").authenticated();
+            registry.requestMatchers(EndpointRequest.toAnyEndpoint()).authenticated();
+            registry.anyRequest().permitAll();
+            return registry;
+        } catch (Exception ex) {
+            throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
+        }
+    }
 }

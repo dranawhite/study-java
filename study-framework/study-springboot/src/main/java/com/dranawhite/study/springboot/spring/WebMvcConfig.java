@@ -69,7 +69,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         int insertIndex = converters.size();
         for (int i = 0, size = converters.size(); i < size; i++) {
             if (converters.get(i) instanceof MappingJackson2HttpMessageConverter) {
@@ -94,7 +94,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return new MethodValidationPostProcessor();
     }
 
-//    @Bean
+    @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.applyPermitDefaultValues();
