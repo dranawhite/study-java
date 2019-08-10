@@ -45,7 +45,13 @@ public class MethodSecurityController {
 
     @PostMapping("/service")
     @PreAuthorize("@methodSecurityService.isMethodSecurityService(#isTrue)")
-    public DranaResponse<Boolean> testDefineSpel(@RequestParam boolean isTrue) {
+    public DranaResponse<Boolean> testService(@RequestParam boolean isTrue) {
+        return DranaResponse.success(Boolean.TRUE);
+    }
+
+    @GetMapping("/spel")
+    @PreAuthorize("isAdmin()")
+    public DranaResponse<Boolean> testSpel() {
         return DranaResponse.success(Boolean.TRUE);
     }
 }
