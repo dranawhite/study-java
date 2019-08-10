@@ -44,6 +44,7 @@ public class LoginFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, @NonNull HttpServletResponse response,
                                     @NonNull FilterChain filterChain) throws ServletException, IOException {
         String token = request.getHeader("token");
+        SecurityContextHolder.clearContext();
         if (StringUtils.isNotEmpty(token)) {
             UserDetails user = customUserService.loadUserByUsername(token);
             if (user != null) {
@@ -52,8 +53,6 @@ public class LoginFilter extends OncePerRequestFilter {
                         token, user.getAuthorities());
                 authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-            } else {
-                SecurityContextHolder.clearContext();
             }
         }
         filterChain.doFilter(request, response);

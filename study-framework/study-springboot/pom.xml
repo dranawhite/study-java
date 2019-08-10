@@ -16,6 +16,8 @@
         <dranawhite.version>1.0.0-SNAPSHOT</dranawhite.version>
         <!-- Test -->
         <greenmail.version>1.5.10</greenmail.version>
+        <!-- Monitor -->
+        <boot-admin.version>2.1.6</boot-admin.version>
     </properties>
 
     <dependencies>
@@ -96,6 +98,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>${boot-admin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${boot-admin.version}</version>
         </dependency>
 
         <!-- Dranawhite Exception -->

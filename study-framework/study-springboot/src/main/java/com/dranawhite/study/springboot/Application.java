@@ -1,5 +1,7 @@
 package com.dranawhite.study.springboot;
 
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
@@ -12,6 +14,7 @@ import org.springframework.cache.annotation.EnableCaching;
         "com.dranawhite.study.springboot"
 })
 @EnableCaching
+@EnableAdminServer
 public class Application {
 
     public static void main(String[] args) {

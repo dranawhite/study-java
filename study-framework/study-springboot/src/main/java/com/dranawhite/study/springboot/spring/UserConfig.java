@@ -22,12 +22,17 @@ public class UserConfig {
         UserVO user = new UserVO();
         user.setId(12);
         user.setName("Jerry");
-        RoleVO role = new RoleVO();
-        role.setId(1);
-        role.setName(RoleTypeEnum.ADMIN.name());
-        role.setRoleType(RoleTypeEnum.ADMIN);
+        RoleVO adminRole = new RoleVO();
+        adminRole.setId(1);
+        adminRole.setName(RoleTypeEnum.ADMIN.name());
+        adminRole.setRoleType(RoleTypeEnum.ADMIN);
+        RoleVO rootRole = new RoleVO();
+        rootRole.setId(2);
+        rootRole.setName(RoleTypeEnum.ROOT.name());
+        rootRole.setRoleType(RoleTypeEnum.ROOT);
         List<RoleVO> roleList = new ArrayList<>();
-        roleList.add(role);
+        roleList.add(adminRole);
+        roleList.add(rootRole);
         user.setRoleList(roleList);
         return user;
     }

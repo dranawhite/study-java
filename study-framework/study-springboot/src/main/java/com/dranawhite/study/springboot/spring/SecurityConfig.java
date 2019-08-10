@@ -7,7 +7,6 @@ import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 import com.dranawhite.study.springboot.security.CustomUserServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.LogoutFilter;
 
 /**
  * @author dranawhite
@@ -52,8 +52,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSecurity) {
         // 资源请求相关的鉴权
         try {
-            validateRequestUrl(httpSecurity).and()
-                    .formLogin();
+            httpSecurity.addFilterBefore(loginFilter, LogoutFilter.class);
+            validateRequestUrl(httpSecurity);
         } catch (Exception ex) {
             throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
         }
@@ -63,12 +63,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         try {
             // 路径/security/**都需要进行登录校验
             // security/noLogin/**无需进行校验
+            // Spring Security的校验流程，登录然后把用户认证信息放到SecurityContextHolder的authentication中
+            // 如果没有的话，就通过AnonymousAuthenticationFilter生成一个匿名的用户，判断authenticated()既判断用户是否是匿名的
+            // permitAll()不做任何判断，直接返回true; denyAll()不做任何判断，直接返回false
             ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry =
                     httpSecurity.authorizeRequests();
             registry.antMatchers("/security/noLogin/**").permitAll();
             registry.antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name());
             registry.antMatchers("/security/**").authenticated();
-            registry.requestMatchers(EndpointRequest.toAnyEndpoint()).authenticated();
+            registry.antMatchers("/method/security/**").authenticated();
             registry.anyRequest().permitAll();
             return registry;
         } catch (Exception ex) {
