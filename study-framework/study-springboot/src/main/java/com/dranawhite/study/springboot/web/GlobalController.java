@@ -1,4 +1,4 @@
-package com.dranawhite.study.springboot.spring;
+package com.dranawhite.study.springboot.web;
 
 import com.dranawhite.api.model.DranaResponse;
 

@@ -24,6 +24,14 @@ import java.util.List;
 
 /**
  * 自定义的MVC组件，实现WebMvcConfigurer接口
+ * <pre>
+ *     浏览器同源策略
+ *     1)Cookie, LocalStorage,IndexDb无法读取
+ *     2)Ajax无法发送
+ *     3)dom无法获得
+ *
+ *     PS: WebSocket不受同源限制
+ * </pre>
  *
  * <pre>
  *     corsFilter配置
@@ -36,6 +44,8 @@ import java.util.List;
  *     corsConfiguration.addAllowedMethod(HttpMethod.DELETE);
  *     // 允许发送Cookie
  *     // 添加Access-Control-Allow-Credentials响应头
+ *     // 如果允许发送Cookie，则allow-origin不能设置为*,必须设置为URL发送的origin
+ *     // Cookie依然遵循同源政策，只有用服务器域名设置的Cookie才会上传，其他域名的Cookie并不会上传，且（跨源）原网页代码中的document.cookie也无法读取服务器域名下的Cookie。
  *     corsConfiguration.setAllowCredentials(Boolean.TRUE);
  *     // 允许所有的浏览器请求头
  *     // 添加Access-Control-Allow-Headers响应头

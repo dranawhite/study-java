@@ -11,7 +11,8 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Server端配置
  * <pre>
- *     配置http请求转发到https
+ *     配置http请求转发到https,
+ *     配置HTTPS请求，一般运维在NGINX上配置请求转发即可，程序无需修改
  * </pre>
  *
  * @author dranawhite

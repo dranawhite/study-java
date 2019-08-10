@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -17,6 +18,7 @@ import org.springframework.security.config.annotation.web.configurers.Expression
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
  * @author dranawhite
@@ -24,6 +26,7 @@ import org.springframework.security.web.authentication.logout.LogoutFilter;
  */
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -51,8 +54,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity httpSecurity) {
         // 资源请求相关的鉴权
+        // csrf跨站请求伪造，要求传送一个X-XSRF-TOKEN的header或者在参数中添加一个_csrf
+        // CookieCsrfTokenRepository用cookie中的token跟header或者param中的token比较
+        // 在分布式应用中，为了节省效率，多根据一定的规则计算一个token，避免从各种存储中查询token的问题
         try {
-            httpSecurity.addFilterBefore(loginFilter, LogoutFilter.class);
+            httpSecurity.addFilterBefore(loginFilter, LogoutFilter.class)
+                    .csrf().csrfTokenRepository(new CookieCsrfTokenRepository());
             validateRequestUrl(httpSecurity);
         } catch (Exception ex) {
             throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);

@@ -23,4 +23,8 @@ public class MethodSecurityService {
         }
         return list;
     }
+
+    public boolean isMethodSecurityService(boolean isTrue) {
+        return isTrue;
+    }
 }
