@@ -17,6 +17,13 @@ import org.springframework.web.context.request.async.WebAsyncTask;
 import java.util.concurrent.Callable;
 
 /**
+ * <pre>
+ *  参考:
+ *     doc/async/同步请求.png
+ *     doc/async/异步请求.png
+ *     doc/async/请求超时.png
+ * </pre>
+ *
  * @author dranawhite
  * @version : AsyncRequestController.java, v 0.1 2019-08-01 16:21 dranawhite Exp $$
  */

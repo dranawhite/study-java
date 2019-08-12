@@ -5,6 +5,8 @@ import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.study.springboot.filter.LoginFilter;
 import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 import com.dranawhite.study.springboot.security.CustomUserServiceImpl;
+import com.dranawhite.study.springboot.security.HttpAccessDeniedHandler;
+import com.dranawhite.study.springboot.security.HttpAuthenticationEntryPoint;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -57,7 +59,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 在分布式应用中，为了节省效率，多根据一定的规则计算一个token，避免从各种存储中查询token的问题
         try {
             httpSecurity.addFilterBefore(loginFilter, LogoutFilter.class)
-                    .csrf().csrfTokenRepository(new CookieCsrfTokenRepository());
+                    .csrf().csrfTokenRepository(new CookieCsrfTokenRepository()).and()
+                    .exceptionHandling().authenticationEntryPoint(new HttpAuthenticationEntryPoint()).accessDeniedHandler(new HttpAccessDeniedHandler());
             validateRequestUrl(httpSecurity);
         } catch (Exception ex) {
             throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
