@@ -1,4 +1,4 @@
-package com.dranawhite.study.pattern.chain;
+package com.dranawhite.study.pattern.chain.chain;
 
 import com.dranawhite.api.model.BaseRequest;
 

@@ -1,4 +1,4 @@
-package com.dranawhite.study.pattern.chain;
+package com.dranawhite.study.pattern.chain.chain;
 
 import com.dranawhite.api.model.BaseRequest;
 
@@ -6,19 +6,19 @@ import com.dranawhite.api.model.BaseRequest;
  * @author dranawhite 2018/1/2
  * @version 1.0
  */
-public class Director implements Handler {
+public class Manager implements Handler {
 
     private Handler handler;
 
-    public Director() {
-        this.handler = new Master();
+    public Manager() {
+        this.handler = new Director();
     }
 
     @Override
     public void processRequest(BaseRequest request) {
         if ("适用条件".equals(request)) {
-            System.out.println("Director invoke!");
-        } else if (handler != null) {
+            System.out.println("Manager invoke!");
+        } else if (handler != null){
             handler.processRequest(request);
         }
     }
