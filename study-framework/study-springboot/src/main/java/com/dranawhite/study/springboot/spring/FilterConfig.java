@@ -21,7 +21,7 @@ public class FilterConfig {
         FilterRegistrationBean<CorsFilter> registration = new FilterRegistrationBean<>();
         registration.setFilter(corsFilter);
         registration.setOrder(1);
-        registration.setName("cors-filter");
+        registration.setName("corsFilter");
         registration.addUrlPatterns("/*");
         registration.setDispatcherTypes(DispatcherType.REQUEST, DispatcherType.FORWARD);
         return registration;

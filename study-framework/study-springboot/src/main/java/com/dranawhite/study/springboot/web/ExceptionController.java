@@ -3,7 +3,7 @@ package com.dranawhite.study.springboot.web;
 import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.common.exception.DranaRuntimeException;
 import com.dranawhite.common.exception.ResultCodeEnum;
-import com.dranawhite.common.exception.request.DranaForbidException;
+import com.dranawhite.common.exception.request.DranaForbiddenException;
 import com.dranawhite.common.exception.request.DranaNonAuthorityException;
 import com.dranawhite.common.text.MessageFormatter;
 
@@ -63,10 +63,10 @@ public class ExceptionController {
     }
 
     @ExceptionHandler(value = {
-            DranaForbidException.class
+            DranaForbiddenException.class
     })
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public DranaResponse handleForbiddenException(DranaForbidException ex) {
+    public DranaResponse handleForbiddenException(DranaForbiddenException ex) {
         return DranaResponse.fail(ex.getResultCodeEnum());
     }
 

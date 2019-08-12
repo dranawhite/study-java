@@ -59,6 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 在分布式应用中，为了节省效率，多根据一定的规则计算一个token，避免从各种存储中查询token的问题
         try {
             httpSecurity.addFilterBefore(loginFilter, LogoutFilter.class)
+                    .cors().and()
                     .csrf().csrfTokenRepository(new CookieCsrfTokenRepository()).and()
                     .exceptionHandling().authenticationEntryPoint(new HttpAuthenticationEntryPoint()).accessDeniedHandler(new HttpAccessDeniedHandler());
             validateRequestUrl(httpSecurity);
