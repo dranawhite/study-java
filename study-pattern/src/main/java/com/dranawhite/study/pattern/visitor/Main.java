@@ -1,6 +1,7 @@
 package com.dranawhite.study.pattern.visitor;
 
 /**
+ * 访问者模式
  *
  * @author dranawhite
  * @version $Id: Main.java, v 0.1 2019-01-02 17:24 dranawhite Exp $$
