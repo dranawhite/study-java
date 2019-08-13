@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author liangyuquan
- * @version : HttpAccessDeniedHandler.java, v 0.1 2019-08-12 13:47 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : HttpAccessDeniedHandler.java, v 0.1 2019-08-12 13:47 dranawhite Exp $$
  */
 public class HttpAccessDeniedHandler implements AccessDeniedHandler {
 

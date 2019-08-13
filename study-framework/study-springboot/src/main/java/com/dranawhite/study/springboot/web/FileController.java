@@ -19,6 +19,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 
 /**
+ * <pre>
+ *     Content-Disposition响应头，浏览器会自动识别该响应头，并读取fileName字段作为文件名和文件类型
+ * </pre>
+ *
  * @author dranawhite
  * @version : FileController.java, v 0.1 2019-07-31 18:06 dranawhite Exp $$
  */

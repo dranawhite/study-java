@@ -113,6 +113,7 @@ public class ExceptionController {
 
     @ModelAttribute
     public void addAttribute(Model model) {
+        // ModelAttribute注解在ControllerAdvice中可以定义全局变量
         model.addAttribute("global", "GlobalAttribute");
     }
 
