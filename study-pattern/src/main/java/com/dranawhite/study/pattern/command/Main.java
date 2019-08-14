@@ -16,6 +16,7 @@ package com.dranawhite.study.pattern.command;
  * </pre>
  * <pre>
  *     适用场景：事务，状态条，线程池等可以回退的场景
+ *     命令模式多与其它模式结合使用，如备忘录模式
  * </pre>
  *
  * @author dranawhite 2017/8/18
