@@ -28,7 +28,7 @@ public class AsyncService {
         log.info("异步任务——End!");
     }
 
-    @Scheduled(initialDelay = 5000, fixedDelay = 60000)
+    @Scheduled(initialDelay = 5000, fixedDelay = 600000)
     public void execScheduledTask() {
         log.info("定时任务!");
     }

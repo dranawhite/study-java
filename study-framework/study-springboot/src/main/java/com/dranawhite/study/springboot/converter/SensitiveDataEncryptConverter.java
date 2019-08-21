@@ -43,7 +43,7 @@ public class SensitiveDataEncryptConverter extends MappingJackson2HttpMessageCon
         if (type == null) {
             return canWrite(clazz, mediaType);
         }
-        if (!DranaResponse.class.isAssignableFrom(clazz)) {
+        if (!DranaResponse.class.isAssignableFrom(clazz) || !(type instanceof ParameterizedType)) {
             return false;
         }
         ParameterizedType parameterizedType = (ParameterizedType) type;

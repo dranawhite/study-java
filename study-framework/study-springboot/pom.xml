@@ -14,6 +14,8 @@
     <properties>
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <dranawhite.version>1.0.0-SNAPSHOT</dranawhite.version>
+        <sentinel.version>1.6.3</sentinel.version>
+        <sentinel-starter.version>2.1.0.RELEASE</sentinel-starter.version>
         <!-- Test -->
         <greenmail.version>1.5.10</greenmail.version>
         <!-- Monitor -->
@@ -79,6 +81,23 @@
                     <artifactId>spring-boot-starter-jdbc</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- Sentinel -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+            <version>${sentinel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-annotation-aspectj</artifactId>
+            <version>${sentinel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>${sentinel-starter.version}</version>
         </dependency>
 
         <!-- Test -->
