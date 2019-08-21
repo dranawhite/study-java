@@ -8,6 +8,9 @@ package com.study.spring.aop;
  */
 public interface Apolopy {
 
+    /**
+     * some method
+     */
     void sayAgain();
 
 }

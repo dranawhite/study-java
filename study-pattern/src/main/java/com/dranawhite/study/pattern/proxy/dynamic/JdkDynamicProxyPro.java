@@ -8,8 +8,8 @@ import java.lang.reflect.Modifier;
 /**
  * 生成的代理类参照docs/DranaProxy.class
  *
- * @author liangyuquan
- * @version : JdkDynamicProxyPro.java, v 0.1 2019-08-21 15:58 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : JdkDynamicProxyPro.java, v 0.1 2019-08-21 15:58 dranawhite Exp $$
  */
 public class JdkDynamicProxyPro {
 

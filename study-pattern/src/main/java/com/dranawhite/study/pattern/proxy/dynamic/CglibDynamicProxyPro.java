@@ -6,8 +6,8 @@ import net.sf.cglib.proxy.Enhancer;
 /**
  * 生成的字节码文件参照docs/Person$$EnhancerByCGLIB$$a5bba25b.class
  *
- * @author liangyuquan
- * @version : CglibDynamicProxy.java, v 0.1 2019-08-21 16:48 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : CglibDynamicProxy.java, v 0.1 2019-08-21 16:48 dranawhite Exp $$
  */
 public class CglibDynamicProxyPro {
 

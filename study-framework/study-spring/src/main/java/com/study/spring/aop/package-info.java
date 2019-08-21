@@ -14,8 +14,14 @@
  * </pre>
  *
  * <pre>
- *     动态代理JDK实现
- *     1)Proxy和InvocationHandler
+ *     动态代理JDK实现:Proxy和InvocationHandler
+ *     动态代理Cglib实现:MethodInterceptor
+ * </pre>
+ *
+ * <pre>
+ *     Spring AOP实现
+ *     1) Advice接口相关
+ *     2) ProxyFactory创建代理类
  * </pre>
  */
 package com.study.spring.aop;

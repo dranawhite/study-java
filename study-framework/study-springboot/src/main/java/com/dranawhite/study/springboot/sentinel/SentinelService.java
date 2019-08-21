@@ -11,8 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
- * @author liangyuquan
- * @version : SentinelService.java, v 0.1 2019-08-19 17:39 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : SentinelService.java, v 0.1 2019-08-19 17:39 dranawhite Exp $$
  */
 @Service
 @Slf4j

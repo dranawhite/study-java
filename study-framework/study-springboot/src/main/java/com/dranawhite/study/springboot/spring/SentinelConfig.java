@@ -34,8 +34,8 @@ import javax.annotation.PostConstruct;
  *     }
  * </pre>
  *
- * @author liangyuquan
- * @version : SentinelConfig.java, v 0.1 2019-08-19 17:45 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : SentinelConfig.java, v 0.1 2019-08-19 17:45 dranawhite Exp $$
  */
 @Configuration
 @Slf4j
