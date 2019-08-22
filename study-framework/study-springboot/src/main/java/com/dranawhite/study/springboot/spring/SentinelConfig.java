@@ -68,14 +68,14 @@ public class SentinelConfig {
     }
 
     private void initDegradeRules() {
-//        DegradeRule rule = new DegradeRule();
-//        rule.setCount(3);
-//        rule.setResource("sentinelService");
-//        rule.setGrade(RuleConstant.DEGRADE_GRADE_RT);
-//        rule.setTimeWindow(2);
-//
-//        List<DegradeRule> ruleList = new ArrayList<>();
-//        ruleList.add(rule);
-//        DegradeRuleManager.loadRules(ruleList);
+        DegradeRule rule = new DegradeRule();
+        rule.setCount(3);
+        rule.setResource("sentinelService");
+        rule.setGrade(RuleConstant.DEGRADE_GRADE_RT);
+        rule.setTimeWindow(2);
+
+        List<DegradeRule> ruleList = new ArrayList<>();
+        ruleList.add(rule);
+        DegradeRuleManager.loadRules(ruleList);
     }
 }
