@@ -24,4 +24,4 @@
  *     2) ProxyFactory创建代理类
  * </pre>
  */
-package com.study.spring.aop;
+package com.study.spring.aop.origin;

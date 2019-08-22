@@ -7,6 +7,6 @@ public class ApolopyImpl implements Apolopy {
 
     @Override
     public void sayAgain() {
-        System.out.println("Spring Aspect-引入增强");
+        System.out.println("我再强调几句啊...");
     }
 }
