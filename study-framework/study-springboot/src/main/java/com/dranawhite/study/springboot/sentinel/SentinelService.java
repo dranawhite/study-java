@@ -11,6 +11,20 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
+ * <pre>
+ *     DefaultSlotChain
+ *
+ *     ProcessorSlotChain chain = new DefaultProcessorSlotChain();
+ *     chain.addLast(new NodeSelectorSlot());
+ *     chain.addLast(new ClusterBuilderSlot());
+ *     chain.addLast(new LogSlot());
+ *     chain.addLast(new StatisticSlot());
+ *     chain.addLast(new SystemSlot());
+ *     chain.addLast(new AuthoritySlot());
+ *     chain.addLast(new FlowSlot());
+ *     chain.addLast(new DegradeSlot());
+ * </pre>
+ *
  * @author dranawhite
  * @version : SentinelService.java, v 0.1 2019-08-19 17:39 dranawhite Exp $$
  */

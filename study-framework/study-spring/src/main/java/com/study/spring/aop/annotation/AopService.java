@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author liangyuquan
- * @version : AopService.java, v 0.1 2019-08-21 18:28 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : AopService.java, v 0.1 2019-08-21 18:28 dranawhite Exp $$
  */
 @Aspect
 @Configuration

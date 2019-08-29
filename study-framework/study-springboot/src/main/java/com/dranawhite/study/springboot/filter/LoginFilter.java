@@ -4,6 +4,7 @@ import com.dranawhite.study.springboot.security.CustomUserServiceImpl;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.lang.NonNull;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
@@ -37,6 +38,7 @@ import javax.servlet.http.HttpServletResponse;
  * @version : LoginFilter.java, v 0.1 2019-07-27 16:57 dranawhite Exp $$
  */
 @Component
+@Order(12)
 public class LoginFilter extends OncePerRequestFilter {
 
     @Autowired

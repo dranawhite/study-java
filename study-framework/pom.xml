@@ -14,7 +14,6 @@
     <modules>
         <module>study-spring</module>
         <module>study-mybatis</module>
-        <module>study-distributed</module>
         <module>study-log</module>
         <module>study-zookeeper</module>
         <module>study-springmvc</module>

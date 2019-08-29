@@ -25,6 +25,7 @@
         <module>study-core</module>
         <module>study-data</module>
         <module>study-tomcat</module>
+        <module>study-starter</module>
     </modules>
 
     <dependencyManagement>
