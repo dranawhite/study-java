@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Spring Starter
+ * <pre>
+ *     加载META-INF/spring.factories中配置的信息
+ *     引入spring-boot-configuration-processor包生成json元文件
+ * </pre>
  *
  * @author dranawhite
  * @version : StarterController.java, v 0.1 2019-08-29 9:44 dranawhite Exp $$
