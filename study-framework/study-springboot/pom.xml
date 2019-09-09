@@ -71,6 +71,11 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+
         <!-- Batch处理大量的数据 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

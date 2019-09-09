@@ -54,7 +54,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity httpSecurity) {
         // 资源请求相关的鉴权
-        // csrf跨站请求伪造，要求传送一个X-XSRF-TOKEN的header或者在参数中添加一个_csrf
+        // csrf跨站请求伪造，第一个登录接口必须是GET方法，获取到XSRF-TOKEN后保存到cookie中
+        // 后续的POST、PUT、DELETE接口取cookie中的XSRF-TOKEN值，传送到一个X-XSRF-TOKEN的header或者在参数中添加一个_csrf
         // CookieCsrfTokenRepository用cookie中的token跟header或者param中的token比较
         // 在分布式应用中，为了节省效率，多根据一定的规则计算一个token，避免从各种存储中查询token的问题
         try {
