@@ -78,6 +78,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             // permitAll()不做任何判断，直接返回true; denyAll()不做任何判断，直接返回false
             ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry =
                     httpSecurity.authorizeRequests();
+            registry.antMatchers("/actuator/**").permitAll();
             registry.antMatchers("/security/noLogin/**").permitAll();
             registry.antMatchers("/security/admin/**").hasAnyRole(RoleTypeEnum.ROOT.name(), RoleTypeEnum.ADMIN.name());
             registry.antMatchers("/security/**").authenticated();

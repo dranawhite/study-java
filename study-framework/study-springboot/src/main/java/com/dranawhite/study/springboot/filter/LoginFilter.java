@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.lang.NonNull;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
+import org.springframework.security.authentication.AbstractAuthenticationToken;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -49,18 +51,19 @@ public class LoginFilter extends OncePerRequestFilter {
                                     @NonNull FilterChain filterChain) throws ServletException, IOException {
         String token = request.getHeader("token");
         SecurityContextHolder.clearContext();
+        AbstractAuthenticationToken authenticationToken = null;
         if (StringUtils.isEmpty(token)) {
-            throw new AuthenticationCredentialsNotFoundException("无效的用户名/密码");
+            authenticationToken = new AnonymousAuthenticationToken("key", "anonymous",
+                    AuthorityUtils.createAuthorityList("ROLE_ANONYMOUS"));
+        } else {
+            UserDetails user = customUserService.loadUserByUsername(token);
+            if (user == null) {
+                throw new AccessDeniedException("用户已失效");
+            }
+            // 将当前用户放入上下文中
+            authenticationToken = new UsernamePasswordAuthenticationToken(user, token, user.getAuthorities());
         }
 
-        UserDetails user = customUserService.loadUserByUsername(token);
-        if (user == null) {
-            throw new AccessDeniedException("用户已失效");
-        }
-
-        // 将当前用户放入上下文中
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user, token,
-                user.getAuthorities());
         authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         filterChain.doFilter(request, response);
