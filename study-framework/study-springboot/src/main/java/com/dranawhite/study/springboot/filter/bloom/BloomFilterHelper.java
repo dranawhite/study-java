@@ -5,6 +5,11 @@ import com.google.common.hash.Funnel;
 import com.google.common.hash.Hashing;
 
 /**
+ * <pre>
+ *     布隆过滤器可以根据待插入的数据总量和错误率计算出最合适的bit数组大小和hash的大小
+ *     bit数组大小=(-n * Math.log(p) / (Math.log(2) * Math.log(2)));
+ *     hash大小=(Math.max(1, (int) Math.round((double) m / n * Math.log(2))));
+ * </pre>
  *
  * @author dranawhite
  * @version : BloomFilterHelper.java, v 0.1 2019-09-27 14:33 dranawhite Exp $$
