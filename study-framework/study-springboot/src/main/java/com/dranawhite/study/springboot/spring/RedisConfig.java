@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
@@ -23,13 +26,17 @@ import java.time.Duration;
  * @version : RedisConfig.java, v 0.1 2019-07-27 14:11 dranawhite Exp $$
  */
 @Configuration
+@EnableCaching
 @SuppressWarnings("unchecked")
-public class RedisConfig {
+public class RedisConfig extends CachingConfigurerSupport {
+
+    @Autowired
+    private RedisConnectionFactory connectionFactory;
 
     @Bean
-    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
+    public RedisTemplate<String, Object> redisTemplate() {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
-        template.setConnectionFactory(redisConnectionFactory);
+        template.setConnectionFactory(connectionFactory);
         // 值序列化采用jackson序列化器，键的序列化采用StringRedis序列化器
         template.setValueSerializer(jackson2JsonRedisSerializer());
         template.setKeySerializer(new StringRedisSerializer());
@@ -37,8 +44,9 @@ public class RedisConfig {
         return template;
     }
 
+    @Override
     @Bean
-    public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
+    public RedisCacheManager cacheManager() {
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig();
         configuration.entryTtl(Duration.ofSeconds(60));
         configuration.prefixKeysWith("study:boot:");

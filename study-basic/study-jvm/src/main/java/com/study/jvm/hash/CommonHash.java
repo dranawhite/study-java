@@ -31,13 +31,13 @@ public class CommonHash {
         HashMap hash = new HashMap(1);
         Method hashMethod = hash.getClass().getDeclaredMethod("hash", Object.class);
         hashMethod.setAccessible(true);
-        Random random = new Random(Integer.MAX_VALUE);
+        Random random = new Random();
         for (int i = 0; i < NODE_SIZE; i++) {
             map.add(0);
         }
 
         for (int i = 0; i < dataSize; i++) {
-            int hashValue = (int) hashMethod.invoke(hash, random.nextInt());
+            int hashValue = (int) hashMethod.invoke(hash, random.nextInt(Integer.MAX_VALUE));
             int mod = hashValue & (NODE_SIZE - 1);
             int num = map.get(mod);
             map.set(mod, num + 1);

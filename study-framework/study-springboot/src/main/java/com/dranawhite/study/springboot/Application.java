@@ -4,13 +4,11 @@ import de.codecentric.boot.admin.server.config.EnableAdminServer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 
 /**
- * D:/mail              java -jar fakeSTMP-2.0.jar开启mail测试服务器
- * D:/redis             redis-server开启Redis服务端
- * D:/apache-kafka      bin/zookeeper-server-start.sh config/zookeeper.properties开启zk
- * D:/apache-kafka      bin/kafka-server-start.sh config/server.properties开启kafka
+ * D:/mail              java -jar fakeSTMP-2.0.jar开启mail测试服务器 D:/redis             redis-server开启Redis服务端
+ * D:/apache-kafka      bin/zookeeper-server-start.sh config/zookeeper.properties开启zk D:/apache-kafka
+ * bin/kafka-server-start.sh config/server.properties开启kafka
  *
  * @author dranawhite
  * @version : Application.java, v 0.1 2019-07-26 11:31 dranawhite Exp $$
@@ -18,7 +16,6 @@ import org.springframework.cache.annotation.EnableCaching;
 @SpringBootApplication(scanBasePackages = {
         "com.dranawhite.study.springboot"
 })
-@EnableCaching
 @EnableAdminServer
 public class Application {
 
