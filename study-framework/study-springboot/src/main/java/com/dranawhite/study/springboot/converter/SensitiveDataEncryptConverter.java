@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.converter;
 
-import com.dranawhite.api.model.DranaResponse;
+import com.dranawhite.common.model.DranaResponse;
 import com.dranawhite.common.text.JsonUtil;
 import com.dranawhite.study.springboot.model.user.UserVO;
 
@@ -64,7 +64,7 @@ public class SensitiveDataEncryptConverter extends MappingJackson2HttpMessageCon
     protected void writeInternal(@NonNull Object object, @Nullable Type type, HttpOutputMessage outputMessage)
             throws IOException, HttpMessageNotWritableException {
         DranaResponse response = (DranaResponse) object;
-        Object body = response.getBody();
+        Object body = response.getData();
         if (body == null) {
             super.writeInternal(object, type, outputMessage);
             return;

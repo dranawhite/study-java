@@ -1,7 +1,7 @@
 package com.dranawhite.study.springboot.security;
 
-import com.dranawhite.common.exception.ResultCodeEnum;
-import com.dranawhite.common.exception.request.DranaForbiddenException;
+import com.dranawhite.common.exception.DranaAccessException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
@@ -17,6 +17,6 @@ public class HttpAccessDeniedHandler implements AccessDeniedHandler {
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) {
-        throw new DranaForbiddenException("无权操作!", ResultCodeEnum.NOT_SUPPORTED);
+        throw new DranaAccessException("无权操作!", GenericResultCode.FORBIDDEN);
     }
 }

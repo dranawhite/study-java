@@ -1,8 +1,8 @@
 package com.dranawhite.study.springboot.web;
 
-import com.dranawhite.api.model.DranaRequest;
-import com.dranawhite.api.model.DranaResponse;
-import com.dranawhite.common.validate.annotation.InsertGroup;
+import com.dranawhite.common.model.DranaRequest;
+import com.dranawhite.common.model.DranaResponse;
+import com.dranawhite.common.validation.annotation.InsertGroup;
 import com.dranawhite.study.springboot.model.user.UserVO;
 import com.dranawhite.study.springboot.strategy.IUserService;
 

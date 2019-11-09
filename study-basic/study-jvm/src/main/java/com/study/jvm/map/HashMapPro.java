@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 /**
  *
- * @author liangyuquan
- * @version : HashMapPro.java, v 0.1 2019-09-18 10:49 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : HashMapPro.java, v 0.1 2019-09-18 10:49 dranawhite Exp $$
  */
 public class HashMapPro {
 

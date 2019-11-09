@@ -1,7 +1,7 @@
 package com.dranawhite.study.springboot.spring;
 
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 import com.dranawhite.study.springboot.filter.LoginFilter;
 import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 import com.dranawhite.study.springboot.security.CustomUserServiceImpl;
@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         try {
             auth.userDetailsService(customUserService);
         } catch (Exception ex) {
-            throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
+            throw new DranaSystemException("Spring Security异常!", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 
@@ -65,7 +65,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .exceptionHandling().authenticationEntryPoint(new HttpAuthenticationEntryPoint()).accessDeniedHandler(new HttpAccessDeniedHandler());
             validateRequestUrl(httpSecurity);
         } catch (Exception ex) {
-            throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
+            throw new DranaSystemException("Spring Security异常!", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 
@@ -86,7 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             registry.anyRequest().permitAll();
             return registry;
         } catch (Exception ex) {
-            throw new DranaRuntimeException("Spring Security异常!", ResultCodeEnum.SYSTEM_ERR, ex);
+            throw new DranaSystemException("Spring Security异常!", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 }

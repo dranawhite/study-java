@@ -1,7 +1,7 @@
 package com.study.jvm.serialization;
 
-import com.dranawhite.common.exception.ResultCodeEnum;
-import com.dranawhite.common.exception.file.DranaFileException;
+import com.dranawhite.common.exception.DranaFileException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Registration;
@@ -52,7 +52,7 @@ public class KryoSerializer {
             output.flush();
             return outputStream.toByteArray();
         } catch (IOException ex) {
-            throw new DranaFileException("序列化对象失败", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
+            throw new DranaFileException("序列化对象失败", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 
@@ -75,7 +75,7 @@ public class KryoSerializer {
              Input input = new Input(byteArrayInputStream)) {
             return (T) kryo.readObject(input, registration.getType());
         } catch (IOException ex) {
-            throw new DranaFileException("反序列化对象失败", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
+            throw new DranaFileException("反序列化对象失败", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 

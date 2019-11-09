@@ -1,7 +1,7 @@
 package com.study.concurrent.unsafe;
 
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import sun.misc.Unsafe;
 
@@ -32,7 +32,7 @@ public class UnsafePro {
             unsafe.compareAndSwapObject(pro, pro.offSet, null, 100);
             System.out.println("变更值：" + pro.num);
         } catch (NoSuchFieldException ex) {
-            throw new DranaRuntimeException("找不到该字段!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
+            throw new DranaSystemException("找不到该字段!", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 }

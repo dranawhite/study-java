@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.model.user;
 
-import com.dranawhite.common.validate.annotation.InsertGroup;
+import com.dranawhite.common.validation.annotation.InsertGroup;
 import com.dranawhite.study.springboot.model.BaseVO;
 
 import lombok.Getter;

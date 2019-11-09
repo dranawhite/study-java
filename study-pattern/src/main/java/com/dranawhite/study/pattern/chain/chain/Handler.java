@@ -1,6 +1,6 @@
 package com.dranawhite.study.pattern.chain.chain;
 
-import com.dranawhite.api.model.BaseRequest;
+import com.dranawhite.common.model.DranaRequest;
 
 /**
  * 处理请求的接口
@@ -15,6 +15,6 @@ public interface Handler {
      *
      * @param request 请求
      */
-    void processRequest(BaseRequest request);
+    void processRequest(DranaRequest request);
 
 }

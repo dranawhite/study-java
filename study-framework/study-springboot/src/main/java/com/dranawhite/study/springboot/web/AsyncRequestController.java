@@ -1,7 +1,7 @@
 package com.dranawhite.study.springboot.web;
 
-import com.dranawhite.api.model.DranaResponse;
 import com.dranawhite.common.common.ThreadUnit;
+import com.dranawhite.common.model.DranaResponse;
 import com.dranawhite.study.springboot.async.AsyncService;
 
 import lombok.extern.slf4j.Slf4j;

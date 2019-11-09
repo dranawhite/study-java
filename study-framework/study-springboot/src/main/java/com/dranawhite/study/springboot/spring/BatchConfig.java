@@ -1,8 +1,8 @@
 package com.dranawhite.study.springboot.spring;
 
 import com.dranawhite.common.constants.Separator;
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 import com.dranawhite.common.resource.ResourceLoader;
 import com.dranawhite.study.springboot.batch.CsvItemProcessor;
 import com.dranawhite.study.springboot.batch.CsvItemValidator;
@@ -69,7 +69,7 @@ public class BatchConfig {
             JobRepositoryFactoryBean factoryBean = new JobRepositoryFactoryBean();
             return factoryBean.getObject();
         } catch (Exception ex) {
-            throw new DranaRuntimeException("Batch Job错误", ResultCodeEnum.SYSTEM_ERR, ex);
+            throw new DranaSystemException("Batch Job错误", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 
@@ -81,7 +81,7 @@ public class BatchConfig {
             jobLauncher.setJobRepository(batchJobRepository());
             return jobLauncher;
         } catch (Exception ex) {
-            throw new DranaRuntimeException("Batch Job错误", ResultCodeEnum.SYSTEM_ERR, ex);
+            throw new DranaSystemException("Batch Job错误", GenericResultCode.SYSTEM_ERROR, ex);
         }
     }
 
@@ -110,7 +110,7 @@ public class BatchConfig {
     private LineTokenizer getUserLineTokenizer() {
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
         lineTokenizer.setNames("id", "name", "address");
-        lineTokenizer.setDelimiter(Separator.COMMA);
+        lineTokenizer.setDelimiter(Separator.StringSeparator.COMMA);
         return lineTokenizer;
     }
 

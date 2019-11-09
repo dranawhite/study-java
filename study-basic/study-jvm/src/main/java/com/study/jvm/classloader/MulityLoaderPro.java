@@ -1,7 +1,7 @@
 package com.study.jvm.classloader;
 
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import com.study.log.LoggerBuilder;
 
@@ -24,14 +24,14 @@ import com.study.log.LoggerBuilder;
  */
 public class MulityLoaderPro {
 
-	public static void main(String[] args) {
-		try {
-			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-			Class<?> clz = classLoader.loadClass("com.study.log.LoggerBuilder");
-			LoggerBuilder loggerBuilder = (LoggerBuilder) clz.newInstance();
-			loggerBuilder.print();
-		} catch(ClassNotFoundException | IllegalAccessException | InstantiationException e) {
-			throw new DranaRuntimeException("突发异常", ResultCodeEnum.SERVICE_UNAVAILABLE, e);
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+            Class<?> clz = classLoader.loadClass("com.study.log.LoggerBuilder");
+            LoggerBuilder loggerBuilder = (LoggerBuilder) clz.newInstance();
+            loggerBuilder.print();
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+            throw new DranaSystemException("突发异常", GenericResultCode.SYSTEM_ERROR, e);
+        }
+    }
 }

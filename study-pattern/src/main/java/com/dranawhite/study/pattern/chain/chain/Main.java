@@ -1,6 +1,6 @@
 package com.dranawhite.study.pattern.chain.chain;
 
-import com.dranawhite.api.model.BaseRequest;
+import com.dranawhite.common.model.DranaRequest;
 
 /**
  * 职责链模式
@@ -15,7 +15,7 @@ import com.dranawhite.api.model.BaseRequest;
 public class Main {
 
     public static void main(String[] args) {
-        BaseRequest request = new BaseRequest(){};
+        DranaRequest request = new DranaRequest(){};
         Handler handler = new Manager();
         handler.processRequest(request);
     }

@@ -157,12 +157,6 @@
             <artifactId>dranawhite-common</artifactId>
             <version>${dranawhite.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.dranawhite</groupId>
-            <artifactId>dranawhite-api</artifactId>
-            <version>${dranawhite.version}</version>
-        </dependency>
-
         <!-- Apache Common -->
         <dependency>
             <groupId>org.apache.commons</groupId>

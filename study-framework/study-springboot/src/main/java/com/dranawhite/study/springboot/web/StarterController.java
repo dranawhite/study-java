@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.web;
 
-import com.dranawhite.api.model.DranaResponse;
+import com.dranawhite.common.model.DranaResponse;
 import com.dranawhite.starter.HelloService;
 
 import lombok.extern.slf4j.Slf4j;

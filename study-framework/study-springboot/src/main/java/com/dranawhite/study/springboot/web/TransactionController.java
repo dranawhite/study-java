@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.web;
 
-import com.dranawhite.api.model.DranaResponse;
+import com.dranawhite.common.model.DranaResponse;
 import com.dranawhite.study.springboot.transaction.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;

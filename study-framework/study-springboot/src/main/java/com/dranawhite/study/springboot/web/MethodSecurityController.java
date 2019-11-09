@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.web;
 
-import com.dranawhite.api.model.DranaResponse;
+import com.dranawhite.common.model.DranaResponse;
 import com.dranawhite.study.springboot.security.MethodSecurityService;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.dranawhite.study.springboot.mail;
 
-import com.dranawhite.common.exception.ResultCodeEnum;
-import com.dranawhite.common.exception.request.DranaIllegalArgumentException;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 import com.dranawhite.study.springboot.model.user.UserVO;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -45,7 +45,7 @@ public class MailClient {
     private MimeMessagePreparator prepareMimeMessage(List<UserVO> toUserList, List<UserVO> copyUserList, String subject,
                                                      String message, List<File> attachmentList) {
         if (CollectionUtils.isEmpty(toUserList)) {
-            throw new DranaIllegalArgumentException("邮件收件人不能为空!", ResultCodeEnum.ILLEGAL_REQUEST);
+            throw new DranaSystemException("邮件收件人不能为空!", GenericResultCode.SYSTEM_ERROR);
         }
 
         // 通过MimeMessage类可以构建出比较复杂的邮件内容

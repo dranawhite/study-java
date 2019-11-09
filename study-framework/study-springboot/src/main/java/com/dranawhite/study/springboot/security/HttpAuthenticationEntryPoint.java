@@ -1,8 +1,8 @@
 package com.dranawhite.study.springboot.security;
 
-import com.dranawhite.common.exception.ResultCodeEnum;
-import com.dranawhite.common.exception.request.DranaForbiddenException;
-import com.dranawhite.common.exception.request.DranaNonAuthorityException;
+import com.dranawhite.common.exception.DranaAccessException;
+import com.dranawhite.common.exception.DranaAuthorizationException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.AuthenticationException;
@@ -22,9 +22,9 @@ public class HttpAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) {
         if (authException instanceof InsufficientAuthenticationException) {
-            throw new DranaForbiddenException("无权操作!", ResultCodeEnum.NOT_SUPPORTED);
+            throw new DranaAccessException("无权操作!", GenericResultCode.FORBIDDEN);
         } else {
-            throw new DranaNonAuthorityException("请重新登录!", ResultCodeEnum.SESSION_EXPIRED);
+            throw new DranaAuthorizationException("请重新登录!", GenericResultCode.UNAUTHORIZED);
         }
     }
 }

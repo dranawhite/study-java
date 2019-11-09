@@ -1,7 +1,7 @@
 package com.study.concurrent.pool.datasource.pool;
 
 import com.dranawhite.common.common.ThreadUnit;
-import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.DranaSystemException;
 
 import java.util.Random;
 
@@ -33,7 +33,7 @@ public class DranaDataSource {
             System.out.println("获取连接: ConnType = " + connType + "; Id: " + connectionHolder.getId() +
                     "; CostTime: " + (endTime - startTime) + "ms");
             ThreadUnit.sleep(random.nextInt(12));
-        } catch (DranaRuntimeException ex) {
+        } catch (DranaSystemException ex) {
             System.out.println(ex.getMessage());
         } catch (Exception ex) {
             ex.printStackTrace();

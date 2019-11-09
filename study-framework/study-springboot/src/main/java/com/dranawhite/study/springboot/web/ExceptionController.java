@@ -1,10 +1,10 @@
 package com.dranawhite.study.springboot.web;
 
-import com.dranawhite.api.model.DranaResponse;
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
-import com.dranawhite.common.exception.request.DranaForbiddenException;
-import com.dranawhite.common.exception.request.DranaNonAuthorityException;
+import com.dranawhite.common.exception.DranaAccessException;
+import com.dranawhite.common.exception.DranaAuthorizationException;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
+import com.dranawhite.common.model.DranaResponse;
 import com.dranawhite.common.text.MessageFormatter;
 
 import lombok.extern.slf4j.Slf4j;
@@ -51,32 +51,32 @@ public class ExceptionController {
     public DranaResponse handleRequestValidationException(Exception ex) {
         String objErrorMsg = parseRequestValidationException(ex);
         log.warn("HTTP请求参数错误, Caused By = [{}]", objErrorMsg);
-        return DranaResponse.fail(ResultCodeEnum.ILLEGAL_REQUEST.getCode(), objErrorMsg);
+        return DranaResponse.fail(GenericResultCode.REQUEST_INVALID.getCode(), objErrorMsg);
     }
 
     @ExceptionHandler(value = {
-            DranaNonAuthorityException.class
+            DranaAuthorizationException.class
     })
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public DranaResponse handleUnauthorizedException(DranaNonAuthorityException ex) {
-        return DranaResponse.fail(ex.getResultCodeEnum());
+    public DranaResponse handleUnauthorizedException(DranaAuthorizationException ex) {
+        return DranaResponse.fail(ex.getResultCode());
     }
 
     @ExceptionHandler(value = {
-            DranaForbiddenException.class
+            DranaAccessException.class
     })
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public DranaResponse handleForbiddenException(DranaForbiddenException ex) {
-        return DranaResponse.fail(ex.getResultCodeEnum());
+    public DranaResponse handleForbiddenException(DranaAccessException ex) {
+        return DranaResponse.fail(ex.getResultCode());
     }
 
     @ExceptionHandler(value = {
-            DranaRuntimeException.class
+            DranaSystemException.class
     })
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public DranaResponse handleBusinessException(DranaRuntimeException ex) {
+    public DranaResponse handleBusinessException(DranaSystemException ex) {
         log.warn("业务异常! Caused By = [{}]", ex.getMessage());
-        return DranaResponse.fail(ex.getResultCodeEnum());
+        return DranaResponse.fail(ex.getResultCode());
     }
 
     @ExceptionHandler(value = {
@@ -85,7 +85,7 @@ public class ExceptionController {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public DranaResponse handleException(Exception ex) {
         log.error("服务器异常! Caused By = [{}]", ex.getMessage(), ex);
-        return DranaResponse.fail(ResultCodeEnum.SYSTEM_ERR);
+        return DranaResponse.fail(GenericResultCode.SYSTEM_ERROR);
     }
 
     private String parseRequestValidationException(Exception e) {

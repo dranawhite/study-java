@@ -1,7 +1,7 @@
 package com.study.concurrent.pool.datasource.pool;
 
-import com.dranawhite.common.exception.ResultCodeEnum;
-import com.dranawhite.common.exception.business.DranaTimeOutException;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -56,7 +56,7 @@ public class BlockedConnectionPool extends ConnectionPool {
         if (syncLock.tryLock()) {
             return getConnection(connType);
         }
-        throw new DranaTimeOutException("获取数据源连接超时!", ResultCodeEnum.SYSTEM_BUSY);
+        throw new DranaSystemException("获取数据源连接超时!", GenericResultCode.SYSTEM_ERROR);
     }
 
     @Override
@@ -105,14 +105,14 @@ public class BlockedConnectionPool extends ConnectionPool {
         @Override
         public boolean tryLock() {
             if (waitConnectionNum.get() > maxWaitSize) {
-                throw new DranaTimeOutException("获取数据源超时!", ResultCodeEnum.SYSTEM_BUSY);
+                throw new DranaSystemException("获取数据源超时!", GenericResultCode.SYSTEM_ERROR);
             }
             waitConnectionNum.incrementAndGet();
             try {
                 return sync.tryAcquireSharedNanos(1, TimeUnit.SECONDS.toNanos(maxWaitSeconds));
             } catch (Exception ex) {
                 waitConnectionNum.decrementAndGet();
-                throw new DranaTimeOutException("获取数据源失败!", ResultCodeEnum.SYSTEM_BUSY, ex);
+                throw new DranaSystemException("获取数据源失败!", GenericResultCode.SYSTEM_ERROR, ex);
             }
         }
 

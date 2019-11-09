@@ -1,12 +1,10 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2019 All Rights Reserved.
- */
+
 package com.dranawhite.study.springboot;
 
 /**
  *
- * @author liangyuquan
- * @version : Test.java, v 0.1 2019-09-27 15:24 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : Test.java, v 0.1 2019-09-27 15:24 dranawhite Exp $$
  */
 public class Test {
 

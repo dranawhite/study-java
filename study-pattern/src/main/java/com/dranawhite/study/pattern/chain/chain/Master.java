@@ -1,6 +1,6 @@
 package com.dranawhite.study.pattern.chain.chain;
 
-import com.dranawhite.api.model.BaseRequest;
+import com.dranawhite.common.model.DranaRequest;
 
 /**
  * @author dranawhite 2018/1/2
@@ -9,7 +9,7 @@ import com.dranawhite.api.model.BaseRequest;
 public class Master implements Handler {
 
     @Override
-    public void processRequest(BaseRequest request) {
+    public void processRequest(DranaRequest request) {
         System.out.println("Master invoke!");
     }
 }

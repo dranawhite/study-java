@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.batch;
 
-import com.dranawhite.common.validate.BeanValidator;
+import com.dranawhite.common.validation.BeanValidator;
 
 import org.springframework.batch.item.validator.ValidationException;
 import org.springframework.batch.item.validator.Validator;

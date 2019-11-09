@@ -1,7 +1,7 @@
 package com.study.concurrent.unsafe;
 
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
@@ -14,21 +14,21 @@ import java.util.concurrent.locks.LockSupport;
  */
 public class UnsafePark extends Thread {
 
-	@Override
-	public void run() {
-		System.out.println("This is a Thread!");
-		LockSupport.park();
-		System.out.println("I am back!");
-	}
+    @Override
+    public void run() {
+        System.out.println("This is a Thread!");
+        LockSupport.park();
+        System.out.println("I am back!");
+    }
 
-	public static void main(String[] args) {
-		try {
-			UnsafePark park = new UnsafePark();
-			park.start();
-			TimeUnit.SECONDS.sleep(5);
-			LockSupport.unpark(park);
-		} catch (InterruptedException ex) {
-			throw new DranaRuntimeException("中断异常!", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            UnsafePark park = new UnsafePark();
+            park.start();
+            TimeUnit.SECONDS.sleep(5);
+            LockSupport.unpark(park);
+        } catch (InterruptedException ex) {
+            throw new DranaSystemException("中断异常!", GenericResultCode.SYSTEM_ERROR, ex);
+        }
+    }
 }

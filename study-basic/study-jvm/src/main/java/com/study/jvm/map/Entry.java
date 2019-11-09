@@ -1,8 +1,8 @@
 package com.study.jvm.map;
 
 /**
- * @author liangyuquan
- * @version : Entry.java, v 0.1 2019-09-18 10:49 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : Entry.java, v 0.1 2019-09-18 10:49 dranawhite Exp $$
  */
 public class Entry {
 

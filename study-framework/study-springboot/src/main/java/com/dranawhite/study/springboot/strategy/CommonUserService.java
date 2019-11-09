@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.strategy;
 
-import com.dranawhite.common.validate.annotation.InsertGroup;
+import com.dranawhite.common.validation.annotation.InsertGroup;
 import com.dranawhite.study.springboot.model.user.RoleTypeEnum;
 
 import org.springframework.core.annotation.Order;

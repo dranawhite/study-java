@@ -1,7 +1,7 @@
 package com.study.concurrent.thread;
 
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
@@ -16,35 +16,35 @@ import java.util.concurrent.locks.LockSupport;
  */
 public class ThreadPro extends Thread {
 
-	@Override
-	public void run() {
-		long i = 0;
-		while (true) {
-			i++;
-			System.out.println("Oh, No!");
-			LockSupport.park();
-			System.out.println("I am back!");
-			if (Thread.currentThread().isInterrupted()) {
-				System.out.println("Interrupted");
-				return;
-			}
-		}
-	}
+    @Override
+    public void run() {
+        long i = 0;
+        while (true) {
+            i++;
+            System.out.println("Oh, No!");
+            LockSupport.park();
+            System.out.println("I am back!");
+            if (Thread.currentThread().isInterrupted()) {
+                System.out.println("Interrupted");
+                return;
+            }
+        }
+    }
 
-	public static void main(String[] args) {
-		try {
-			// Thread interrupt
-			ThreadPro td = new ThreadPro();
-			td.start();
-			TimeUnit.SECONDS.sleep(5);
-			System.out.println("Hey, man waking up!");
-			LockSupport.unpark(td);
-			TimeUnit.SECONDS.sleep(5);
-			System.out.println("Hey, guy interrupting!");
-			td.interrupt();
-		} catch (InterruptedException ex) {
-			throw new DranaRuntimeException("中断异常", ResultCodeEnum.SERVICE_UNAVAILABLE, ex);
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            // Thread interrupt
+            ThreadPro td = new ThreadPro();
+            td.start();
+            TimeUnit.SECONDS.sleep(5);
+            System.out.println("Hey, man waking up!");
+            LockSupport.unpark(td);
+            TimeUnit.SECONDS.sleep(5);
+            System.out.println("Hey, guy interrupting!");
+            td.interrupt();
+        } catch (InterruptedException ex) {
+            throw new DranaSystemException("中断异常", GenericResultCode.SYSTEM_ERROR, ex);
+        }
+    }
 
 }

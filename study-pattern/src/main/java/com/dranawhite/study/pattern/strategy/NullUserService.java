@@ -14,11 +14,11 @@ public class NullUserService implements IUserService {
         // 当为null时有特殊逻辑，可以使用空对象模式
         // 否则在RoleEnum中直接抛出异常即可
         StringBuilder roleBuilder = new StringBuilder();
-        roleBuilder.append(Separator.CH_LEFT_BRACKET);
+        roleBuilder.append(Separator.StringSeparator.LEFT_BRACKET);
         for (RoleEnum roleEnum : RoleEnum.values()) {
-            roleBuilder.append(roleEnum.name()).append(Separator.COMMA);
+            roleBuilder.append(roleEnum.name()).append(Separator.StringSeparator.COMMA);
         }
-        roleBuilder.replace(roleBuilder.length() - 1, roleBuilder.length(), String.valueOf(Separator.CH_RIGHT_BRACKET));
+        roleBuilder.replace(roleBuilder.length() - 1, roleBuilder.length(), Separator.StringSeparator.LEFT_BRACKET);
         System.out.println("无效的用户角色, " + roleBuilder.toString());
     }
 }

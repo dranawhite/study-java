@@ -1,7 +1,7 @@
 package com.study.log.jdk;
 
-import com.dranawhite.common.exception.DranaRuntimeException;
-import com.dranawhite.common.exception.ResultCodeEnum;
+import com.dranawhite.common.exception.DranaSystemException;
+import com.dranawhite.common.exception.GenericResultCode;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;
@@ -19,24 +19,24 @@ import java.util.logging.Logger;
  */
 public class JdkLogger {
 
-	private Logger logger = Logger.getLogger("logging.jdk");
-	private FileHandler fileHandler;
+    private Logger logger = Logger.getLogger("logging.jdk");
+    private FileHandler fileHandler;
 
-	public JdkLogger() {
-		try {
-			//指定输出路径，如果不指定路径日志文件将位于项目根路径下;默认是打印到控制台
-			fileHandler = new FileHandler("log/jdk.log");
-			fileHandler.setLevel(Level.ALL);
-			fileHandler.setFormatter(new JdkLogFormatter());
-			logger.setLevel(Level.INFO);
-			logger.addHandler(fileHandler);
-		} catch (IOException ioe) {
-			throw new DranaRuntimeException("IO异常", ResultCodeEnum.SERVICE_UNAVAILABLE, ioe);
-		}
-	}
+    public JdkLogger() {
+        try {
+            //指定输出路径，如果不指定路径日志文件将位于项目根路径下;默认是打印到控制台
+            fileHandler = new FileHandler("log/jdk.log");
+            fileHandler.setLevel(Level.ALL);
+            fileHandler.setFormatter(new JdkLogFormatter());
+            logger.setLevel(Level.INFO);
+            logger.addHandler(fileHandler);
+        } catch (IOException ioe) {
+            throw new DranaSystemException("IO异常", GenericResultCode.SYSTEM_ERROR, ioe);
+        }
+    }
 
-	public void info(String msg) {
-		logger.info(msg);
-	}
+    public void info(String msg) {
+        logger.info(msg);
+    }
 }
 

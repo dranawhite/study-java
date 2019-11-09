@@ -1,6 +1,6 @@
 package com.dranawhite.study.springboot.mail;
 
-import com.dranawhite.common.exception.DranaRuntimeException;
+import com.dranawhite.common.exception.DranaSystemException;
 import com.dranawhite.common.exception.ResultCodeEnum;
 import com.dranawhite.study.springboot.BaseTest;
 import com.dranawhite.study.springboot.model.user.UserVO;
@@ -72,7 +72,7 @@ public class MailClientTest extends BaseTest {
             Assert.assertEquals(subject, receivedSubject);
             log.info("Test Mail Subject: [{}]", subject);
         } catch (MessagingException ex) {
-            throw new DranaRuntimeException("GreenMail获取邮件时报错", ResultCodeEnum.SYSTEM_ERR, ex);
+            throw new DranaSystemException("GreenMail获取邮件时报错", ResultCodeEnum.SYSTEM_ERR, ex);
         }
     }
 }

@@ -4,8 +4,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  *
- * @author liangyuquan
- * @version : ConcurrentHashMap.java, v 0.1 2019-09-21 10:32 liangyuquan Exp $$
+ * @author dranawhite
+ * @version : ConcurrentHashMap.java, v 0.1 2019-09-21 10:32 dranawhite Exp $$
  */
 public class ConcurrentHashMapPro {
 

@@ -32,11 +32,6 @@
         <dependencies>
             <dependency>
                 <groupId>com.dranawhite</groupId>
-                <artifactId>dranawhite-api</artifactId>
-                <version>${dranawhite.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.dranawhite</groupId>
                 <artifactId>dranawhite-cache</artifactId>
                 <version>${dranawhite.version}</version>
             </dependency>
